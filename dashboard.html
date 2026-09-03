@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fresh Fold</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="font-[Poppins] dashboard-bg min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="sidebar w-64 min-h-screen text-white flex-shrink-0 hidden md:flex flex-col">
+
+        <div class="flex items-center gap-3 px-6 py-6">
+            <div class="w-10 h-10 rounded-full bg-white p-1">
+                <img src="images/laundry-logo.jpg" alt="Fresh Fold" class="w-full h-full rounded-full object-cover">
+            </div>
+            <span class="text-xl font-bold">Fresh Fold</span>
+        </div>
+
+        <nav class="flex-1 px-3 mt-4 space-y-1">
+            <a href="dashboard.html" class="sidebar-link sidebar-active flex items-center gap-3 px-4 py-3 rounded-xl text-white">
+                <i class="fa-solid fa-gauge-high w-5"></i> Dashboard
+            </a>
+            <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90">
+                <i class="fa-solid fa-shirt w-5"></i> Orders
+            </a>
+            <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90">
+                <i class="fa-solid fa-user w-5"></i> Profile
+            </a>
+        </nav>
+
+        <button id="logoutBtn" class="m-3 flex items-center gap-3 px-4 py-3 rounded-xl text-white/90 hover:bg-white/10 transition">
+            <i class="fa-solid fa-right-from-bracket w-5"></i> Logout
+        </button>
+
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 p-6 md:p-10">
+
+        <!-- Mobile logout (sidebar is hidden on small screens) -->
+        <div class="flex justify-end md:hidden mb-4">
+            <button id="logoutBtnMobile" class="text-slate-500 flex items-center gap-2">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+
+        <!-- Welcome banner -->
+        <div class="welcome-banner p-8 mb-8">
+            <h1 id="welcomeHeading" class="text-2xl md:text-3xl font-bold mb-1">Welcome back!</h1>
+            <p id="welcomeRole" class="text-white/80"></p>
+        </div>
+
+        <!-- Orders table -->
+        <div class="dashboard-card p-6">
+
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold text-slate-800">Laundry Orders</h2>
+                <span id="ordersCount" class="text-sm text-slate-500"></span>
+            </div>
+
+            <p id="ordersMessage" class="text-slate-500 text-sm mb-4"></p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left table-hover">
+                    <thead>
+                        <tr class="text-slate-500 text-sm border-b border-slate-200">
+                            <th class="py-3 pr-4">Order #</th>
+                            <th class="py-3 pr-4">Service</th>
+                            <th class="py-3 pr-4">Item</th>
+                            <th class="py-3 pr-4">Amount</th>
+                            <th class="py-3 pr-4">Status</th>
+                            <th class="py-3 pr-4">Created</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Rows injected by dashboard.js -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
