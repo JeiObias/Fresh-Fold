@@ -1,268 +1,630 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Fold</title>
 
-    <title>Fresh Fold</title>
+<!-- Tailwind CSS -->
+<link rel="stylesheet" href="src/output.css">
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="src/output.css">
+<!-- Poppins Font -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Poppins Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
+
 </head>
 
-
-<body style="margin: 0; padding: 0; width: 100%; min-height: 100vh; display: flex; flex-direction: column;">
-
-   
-
-    <header class="w-full bg-white border-b border-gray-300">
-
-        <div class="max-w-7xl mx-auto px-6">
+<body class="font-[Poppins] dashboard-bg min-h-screen">
 
 
-          
+<!-- ===================================================== -->
+<!-- GOVERNMENT TOP BAR + NAVIGATION -->
+<!-- ===================================================== -->
 
-            <div class="flex items-center justify-between py-4">
+<header class="relative z-30 w-full bg-slate-900/95 text-white shadow-lg">
 
-                <!-- Republic Seal -->
+    <div class="w-full px-4 md:px-8 py-3">
 
-                <img
-                    src="images/republic-seal.png"
-                    alt="Seal of the Republic of the Philippines"
-                    class="w-16 h-16 object-contain"
-                >
+        <div class="flex items-center justify-between gap-4">
 
+            <!-- LEFT: REPUBLIC SEAL -->
 
-                <!-- Transparency Seal -->
+            <div class="flex items-center gap-3 shrink-0">
 
-                <img
-                    src="images/transparency-seal.png"
-                    alt="Transparency Seal"
-                    class="w-16 h-16 object-contain"
-                >
+                <div
+                    class="rounded-full bg-white p-1 shadow-md"
+                    style="width: 60px; height: 60px;">
+
+                    <img
+                        src="images/ph.webp"
+                        alt="Republic of the Philippines Seal"
+                        class="w-full h-full rounded-full object-contain">
+
+                </div>
+
+                <div class="hidden sm:block">
+
+                    <p class="text-xs text-white/70">
+                        Government of the Philippines
+                    </p>
+
+                    <p class="font-semibold text-sm md:text-base">
+                        Republic of the Philippines
+                    </p>
+
+                </div>
 
             </div>
 
 
-         
+            <!-- NAVIGATION -->
 
-           <nav class="border-t border-gray-200">
+            <nav class="hidden md:flex items-center gap-8 lg:gap-10 text-sm">
 
-    <div
-        style="
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 32px;
-            padding: 16px 0;
-            flex-wrap: wrap;
-        "
-    >
+                <a
+                    href="#home"
+                    class="hover:text-cyan-300 transition">
+                    Home
+                </a>
 
-        <a
-            href="dashboard.html"
-            style="color: black; font-weight: 500; text-decoration: none;"
-        >
-            Home
-        </a>
+                <a
+                    href="#orders"
+                    class="hover:text-cyan-300 transition">
+                    Orders
+                </a>
 
-        <a
-            href="#services"
-            style="color: black; font-weight: 500; text-decoration: none;"
-        >
-            Services
-        </a>
+                <a
+                    href="#profile"
+                    class="hover:text-cyan-300 transition">
+                    Profile
+                </a>
 
-        <a
-            href="#about"
-            style="color: black; font-weight: 500; text-decoration: none;"
-        >
-            About Us
-        </a>
+                <button
+                    type="button"
+                    id="searchButton"
+                    class="hover:text-cyan-300 transition"
+                    title="Search">
 
-        <a
-            href="#contact"
-            style="color: black; font-weight: 500; text-decoration: none;"
-        >
-            Contact Us
-        </a>
+                    <i class="fa-solid fa-magnifying-glass"></i>
 
-    </div>
+                </button>
 
-</nav>
+            </nav>
 
 
-        
+            <!-- RIGHT: TRANSPARENCY SEAL -->
 
-            <div class="border-t border-gray-200 py-4">
+            <div
+                class="rounded-full bg-white p-1 shadow-md shrink-0"
+                style="width: 60px; height: 60px;">
 
-                <form
-                    id="searchForm"
-                    class="flex w-full max-w-lg"
-                >
-
-                    <input
-                        type="search"
-                        id="searchInput"
-                        placeholder="Search"
-                        class="flex-1 border border-gray-400 px-4 py-2 focus:outline-none focus:border-black"
-                    >
-
-
-                    <button
-                        type="submit"
-                        class="border border-gray-400 border-l-0 bg-gray-100 px-6 py-2 hover:bg-gray-200"
-                    >
-                        Search
-                    </button>
-
-                </form>
+                <img
+                    src="images/ph1.png"
+                    alt="Transparency Seal"
+                    class="w-full h-full rounded-full object-contain">
 
             </div>
 
         </div>
 
-    </header>
+    </div>
 
 
+    <!-- SEARCH BAR -->
 
-   
+    <div class="border-t border-white/10 px-4 md:px-8 py-3">
 
-    <main style="flex: 1; width: 100%;">
+        <form
+            id="searchForm"
+            class="flex w-full max-w-lg mx-auto">
 
-        <section class="max-w-7xl mx-auto px-6 py-12">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search"
+                class="flex-1 rounded-l-lg border-0 px-4 py-2 text-slate-800 focus:outline-none">
 
-            <!--
-                BLANK CONTENT AREA
+            <button
+                type="submit"
+                class="rounded-r-lg bg-cyan-600 px-6 py-2 text-white hover:bg-cyan-700 transition">
 
-            -->
+                Search
+
+            </button>
+
+        </form>
+
+    </div>
+
+</header>
+
+
+<!-- ===================================================== -->
+<!-- MAIN LAYOUT -->
+<!-- ===================================================== -->
+
+<div class="flex min-h-screen">
+
+
+    <!-- ================================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================================= -->
+
+    <aside
+        class="sidebar w-64 min-h-screen text-white shrink-0 hidden md:flex flex-col">
+
+        <!-- FRESH FOLD LOGO -->
+
+        <div class="flex items-center gap-3 px-6 py-6">
+
+            <div class="w-10 h-10 rounded-full bg-white p-1">
+
+                <img
+                    src="images/laundry-logo.png"
+                    alt="Fresh Fold"
+                    class="w-full h-full rounded-full object-cover">
+
+            </div>
+
+            <span class="text-xl font-bold">
+                Fresh Fold
+            </span>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="flex-1 px-3 mt-4 space-y-1">
+
+            <!-- Dashboard -->
+
+            <a
+                href="#home"
+                class="sidebar-link sidebar-active flex items-center gap-3 px-4 py-3 rounded-xl text-white">
+
+                <i class="fa-solid fa-gauge-high w-5"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <!-- Orders -->
+
+            <a
+                href="#orders"
+                class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90">
+
+                <i class="fa-solid fa-shirt w-5"></i>
+
+                Orders
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a
+                href="#profile"
+                class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90">
+
+                <i class="fa-solid fa-user w-5"></i>
+
+                Profile
+
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <button
+            id="logoutBtn"
+            type="button"
+            class="m-3 flex items-center gap-3 px-4 py-3 rounded-xl text-white/90 hover:bg-white/10 transition">
+
+            <i class="fa-solid fa-right-from-bracket w-5"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================= -->
+
+    <main class="flex-1 p-6 md:p-10">
+
+
+        <!-- MOBILE LOGOUT -->
+
+        <div class="flex justify-end md:hidden mb-4">
+
+            <button
+                id="logoutBtnMobile"
+                type="button"
+                class="text-slate-500 flex items-center gap-2">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- WELCOME -->
+        <!-- ================================================= -->
+
+        <section id="home">
+
+            <div class="welcome-banner p-8 mb-8">
+
+                <h1
+                    id="welcomeHeading"
+                    class="text-2xl md:text-3xl font-bold mb-1">
+
+                    Welcome back!
+
+                </h1>
+
+                <p
+                    id="welcomeRole"
+                    class="text-white/80">
+
+                </p>
+
+            </div>
 
         </section>
 
+
+        <!-- ================================================= -->
+        <!-- LAUNDRY ORDERS -->
+        <!-- ================================================= -->
+
+        <section id="orders" class="mb-8">
+
+            <div class="dashboard-card p-6">
+
+                <div
+                    class="flex items-center justify-between mb-4">
+
+                    <h2
+                        class="text-lg font-semibold text-slate-800">
+
+                        Laundry Orders
+
+                    </h2>
+
+                    <span
+                        id="ordersCount"
+                        class="text-sm text-slate-500">
+
+                    </span>
+
+                </div>
+
+
+                <p
+                    id="ordersMessage"
+                    class="text-slate-500 text-sm mb-4">
+
+                </p>
+
+
+                <div class="overflow-x-auto">
+
+                    <table
+                        class="w-full text-left table-hover">
+
+                        <thead>
+
+                            <tr
+                                class="text-slate-500 text-sm border-b border-slate-200">
+
+                                <th class="py-3 pr-4">
+                                    Order #
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Service
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Item
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Amount
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Status
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Created
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTableBody">
+
+                            <!-- Rows injected by dashboard.js -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- PROFILE -->
+        <!-- ================================================= -->
+
+        <section
+            id="profile"
+            class="mb-8">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-user text-blue-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Profile
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Manage your Fresh Fold account information.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- CONTACT US -->
+        <!-- ================================================= -->
+
+        <section
+            id="contact-us"
+            class="mb-8">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-envelope text-cyan-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Contact Us
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            For questions and concerns,
+                            please contact the Fresh Fold
+                            administration.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- GOVERNMENT DIRECTORY -->
+        <!-- ================================================= -->
+
+        <section
+            id="government-directory"
+            class="mb-8">
+
+            <div class="dashboard-card p-6 text-center">
+
+                <h2
+                    class="text-lg font-semibold text-slate-800 mb-3">
+
+                    Government Directory
+
+                </h2>
+
+                <p class="text-sm text-slate-500">
+
+                    Government information and directory services.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- STANDARD FOOTER -->
+        <!-- ================================================= -->
+
+        <footer>
+
+            <div
+                class="bg-slate-900 text-white px-6 md:px-8 py-6">
+
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-5">
+
+
+                    <!-- REPUBLIC IDENTITY -->
+
+                    <div
+                        class="flex items-center gap-3">
+
+                        <img
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-12 h-12 object-contain">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-slate-400">
+
+                                Government of the Philippines
+
+                            </p>
+
+                            <p
+                                class="text-sm font-semibold">
+
+                                Republic of the Philippines
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COPYRIGHT -->
+
+                    <div
+                        class="text-center md:text-right">
+
+                        <p
+                            class="text-xs text-slate-400">
+
+                            © 2026 Fresh Fold Laundry
+                            Management System
+
+                        </p>
+
+                        <p
+                            class="text-xs text-slate-500 mt-1">
+
+                            All content is public domain
+                            unless otherwise stated.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
     </main>
 
+</div>
 
 
-   
-    <div class="hidden">
+<!-- ===================================================== -->
+<!-- SUPABASE + DASHBOARD SCRIPT -->
+<!-- ===================================================== -->
 
-        <h1 id="welcomeHeading">
-            Welcome back!
-        </h1>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-        <p id="welcomeRole"></p>
+<script src="js/supabase.js"></script>
 
-        <div id="ordersTableBody"></div>
-
-        <p id="ordersMessage"></p>
-
-        <span id="ordersCount"></span>
-
-        <button id="logoutBtn" type="button">
-            Logout
-        </button>
-
-        <button id="logoutBtnMobile" type="button">
-            Logout
-        </button>
-
-    </div>
+<script src="js/dashboard.js"></script>
 
 
+<!-- ===================================================== -->
+<!-- SEARCH SCRIPT -->
+<!-- ===================================================== -->
 
-   
+<script>
 
-   <footer style="width: 100%; background: white; border-top: 1px solid #d1d5db;">
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
 
-    <div style="width: 100%; padding: 25px 24px; box-sizing: border-box;">
+    searchForm.addEventListener("submit", function (event) {
 
-        <!-- Government Directory -->
-        <div style="text-align: center; margin-bottom: 20px;">
-            <a
-                href="#government-directory"
-                style="color: black; font-weight: 500; text-decoration: none;"
-            >
-                Government Directory
-            </a>
-        </div>
+        event.preventDefault();
 
-        <!-- Republic Seal -->
-        <div style="text-align: center;">
+        const searchValue = searchInput.value.trim();
 
-            <img
-                src="images/republic-seal.png"
-                alt="Seal of the Republic of the Philippines"
-                style="
-                    display: block;
-                    width: 64px;
-                    height: 64px;
-                    object-fit: contain;
-                    margin: 0 auto 12px auto;
-                "
-            >
+        if (searchValue !== "") {
 
-            <p style="
-                color: black;
-                font-size: 14px;
-                margin: 0;
-                text-align: center;
-            ">
-                All content is public domain unless otherwise stated
-            </p>
+            console.log("Search:", searchValue);
 
-        </div>
+        }
 
-    </div>
-
-</footer>
+    });
 
 
+    searchButton.addEventListener("click", function () {
 
-   
+        searchInput.focus();
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    });
 
-    <script src="js/supabase.js"></script>
-
-    <script src="js/dashboard.js"></script>
-
-
-
-
-    <script>
-
-        const searchForm = document.getElementById("searchForm");
-        const searchInput = document.getElementById("searchInput");
-
-        searchForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const searchValue = searchInput.value.trim();
-
-            if (searchValue !== "") {
-                console.log("Search:", searchValue);
-            }
-
-        });
-
-    </script>
-
-
+</script>
 </body>
 
 </html>

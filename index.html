@@ -1,178 +1,999 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Laundry Management System</title>
+    <title>Fresh Fold</title>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="src/output.css">
 
-    
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+        }
+    </style>
 </head>
 
-<body class="font-[Poppins] min-h-screen flex items-center justify-center px-5 overflow-hidden relative">
+<body class="font-[Poppins] bg-slate-50 text-slate-800">
 
-    <!-- Background Image -->
-    <div class="absolute inset-0 -z-20">
-        <img
-            src="images/washing-machine.jpg"
-            alt="Laundry Background"
-            class="w-full h-full object-cover">
-    </div>
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
 
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-slate-900/40 -z-10"></div>
+        <div class="w-full px-4 md:px-6 lg:px-8">
 
-    <!-- Floating Bubbles -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="flex items-center justify-between h-20">
 
-        <div class="bubble bubble-one"></div>
-        <div class="bubble bubble-two"></div>
-        <div class="bubble bubble-three"></div>
-        <div class="bubble bubble-four"></div>
-        <div class="bubble bubble-five"></div>
-        <div class="bubble bubble-six"></div>
-        <div class="bubble bubble-seven"></div>
-        <div class="bubble bubble-eight"></div>
-        <div class="bubble bubble-nine"></div>
-        <div class="bubble bubble-ten"></div>
-        <div class="bubble bubble-eleven"></div>
-        <div class="bubble bubble-twelve"></div>
-        <div class="bubble bubble-thirteen"></div>
-        <div class="bubble bubble-fourteen"></div>
-        <div class="bubble bubble-fifteen"></div>
+                <!-- LEFT SIDE -->
+                <div class="flex items-center gap-2 shrink-0">
 
-    </div>
+                    <!-- Republic Seal -->
+                    <img
+                        src="images/ph.webp"
+                        alt="Republic of the Philippines"
+                        class="w-11 h-11 md:w-12 md:h-12 object-contain">
 
-    <!-- Login Card -->
-    <div class="relative z-10 w-full max-w-md">
-        
+                    <!-- Fresh Fold Logo -->
+                    <a href="#home" class="flex items-center gap-2">
 
-        <div class="bg-white/70 backdrop-blur-xl border border-white/60 shadow-2xl rounded-3xl p-8">
+                        <img
+                            src="images/laundry-logo.png"
+                            alt="Fresh Fold Logo"
+                            class="w-11 h-11 object-cover rounded-full">
 
-         <!-- Logo -->
-<div class="flex justify-center mb-6">
+                        <div class="hidden sm:block">
 
-    <div class="w-28 h-28 rounded-full bg-white p-2 shadow-2xl border-4 border-blue-400">
+                            <h1 class="text-lg md:text-xl font-bold text-cyan-600">
+                                Fresh Fold
+                            </h1>
 
-        <img
-            src="images/laundry-logo.jpg"
-            alt="Laundry Management System Logo"
-            class="w-full h-full rounded-full object-cover">
+                        </div>
 
-    </div>
-
-</div>
-            <h1 class="text-3xl font-bold text-center text-slate-800">
-                Fresh Fold
-            </h1>
-         
-            <p class="text-center text-slate-500 mt-2 mb-8">
-                Please login.
-            </p>
-
-           <form id="loginForm">
-
-                <!-- Username -->
-
-                <div class="mb-5">
-
-                    <label class="block mb-2 text-slate-700 font-medium">
-                        Username
-                    </label>
-
-                    <div class="relative">
-
-                        <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-cyan-600"></i>
-
-                       <input
-    id="username"
-    type="text"
-    placeholder="Enter username"
-    class="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-4 focus:ring-cyan-200 focus:border-cyan-500 outline-none transition">
-
-<p id="usernameError" class="text-red-500 text-sm mt-2"></p>
-                    </div>
+                    </a>
 
                 </div>
-<!-- Password -->
-
-<div class="mb-3">
-
-    <label class="block mb-2 text-slate-700 font-medium">
-        Password
-    </label>
-
-    <div class="relative">
-
-        <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-cyan-600"></i>
 
 
-        <input
-            id="password"
-            type="password"
-            placeholder="Enter password"
-            autocomplete="current-password"
-            class="w-full pl-12 pr-12 py-3 rounded-xl border border-slate-200 bg-white focus:ring-4 focus:ring-cyan-200 focus:border-cyan-500 outline-none transition">
+                <!-- RIGHT SIDE -->
+                <div class="flex items-center ml-auto">
+
+                    <!-- DESKTOP MENU -->
+                    <div
+                        class="hidden lg:flex items-center gap-7 xl:gap-9 text-sm font-medium mr-8">
+
+                        <a
+                            href="#home"
+                            class="text-slate-700 hover:text-cyan-600 transition">
+                            Home
+                        </a>
+
+                        <a
+                            href="#services"
+                            class="text-slate-700 hover:text-cyan-600 transition">
+                            Services
+                        </a>
+
+                        <a
+                            href="#about"
+                            class="text-slate-700 hover:text-cyan-600 transition">
+                            About Us
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="text-slate-700 hover:text-cyan-600 transition">
+                            Contact Us
+                        </a>
+
+                        <a
+                            href="#login"
+                            class="px-5 py-2.5 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition shadow-md">
+                            Login
+                        </a>
+
+                    </div>
 
 
-        <span
-            id="togglePassword"
-            class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-slate-500 hover:text-cyan-600 transition">
-
-            <i id="eyeIcon" class="fa-solid fa-eye"></i>
-
-        </span>
+                    <!-- TRANSPARENCY SEAL -->
+                    <img
+                        src="images/ph1.png"
+                        alt="Transparency Seal"
+                        class="w-11 h-11 md:w-12 md:h-12 object-contain">
 
 
-    </div>
+                    <!-- MOBILE MENU BUTTON -->
+                    <button
+                        id="menuBtn"
+                        class="lg:hidden ml-3 text-slate-700 text-2xl">
 
-    <p id="passwordError" class="text-red-500 text-sm"></p>
+                        <i class="fa-solid fa-bars"></i>
 
+                    </button>
 
-</div>
-                <!-- Button -->
-
-               <button
-    id="loginBtn"
-    type="submit"
-    class="w-full py-3 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 hover:shadow-xl duration-300">
-
-    Login
-
-</button>
-
-            </form>
-
-            <!-- Sign up link -->
-            <div class="mt-6 text-center text-slate-600 text-sm">
-                Don't have an account?
-                <a href="signup.html" class="text-cyan-600 font-semibold hover:underline">Sign up</a>
-            </div>
-
-            <!-- Footer -->
-
-            <div class="mt-8 text-center text-slate-500 text-sm">
-
-                © 2026 Laundry Management System
+                </div>
 
             </div>
 
         </div>
 
-    </div>
 
-    <!-- Supabase client library (must load BEFORE supabase.js and script.js) -->
+        <!-- MOBILE MENU -->
+        <div
+            id="mobileMenu"
+            class="hidden lg:hidden bg-white border-t border-slate-200">
+
+            <div class="px-6 py-5 space-y-4">
+
+                <a
+                    href="#home"
+                    class="mobile-link block text-slate-700 hover:text-cyan-600">
+                    Home
+                </a>
+
+                <a
+                    href="#services"
+                    class="mobile-link block text-slate-700 hover:text-cyan-600">
+                    Services
+                </a>
+
+                <a
+                    href="#about"
+                    class="mobile-link block text-slate-700 hover:text-cyan-600">
+                    About Us
+                </a>
+
+                <a
+                    href="#contact"
+                    class="mobile-link block text-slate-700 hover:text-cyan-600">
+                    Contact Us
+                </a>
+
+                <a
+                    href="#login"
+                    class="mobile-link block text-cyan-600 font-semibold">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME SECTION
+    ========================== -->
+    <section
+        id="home"
+        class="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('images/washing-machine.jpg');">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-slate-900/55"></div>
+
+
+        <!-- HERO CONTENT -->
+        <div
+            class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white pt-20">
+
+            <p
+                class="text-sm md:text-base uppercase tracking-[0.25em] font-medium mb-4">
+                Republic of the Philippines
+            </p>
+
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Fresh & Clean,
+                <span class="text-cyan-300">
+                    Every Time!
+                </span>
+            </h1>
+
+            <p
+                class="max-w-2xl mx-auto text-sm md:text-lg text-slate-200 leading-relaxed mb-8">
+
+                A simple and organized laundry management system
+                designed to make managing your laundry easier,
+                faster, and more convenient.
+
+            </p>
+
+
+            <!-- BUTTONS -->
+            <div
+                class="flex flex-col sm:flex-row justify-center gap-4">
+
+                <a
+                    href="#login"
+                    class="px-7 py-3.5 rounded-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold shadow-lg transition">
+
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i>
+                    Login Now
+
+                </a>
+
+
+                <a
+                    href="#services"
+                    class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/40 text-white font-semibold backdrop-blur-sm transition">
+
+                    <i class="fa-solid fa-shirt mr-2"></i>
+                    Our Services
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCROLL INDICATOR -->
+        <div
+            class="absolute bottom-7 left-1/2 -translate-x-1/2 text-white text-center animate-bounce">
+
+            <i class="fa-solid fa-chevron-down text-xl"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICES SECTION
+    ========================== -->
+    <section
+        id="services"
+        class="min-h-screen bg-slate-50 flex items-center">
+
+        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+
+            <!-- TITLE -->
+            <div class="text-center mb-14">
+
+                <p
+                    class="text-cyan-600 font-semibold uppercase tracking-widest text-sm mb-2">
+                    What We Offer
+                </p>
+
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-slate-800">
+                    Our Laundry Services
+                </h2>
+
+                <p
+                    class="max-w-2xl mx-auto mt-4 text-slate-500">
+                    Convenient laundry services designed to keep
+                    your clothes fresh, clean, and ready to wear.
+                </p>
+
+            </div>
+
+
+            <!-- SERVICE CARDS -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+
+                <!-- WASH & FOLD -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-shirt"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+                        Wash & Fold
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+                        Your clothes are carefully washed, dried,
+                        folded, and prepared for pickup.
+                    </p>
+
+                </div>
+
+
+                <!-- WASH & DRY -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-wind"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+                        Wash & Dry
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+                        A complete washing and drying service
+                        for clean and fresh clothes.
+                    </p>
+
+                </div>
+
+
+                <!-- DRY CLEANING -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-temperature-low"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+                        Dry Cleaning
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+                        Professional care for clothes that require
+                        special cleaning and handling.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+    <section
+        id="about"
+        class="min-h-screen bg-white flex items-center">
+
+        <div
+            class="max-w-6xl mx-auto px-6 py-20 w-full">
+
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+
+                <!-- IMAGE -->
+                <div>
+
+                    <img
+                        src="images/aboutus.jpg"
+                        alt="About Fresh Fold"
+                        class="w-full h-105 object-cover rounded-3xl shadow-xl">
+
+                </div>
+
+
+                <!-- CONTENT -->
+                <div>
+
+                    <span
+                        class="inline-block px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-semibold mb-5">
+                        Fresh Fold
+                    </span>
+
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-slate-800 mb-5">
+                        Making Laundry Easier
+                    </h2>
+
+                    <p
+                        class="text-slate-600 leading-relaxed mb-5">
+
+                        Fresh Fold is a laundry management system
+                        designed to help organize customers,
+                        laundry orders, payments, and services
+                        in one convenient system.
+
+                    </p>
+
+                    <p
+                        class="text-slate-600 leading-relaxed mb-8">
+
+                        Our goal is to provide a simple, organized,
+                        and user-friendly experience for managing
+                        laundry services.
+
+                    </p>
+
+
+                    <!-- FEATURES -->
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50">
+
+                            <div
+                                class="w-11 h-11 shrink-0 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center">
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-slate-800">
+                                    Convenient
+                                </h3>
+
+                                <p
+                                    class="text-sm text-slate-500 mt-1">
+                                    Easy and organized laundry management.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50">
+
+                            <div
+                                class="w-11 h-11 shrink-0 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3
+                                    class="font-semibold text-slate-800">
+                                    Organized
+                                </h3>
+
+                                <p
+                                    class="text-sm text-slate-500 mt-1">
+                                    Keep laundry information in one place.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+    <section
+        id="contact"
+        class="min-h-screen bg-slate-50 flex items-center">
+
+        <div
+            class="max-w-5xl mx-auto px-6 py-20 w-full">
+
+            <!-- TITLE -->
+            <div class="text-center mb-12">
+
+                <p
+                    class="text-cyan-600 font-semibold uppercase tracking-widest text-sm mb-2">
+                    Get In Touch
+                </p>
+
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-slate-800">
+                    Contact Us
+                </h2>
+
+                <p
+                    class="max-w-2xl mx-auto mt-4 text-slate-500">
+                    Have questions? We're ready to assist you.
+                </p>
+
+            </div>
+
+
+            <!-- CONTACT CARDS -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+                <!-- EMAIL -->
+                <div
+                    class="bg-white rounded-3xl p-7 text-center shadow-lg border border-slate-100">
+
+                    <div
+                        class="w-14 h-14 mx-auto rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl mb-5">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <h3
+                        class="font-bold text-slate-800 mb-2">
+                        Email
+                    </h3>
+
+                    <p
+                        class="text-sm text-slate-500">
+                        freshfold@gmail.com
+                    </p>
+
+                </div>
+
+
+                <!-- LOCATION -->
+                <div
+                    class="bg-white rounded-3xl p-7 text-center shadow-lg border border-slate-100">
+
+                    <div
+                        class="w-14 h-14 mx-auto rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-5">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <h3
+                        class="font-bold text-slate-800 mb-2">
+                        Location
+                    </h3>
+
+                    <p
+                        class="text-sm text-slate-500">
+                        Borongan, Eastern Samar
+                    </p>
+
+                </div>
+
+
+                <!-- SUPPORT -->
+                <div
+                    class="bg-white rounded-3xl p-7 text-center shadow-lg border border-slate-100">
+
+                    <div
+                        class="w-14 h-14 mx-auto rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl mb-5">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <h3
+                        class="font-bold text-slate-800 mb-2">
+                        Support
+                    </h3>
+
+                    <p
+                        class="text-sm text-slate-500">
+                        We're ready to assist you.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
+    <section
+        id="login"
+        class="min-h-screen relative flex items-center justify-center bg-cover bg-center py-20"
+        style="background-image: url('images/washing-machine.jpg');">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-slate-900/55"></div>
+
+
+        <!-- LOGIN CONTAINER -->
+        <div
+            class="relative z-10 w-full max-w-4xl mx-auto px-6 pt-10">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
+
+
+                <!-- LEFT FLYER -->
+                <div
+                    class="bg-linear-to-br from-cyan-600 to-blue-700 text-white p-8 md:p-10 flex flex-col justify-center">
+
+                    <div class="text-center">
+
+                        <img
+                            src="images/laundry-logo.png"
+                            alt="Fresh Fold Logo"
+                            class="w-24 h-24 mx-auto object-cover rounded-full shadow-lg mb-5">
+
+                        <h2
+                            class="text-3xl font-bold mb-2">
+                            Fresh Fold
+                        </h2>
+
+                        <p
+                            class="text-cyan-100 text-sm mb-8">
+                            Laundry Management System
+                        </p>
+
+
+                        <h3
+                            class="text-2xl font-semibold mb-3">
+                            Fresh & Clean,
+                            <br>
+                            Every Time!
+                        </h3>
+
+                        <p
+                            class="text-sm text-cyan-100 leading-relaxed mb-8">
+                            Your clothes. Our care.
+                            Simple, organized, and convenient
+                            laundry management.
+                        </p>
+
+
+                        <!-- SERVICES -->
+                        <div class="space-y-3 text-left">
+
+                            <div
+                                class="flex items-center gap-3">
+
+                                <i class="fa-solid fa-shirt w-5"></i>
+
+                                <span class="text-sm">
+                                    Wash & Fold
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="flex items-center gap-3">
+
+                                <i class="fa-solid fa-wind w-5"></i>
+
+                                <span class="text-sm">
+                                    Wash & Dry
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="flex items-center gap-3">
+
+                                <i class="fa-solid fa-temperature-low w-5"></i>
+
+                                <span class="text-sm">
+                                    Dry Cleaning
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT LOGIN FORM -->
+                <div
+                    class="bg-white p-8 md:p-10 flex flex-col justify-center">
+
+                    <div class="mb-7">
+
+                        <h2
+                            class="text-3xl font-bold text-slate-800">
+                            Welcome!
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+                            Login to your Fresh Fold account.
+                        </p>
+
+                    </div>
+
+
+                    <!-- LOGIN FORM -->
+                    <form id="loginForm">
+
+
+                        <!-- USERNAME -->
+                        <div class="mb-5">
+
+                            <label
+                                for="username"
+                                class="block text-sm font-medium text-slate-700 mb-2">
+                                Username
+                            </label>
+
+                            <div class="relative">
+
+                                <i
+                                    class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                                </i>
+
+                                <input
+                                    type="text"
+                                    id="username"
+                                    placeholder="Enter your username"
+                                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+
+                            </div>
+
+                            <p
+                                id="usernameError"
+                                class="text-red-500 text-xs mt-1">
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- PASSWORD -->
+                        <div class="mb-6">
+
+                            <label
+                                for="password"
+                                class="block text-sm font-medium text-slate-700 mb-2">
+                                Password
+                            </label>
+
+                            <div class="relative">
+
+                                <i
+                                    class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                                </i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Enter your password"
+                                    class="w-full pl-11 pr-12 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition">
+
+
+                                <!-- TOGGLE PASSWORD -->
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-cyan-600">
+
+                                    <i
+                                        id="eyeIcon"
+                                        class="fa-solid fa-eye">
+                                    </i>
+
+                                </button>
+
+                            </div>
+
+                            <p
+                                id="passwordError"
+                                class="text-red-500 text-xs mt-1">
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- LOGIN BUTTON -->
+                        <button
+                            type="submit"
+                            id="loginBtn"
+                            class="w-full py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-semibold shadow-md transition">
+
+                            <i class="fa-solid fa-right-to-bracket mr-2"></i>
+
+                            Login
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- SIGN UP -->
+                    <p
+                        class="text-center text-sm text-slate-500 mt-6">
+
+                        Don't have an account?
+
+                        <a
+                            href="signup.html"
+                            class="text-cyan-600 font-semibold hover:text-cyan-700">
+                            Sign Up
+                        </a>
+
+                    </p>
+
+
+                    <!-- LOGIN FOOTER -->
+                    <p
+                        class="text-center text-xs text-slate-400 mt-6">
+                        © 2026 Laundry Management System
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+        <!-- STANDARD GOVERNMENT FOOTER -->
+        <div class="bg-slate-900 text-slate-300">
+
+            <div
+                class="max-w-6xl mx-auto px-6 py-7">
+
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-5">
+
+
+                    <!-- REPUBLIC SEAL -->
+                    <div
+                        class="flex items-center gap-3">
+
+                        <img
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-12 h-12 object-contain">
+
+                        <div>
+
+                            <p
+                                class="text-sm font-semibold text-white">
+                                Republic of the Philippines
+                            </p>
+
+                            <p
+                                class="text-xs text-slate-400">
+                                Government of the Philippines
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GOVERNMENT DIRECTORY -->
+                    <div
+                        class="text-center md:text-right">
+
+                        <a
+                            href="#"
+                            class="text-sm text-slate-300 hover:text-cyan-400 transition">
+
+                            <i class="fa-solid fa-building-columns mr-2"></i>
+
+                            Government Directory
+
+                        </a>
+
+                        <p
+                            class="text-xs text-slate-500 mt-2">
+                            © 2026 Fresh Fold Laundry Management System
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PUBLIC DOMAIN -->
+                <div
+                    class="border-t border-slate-700 mt-6 pt-5 text-center">
+
+                    <p
+                        class="text-xs text-slate-500 leading-relaxed">
+
+                        This website is in the public domain unless
+                        otherwise stated.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Supabase Configuration -->
     <script src="js/supabase.js"></script>
+
+    <!-- Login Script -->
     <script src="js/script.js"></script>
 
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("hidden");
+
+        });
+
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.add("hidden");
+
+            });
+
+        });
+
+    </script>
+
 </body>
+
 </html>
