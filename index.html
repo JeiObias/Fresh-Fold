@@ -179,7 +179,265 @@
 
     </nav>
 
+<!-- =========================
+     FRESH FOLD BANNER SLIDER
+========================== -->
 
+<section class="pt-24 pb-6 bg-slate-50">
+
+    <!-- SIDE MARGIN -->
+    <div class="mx-6 md:mx-12 lg:mx-20 xl:mx-28">
+
+        <div id="bannerSlider" class="relative overflow-hidden">
+
+            <!-- SLIDER TRACK -->
+            <div id="bannerTrack"
+                 class="flex gap-6 transition-transform duration-700 ease-in-out">
+
+
+                <!-- =========================
+                     BANNER 1
+                ========================== -->
+
+                <div class="banner-slide min-w-full shrink-0 flex justify-center">
+
+                    <!-- PICTURE ONLY -->
+                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+
+                        <img
+                            src="images/banner1.png"
+                            alt="Fresh Fold Banner 1"
+                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
+                        >
+
+                        <!-- DARK WHEN NOT HOVERED -->
+                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     BANNER 2
+                ========================== -->
+
+                <div class="banner-slide min-w-full shrink-0 flex justify-center">
+
+                    <!-- PICTURE ONLY -->
+                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+
+                        <img
+                            src="images/banner2.png"
+                            alt="Fresh Fold Banner 2"
+                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
+                        >
+
+                        <!-- DARK WHEN NOT HOVERED -->
+                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CLONE BANNER 1
+                ========================== -->
+
+                <div class="banner-slide min-w-full shrink-0 flex justify-center">
+
+                    <!-- PICTURE ONLY -->
+                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+
+                        <img
+                            src="images/banner1.png"
+                            alt="Fresh Fold Banner 1"
+                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
+                        >
+
+                        <!-- DARK WHEN NOT HOVERED -->
+                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 DOTS
+            ========================== -->
+
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+
+                <button
+                    type="button"
+                    id="dot1"
+                    aria-label="Banner 1"
+                    class="w-3 h-3 rounded-full bg-white shadow-md">
+                </button>
+
+                <button
+                    type="button"
+                    id="dot2"
+                    aria-label="Banner 2"
+                    class="w-3 h-3 rounded-full bg-white/50 shadow-md">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BANNER SLIDER SCRIPT
+========================== -->
+
+<script>
+
+const bannerTrack = document.getElementById("bannerTrack");
+
+const dot1 = document.getElementById("dot1");
+const dot2 = document.getElementById("dot2");
+
+let currentBanner = 0;
+let sliderInterval;
+
+
+/* =========================
+   UPDATE DOTS
+========================== */
+
+function updateDots() {
+
+    if (currentBanner === 0) {
+
+        dot1.classList.remove("bg-white/50");
+        dot1.classList.add("bg-white");
+
+        dot2.classList.remove("bg-white");
+        dot2.classList.add("bg-white/50");
+
+    } else {
+
+        dot1.classList.remove("bg-white");
+        dot1.classList.add("bg-white/50");
+
+        dot2.classList.remove("bg-white/50");
+        dot2.classList.add("bg-white");
+
+    }
+
+}
+
+
+/* =========================
+   MOVE BANNER
+========================== */
+
+function moveBanner() {
+
+    currentBanner++;
+
+    bannerTrack.style.transition =
+        "transform 700ms ease-in-out";
+
+    bannerTrack.style.transform =
+        `translateX(calc(-${currentBanner * 100}% - ${currentBanner * 24}px))`;
+
+    updateDots();
+
+
+    /* LOOP */
+
+    if (currentBanner === 2) {
+
+        setTimeout(() => {
+
+            bannerTrack.style.transition = "none";
+
+            currentBanner = 0;
+
+            bannerTrack.style.transform =
+                "translateX(0)";
+
+            updateDots();
+
+        }, 700);
+
+    }
+
+}
+
+
+/* =========================
+   START AUTO SLIDER
+========================== */
+
+function startSlider() {
+
+    sliderInterval = setInterval(moveBanner, 4000);
+
+}
+
+startSlider();
+
+
+/* =========================
+   DOT 1
+========================== */
+
+dot1.addEventListener("click", () => {
+
+    clearInterval(sliderInterval);
+
+    currentBanner = 0;
+
+    bannerTrack.style.transition =
+        "transform 700ms ease-in-out";
+
+    bannerTrack.style.transform =
+        "translateX(0)";
+
+    updateDots();
+
+    startSlider();
+
+});
+
+
+/* =========================
+   DOT 2
+========================== */
+
+dot2.addEventListener("click", () => {
+
+    clearInterval(sliderInterval);
+
+    currentBanner = 1;
+
+    bannerTrack.style.transition =
+        "transform 700ms ease-in-out";
+
+    bannerTrack.style.transform =
+        "translateX(calc(-100% - 24px))";
+
+    updateDots();
+
+    startSlider();
+
+});
+
+</script>
 
     <!-- =========================
          HOME SECTION
