@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +22,10 @@
 
 </head>
 
-<body class="font-[Poppins] dashboard-bg min-h-screen flex flex-col">
-
+<body class="font-[Poppins] dashboard-bg min-h-screen">
 
     <!-- ===================================================== -->
-    <!-- GOVERNMENT TOP BAR -->
+    <!-- GOVERNMENT TOP BAR + MAIN NAVIGATION -->
     <!-- ===================================================== -->
 
     <header class="relative z-30 w-full bg-slate-900/95 text-white shadow-lg">
@@ -66,6 +64,49 @@
                 </div>
 
 
+                <!-- MAIN NAVIGATION -->
+
+                <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm">
+
+                    <a
+                        href="#home"
+                        class="top-nav-link text-cyan-300 transition">
+                        Home
+                    </a>
+
+                    <a
+                        href="#profile"
+                        class="top-nav-link hover:text-cyan-300 transition">
+                        Profile
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="top-nav-link hover:text-cyan-300 transition">
+                        Services
+                    </a>
+
+                    <a
+                        href="#prices"
+                        class="top-nav-link hover:text-cyan-300 transition">
+                        Prices
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="top-nav-link hover:text-cyan-300 transition">
+                        About
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="top-nav-link hover:text-cyan-300 transition">
+                        Contact
+                    </a>
+
+                </nav>
+
+
                 <!-- RIGHT: TRANSPARENCY SEAL -->
 
                 <div
@@ -87,64 +128,75 @@
 
 
     <!-- ===================================================== -->
-    <!-- EMPTY MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
     <!-- ===================================================== -->
 
-    <main class="flex-1 w-full">
-
-        <!-- Content can be added here later -->
-
-    </main>
+    <main class="w-full max-w-7xl mx-auto p-5 md:p-8 lg:p-10">
 
 
-    <!-- ===================================================== -->
-    <!-- FOOTER -->
-    <!-- ===================================================== -->
+        <!-- ================================================= -->
+        <!-- MOBILE NAVIGATION -->
+        <!-- ================================================= -->
 
-    <footer class="w-full">
+        <div class="lg:hidden mb-6">
 
-        <div
-            class="bg-slate-900 text-white px-6 md:px-8 py-6">
+            <div class="dashboard-card p-4">
 
-            <div
-                class="flex flex-col md:flex-row items-center justify-between gap-5">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
 
+                    <a
+                        href="#home"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm">
 
-                <!-- FOOTER LOGO -->
+                        <i class="fa-solid fa-house"></i>
+                        Home
 
-                <div class="flex items-center gap-3">
+                    </a>
 
-                    <img
-                        src="images/ph.webp"
-                        alt="Republic of the Philippines Seal"
-                        class="w-12 h-12 object-contain">
+                    <a
+                        href="#profile"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
-                    <div>
+                        <i class="fa-solid fa-user"></i>
+                        Profile
 
-                        <p class="text-xs text-slate-400">
-                            Government Directory
-                        </p>
+                    </a>
 
-                        <p class="text-sm font-semibold">
-                            Government information and directory services.
-                        </p>
+                    <a
+                        href="#services"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
-                    </div>
+                        <i class="fa-solid fa-shirt"></i>
+                        Services
 
-                </div>
+                    </a>
 
+                    <a
+                        href="#prices"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
-                <!-- COPYRIGHT -->
+                        <i class="fa-solid fa-tags"></i>
+                        Prices
 
-                <div class="text-center md:text-right">
+                    </a>
 
-                    <p class="text-xs text-slate-400">
-                        © 2026 Fresh Fold Laundry Management System
-                    </p>
+                    <a
+                        href="#about"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
-                    <p class="text-xs text-slate-500 mt-1">
-                        All content is public domain unless otherwise stated.
-                    </p>
+                        <i class="fa-solid fa-circle-info"></i>
+                        About
+
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
+
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact
+
+                    </a>
 
                 </div>
 
@@ -152,8 +204,794 @@
 
         </div>
 
-    </footer>
 
+        <!-- ================================================= -->
+        <!-- HOME -->
+        <!-- ================================================= -->
+
+        <section id="home" class="scroll-mt-6">
+
+            <div class="welcome-banner p-8 md:p-10 mb-8">
+
+                <p class="text-sm text-white/70 mb-2">
+                    Fresh Fold Laundry Services
+                </p>
+
+                <h1
+                    id="welcomeHeading"
+                    class="text-2xl md:text-3xl font-bold mb-1">
+
+                    Welcome!
+
+                </h1>
+
+                <p
+                    id="welcomeRole"
+                    class="text-white/80">
+
+                </p>
+
+                <p class="text-white/80 mt-3 max-w-2xl">
+
+                    Convenient, reliable, and quality laundry
+                    services for every customer.
+
+                </p>
+
+            </div>
+
+
+        <!-- ================================================= -->
+        <!-- PROFILE -->
+        <!-- ================================================= -->
+
+        <section
+            id="profile"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-user text-blue-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Profile
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Manage your Fresh Fold account information.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+
+                    <div class="bg-slate-50 rounded-xl p-4">
+
+                        <p class="text-xs text-slate-400">
+                            Account
+                        </p>
+
+                        <p class="text-sm font-medium text-slate-700 mt-1">
+                            Zoro
+                        </p>
+
+                    </div>
+
+                    <div class="bg-slate-50 rounded-xl p-4">
+
+                        <p class="text-xs text-slate-400">
+                            Account Status
+                        </p>
+
+                        <p class="text-sm font-medium text-green-600 mt-1">
+                            Active
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- SERVICES -->
+        <!-- ================================================= -->
+
+        <section
+            id="services"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-shirt text-cyan-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Our Services
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Choose the laundry service that fits your needs.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-soap text-cyan-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Wash & Fold
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Professional washing, drying, and folding
+                            service for your everyday clothes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-spray-can-sparkles text-blue-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Dry Cleaning
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Careful cleaning service for clothes that
+                            require special treatment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-shirt text-purple-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Ironing Service
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Neat and professional ironing for clean,
+                            fresh-looking clothes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-wind text-green-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Wash & Dry
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Complete washing and drying service for
+                            your laundry.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-truck text-orange-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Pickup Service
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Convenient laundry pickup service for
+                            eligible customers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-2xl p-5">
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-red-100 flex items-center justify-center mb-4">
+
+                            <i class="fa-solid fa-box text-red-600"></i>
+
+                        </div>
+
+                        <h3 class="font-semibold text-slate-800">
+                            Delivery Service
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            Have your clean laundry delivered
+                            conveniently.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- PRICES -->
+        <!-- ================================================= -->
+
+        <section
+            id="prices"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-tags text-blue-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Laundry Prices
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Sample Fresh Fold service rates.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full text-left">
+
+                        <thead>
+
+                            <tr
+                                class="text-sm text-slate-500 border-b border-slate-200">
+
+                                <th class="py-3 pr-4">
+                                    Service
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Unit
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Price
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody class="text-sm">
+
+                            <tr class="border-b border-slate-100">
+
+                                <td class="py-4 pr-4 font-medium text-slate-700">
+                                    Wash & Fold
+                                </td>
+
+                                <td class="py-4 pr-4 text-slate-500">
+                                    Per kg
+                                </td>
+
+                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                    ₱50
+                                </td>
+
+                            </tr>
+
+
+                            <tr class="border-b border-slate-100">
+
+                                <td class="py-4 pr-4 font-medium text-slate-700">
+                                    Wash & Dry
+                                </td>
+
+                                <td class="py-4 pr-4 text-slate-500">
+                                    Per kg
+                                </td>
+
+                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                    ₱60
+                                </td>
+
+                            </tr>
+
+
+                            <tr class="border-b border-slate-100">
+
+                                <td class="py-4 pr-4 font-medium text-slate-700">
+                                    Dry Cleaning
+                                </td>
+
+                                <td class="py-4 pr-4 text-slate-500">
+                                    Per item
+                                </td>
+
+                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                    ₱150
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="py-4 pr-4 font-medium text-slate-700">
+                                    Ironing
+                                </td>
+
+                                <td class="py-4 pr-4 text-slate-500">
+                                    Per item
+                                </td>
+
+                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                    ₱30
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- LAUNDRY ORDERS -->
+        <!-- ================================================= -->
+
+        <section
+            id="orders"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div
+                    class="flex items-center justify-between mb-4">
+
+                    <h2
+                        class="text-lg font-semibold text-slate-800">
+
+                        Laundry Orders
+
+                    </h2>
+
+                    <span
+                        id="ordersCount"
+                        class="text-sm text-slate-500">
+
+                    </span>
+
+                </div>
+
+
+                <p
+                    id="ordersMessage"
+                    class="text-slate-500 text-sm mb-4">
+
+                </p>
+
+
+                <div class="overflow-x-auto">
+
+                    <table
+                        class="w-full text-left table-hover">
+
+                        <thead>
+
+                            <tr
+                                class="text-slate-500 text-sm border-b border-slate-200">
+
+                                <th class="py-3 pr-4">
+                                    Order #
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Service
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Item
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Amount
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Status
+                                </th>
+
+                                <th class="py-3 pr-4">
+                                    Created
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTableBody">
+
+                            <!-- Rows injected by dashboard.js -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- ABOUT -->
+        <!-- ================================================= -->
+
+        <section
+            id="about"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4 mb-5">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-circle-info text-purple-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            About Fresh Fold
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Learn more about our laundry management service.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-sm text-slate-600 leading-7">
+
+                    Fresh Fold is a laundry service management system
+                    designed to make laundry services more convenient,
+                    organized, and accessible. Customers can view
+                    available services, check prices, manage their
+                    profile, and monitor their laundry orders.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- CONTACT -->
+        <!-- ================================================= -->
+
+        <section
+            id="contact"
+            class="mb-8 scroll-mt-6">
+
+            <div class="dashboard-card p-6">
+
+                <div class="flex items-center gap-4 mb-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
+
+                        <i
+                            class="fa-solid fa-envelope text-cyan-600 text-xl">
+                        </i>
+
+                    </div>
+
+                    <div>
+
+                        <h2
+                            class="text-lg font-semibold text-slate-800">
+
+                            Contact Us
+
+                        </h2>
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            Get in touch with the Fresh Fold administration.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                    <div class="bg-slate-50 rounded-xl p-5">
+
+                        <i class="fa-solid fa-envelope text-cyan-600 text-xl"></i>
+
+                        <h3 class="font-semibold text-slate-800 mt-3">
+                            Email
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            freshfold@gamil.com
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-xl p-5">
+
+                        <i class="fa-solid fa-phone text-blue-600 text-xl"></i>
+
+                        <h3 class="font-semibold text-slate-800 mt-3">
+                            Phone
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            +63 915 021 5467
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-xl p-5">
+
+                        <i class="fa-solid fa-location-dot text-red-500 text-xl"></i>
+
+                        <h3 class="font-semibold text-slate-800 mt-3">
+                            Location
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            Borongan, Eastern Samar
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- STANDARD FOOTER -->
+        <!-- ================================================= -->
+
+        <footer>
+
+            <div
+                class="bg-slate-900 text-white px-6 md:px-8 py-6">
+
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-5">
+
+
+                    <!-- REPUBLIC IDENTITY -->
+
+                    <div
+                        class="flex items-center gap-3">
+
+                        <img
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-12 h-12 object-contain">
+
+                        <div>
+
+                            <p
+                                class="text-xs text-slate-400">
+
+                                Government Directory
+
+                            </p>
+
+                            <p
+                                class="text-sm font-semibold">
+
+                                Government information and directory services.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COPYRIGHT -->
+
+                    <div
+                        class="text-center md:text-right">
+
+                        <p
+                            class="text-xs text-slate-400">
+
+                            © 2026 Fresh Fold Laundry
+                            Management System
+
+                        </p>
+
+                        <p
+                            class="text-xs text-slate-500 mt-1">
+
+                            All content is public domain
+                            unless otherwise stated.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ===================================================== -->
+    <!-- SUPABASE + DASHBOARD SCRIPT -->
+    <!-- ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+
+    <!-- ===================================================== -->
+    <!-- TOP NAVIGATION ACTIVE LINK -->
+    <!-- ===================================================== -->
+
+    <script>
+
+        const topNavLinks = document.querySelectorAll(".top-nav-link");
+
+        topNavLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                topNavLinks.forEach(function (item) {
+
+                    item.classList.remove("text-cyan-300");
+
+                });
+
+                this.classList.add("text-cyan-300");
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
