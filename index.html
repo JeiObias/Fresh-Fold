@@ -179,39 +179,84 @@
 
     </nav>
 
-<!-- =========================
-     FRESH FOLD BANNER SLIDER
-========================== -->
 
-<section class="pt-24 pb-6 bg-slate-50">
+    <!-- =========================
+         FRESH FOLD BANNER SLIDER
+    ========================== -->
+    <section class="pt-24 pb-6 bg-slate-50">
 
-    <!-- SIDE MARGIN -->
-    <div class="mx-6 md:mx-12 lg:mx-20 xl:mx-28">
+        <!-- SIDE MARGIN -->
+        <div class="mx-6 md:mx-12 lg:mx-20 xl:mx-28">
 
-        <div id="bannerSlider" class="relative overflow-hidden">
+            <div id="bannerSlider" class="relative overflow-hidden">
 
-            <!-- SLIDER TRACK -->
-            <div id="bannerTrack"
-                 class="flex gap-6 transition-transform duration-700 ease-in-out">
+                <!-- SLIDER TRACK -->
+                <div
+                    id="bannerTrack"
+                    class="flex gap-6 transition-transform duration-700 ease-in-out">
 
 
-                <!-- =========================
-                     BANNER 1
-                ========================== -->
+                    <!-- =========================
+                         BANNER 1
+                    ========================== -->
+                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
 
-                <div class="banner-slide min-w-full shrink-0 flex justify-center">
+                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
 
-                    <!-- PICTURE ONLY -->
-                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+                            <img
+                                src="images/banner1.png"
+                                alt="Fresh Fold Banner 1"
+                                class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
 
-                        <img
-                            src="images/banner1.png"
-                            alt="Fresh Fold Banner 1"
-                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
-                        >
+                            <!-- DARK WHEN NOT HOVERED -->
+                            <div
+                                class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                            </div>
 
-                        <!-- DARK WHEN NOT HOVERED -->
-                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         BANNER 2
+                    ========================== -->
+                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
+
+                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+
+                            <img
+                                src="images/banner2.png"
+                                alt="Fresh Fold Banner 2"
+                                class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
+
+                            <!-- DARK WHEN NOT HOVERED -->
+                            <div
+                                class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         CLONE BANNER 1
+                    ========================== -->
+                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
+
+                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+
+                            <img
+                                src="images/banner1.png"
+                                alt="Fresh Fold Banner 1"
+                                class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
+
+                            <!-- DARK WHEN NOT HOVERED -->
+                            <div
+                                class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
+                            </div>
+
                         </div>
 
                     </div>
@@ -220,224 +265,173 @@
 
 
                 <!-- =========================
-                     BANNER 2
+                     DOTS
                 ========================== -->
+                <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
 
-                <div class="banner-slide min-w-full shrink-0 flex justify-center">
+                    <button
+                        type="button"
+                        id="dot1"
+                        aria-label="Banner 1"
+                        class="w-3 h-3 rounded-full bg-white shadow-md">
+                    </button>
 
-                    <!-- PICTURE ONLY -->
-                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
-
-                        <img
-                            src="images/banner2.png"
-                            alt="Fresh Fold Banner 2"
-                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
-                        >
-
-                        <!-- DARK WHEN NOT HOVERED -->
-                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
-                        </div>
-
-                    </div>
+                    <button
+                        type="button"
+                        id="dot2"
+                        aria-label="Banner 2"
+                        class="w-3 h-3 rounded-full bg-white/50 shadow-md">
+                    </button>
 
                 </div>
-
-
-                <!-- =========================
-                     CLONE BANNER 1
-                ========================== -->
-
-                <div class="banner-slide min-w-full shrink-0 flex justify-center">
-
-                    <!-- PICTURE ONLY -->
-                    <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
-
-                        <img
-                            src="images/banner1.png"
-                            alt="Fresh Fold Banner 1"
-                            class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block"
-                        >
-
-                        <!-- DARK WHEN NOT HOVERED -->
-                        <div class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =========================
-                 DOTS
-            ========================== -->
-
-            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-
-                <button
-                    type="button"
-                    id="dot1"
-                    aria-label="Banner 1"
-                    class="w-3 h-3 rounded-full bg-white shadow-md">
-                </button>
-
-                <button
-                    type="button"
-                    id="dot2"
-                    aria-label="Banner 2"
-                    class="w-3 h-3 rounded-full bg-white/50 shadow-md">
-                </button>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================
-     BANNER SLIDER SCRIPT
-========================== -->
+    <!-- =========================
+         BANNER SLIDER SCRIPT
+    ========================== -->
+    <script>
 
-<script>
+        const bannerTrack = document.getElementById("bannerTrack");
 
-const bannerTrack = document.getElementById("bannerTrack");
+        const dot1 = document.getElementById("dot1");
+        const dot2 = document.getElementById("dot2");
 
-const dot1 = document.getElementById("dot1");
-const dot2 = document.getElementById("dot2");
-
-let currentBanner = 0;
-let sliderInterval;
-
-
-/* =========================
-   UPDATE DOTS
-========================== */
-
-function updateDots() {
-
-    if (currentBanner === 0) {
-
-        dot1.classList.remove("bg-white/50");
-        dot1.classList.add("bg-white");
-
-        dot2.classList.remove("bg-white");
-        dot2.classList.add("bg-white/50");
-
-    } else {
-
-        dot1.classList.remove("bg-white");
-        dot1.classList.add("bg-white/50");
-
-        dot2.classList.remove("bg-white/50");
-        dot2.classList.add("bg-white");
-
-    }
-
-}
+        let currentBanner = 0;
+        let sliderInterval;
 
 
-/* =========================
-   MOVE BANNER
-========================== */
+        /* =========================
+           UPDATE DOTS
+        ========================== */
 
-function moveBanner() {
+        function updateDots() {
 
-    currentBanner++;
+            if (currentBanner === 0) {
 
-    bannerTrack.style.transition =
-        "transform 700ms ease-in-out";
+                dot1.classList.remove("bg-white/50");
+                dot1.classList.add("bg-white");
 
-    bannerTrack.style.transform =
-        `translateX(calc(-${currentBanner * 100}% - ${currentBanner * 24}px))`;
+                dot2.classList.remove("bg-white");
+                dot2.classList.add("bg-white/50");
 
-    updateDots();
+            } else {
+
+                dot1.classList.remove("bg-white");
+                dot1.classList.add("bg-white/50");
+
+                dot2.classList.remove("bg-white/50");
+                dot2.classList.add("bg-white");
+
+            }
+
+        }
 
 
-    /* LOOP */
+        /* =========================
+           MOVE BANNER
+        ========================== */
 
-    if (currentBanner === 2) {
+        function moveBanner() {
 
-        setTimeout(() => {
+            currentBanner++;
 
-            bannerTrack.style.transition = "none";
+            bannerTrack.style.transition =
+                "transform 700ms ease-in-out";
+
+            bannerTrack.style.transform =
+                `translateX(calc(-${currentBanner * 100}% - ${currentBanner * 24}px))`;
+
+            updateDots();
+
+
+            /* LOOP */
+
+            if (currentBanner === 2) {
+
+                setTimeout(() => {
+
+                    bannerTrack.style.transition = "none";
+
+                    currentBanner = 0;
+
+                    bannerTrack.style.transform =
+                        "translateX(0)";
+
+                    updateDots();
+
+                }, 700);
+
+            }
+
+        }
+
+
+        /* =========================
+           START AUTO SLIDER
+        ========================== */
+
+        function startSlider() {
+
+            sliderInterval = setInterval(moveBanner, 4000);
+
+        }
+
+        startSlider();
+
+
+        /* =========================
+           DOT 1
+        ========================== */
+
+        dot1.addEventListener("click", () => {
+
+            clearInterval(sliderInterval);
 
             currentBanner = 0;
+
+            bannerTrack.style.transition =
+                "transform 700ms ease-in-out";
 
             bannerTrack.style.transform =
                 "translateX(0)";
 
             updateDots();
 
-        }, 700);
+            startSlider();
 
-    }
-
-}
+        });
 
 
-/* =========================
-   START AUTO SLIDER
-========================== */
+        /* =========================
+           DOT 2
+        ========================== */
 
-function startSlider() {
+        dot2.addEventListener("click", () => {
 
-    sliderInterval = setInterval(moveBanner, 4000);
+            clearInterval(sliderInterval);
 
-}
+            currentBanner = 1;
 
-startSlider();
+            bannerTrack.style.transition =
+                "transform 700ms ease-in-out";
 
+            bannerTrack.style.transform =
+                "translateX(calc(-100% - 24px))";
 
-/* =========================
-   DOT 1
-========================== */
+            updateDots();
 
-dot1.addEventListener("click", () => {
+            startSlider();
 
-    clearInterval(sliderInterval);
+        });
 
-    currentBanner = 0;
+    </script>
 
-    bannerTrack.style.transition =
-        "transform 700ms ease-in-out";
-
-    bannerTrack.style.transform =
-        "translateX(0)";
-
-    updateDots();
-
-    startSlider();
-
-});
-
-
-/* =========================
-   DOT 2
-========================== */
-
-dot2.addEventListener("click", () => {
-
-    clearInterval(sliderInterval);
-
-    currentBanner = 1;
-
-    bannerTrack.style.transition =
-        "transform 700ms ease-in-out";
-
-    bannerTrack.style.transform =
-        "translateX(calc(-100% - 24px))";
-
-    updateDots();
-
-    startSlider();
-
-});
-
-</script>
 
     <!-- =========================
          HOME SECTION
@@ -455,18 +449,16 @@ dot2.addEventListener("click", () => {
         <div
             class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white pt-20">
 
-            <p
-                class="text-sm md:text-base uppercase tracking-[0.25em] font-medium mb-4">
-                Republic of the Philippines
-            </p>
-
             <h1
                 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+
                 Fresh & Clean,
                 <span class="text-cyan-300">
                     Every Time!
                 </span>
+
             </h1>
+
 
             <p
                 class="max-w-2xl mx-auto text-sm md:text-lg text-slate-200 leading-relaxed mb-8">
@@ -517,7 +509,6 @@ dot2.addEventListener("click", () => {
     </section>
 
 
-
     <!-- =========================
          SERVICES SECTION
     ========================== -->
@@ -542,8 +533,10 @@ dot2.addEventListener("click", () => {
 
                 <p
                     class="max-w-2xl mx-auto mt-4 text-slate-500">
+
                     Convenient laundry services designed to keep
                     your clothes fresh, clean, and ready to wear.
+
                 </p>
 
             </div>
@@ -572,8 +565,10 @@ dot2.addEventListener("click", () => {
 
                     <p
                         class="text-slate-500 leading-relaxed">
+
                         Your clothes are carefully washed, dried,
                         folded, and prepared for pickup.
+
                     </p>
 
                 </div>
@@ -597,8 +592,10 @@ dot2.addEventListener("click", () => {
 
                     <p
                         class="text-slate-500 leading-relaxed">
+
                         A complete washing and drying service
                         for clean and fresh clothes.
+
                     </p>
 
                 </div>
@@ -622,8 +619,10 @@ dot2.addEventListener("click", () => {
 
                     <p
                         class="text-slate-500 leading-relaxed">
+
                         Professional care for clothes that require
                         special cleaning and handling.
+
                     </p>
 
                 </div>
@@ -633,7 +632,6 @@ dot2.addEventListener("click", () => {
         </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -666,12 +664,16 @@ dot2.addEventListener("click", () => {
 
                     <span
                         class="inline-block px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-semibold mb-5">
+
                         Fresh Fold
+
                     </span>
 
                     <h2
                         class="text-3xl md:text-4xl font-bold text-slate-800 mb-5">
+
                         Making Laundry Easier
+
                     </h2>
 
                     <p
@@ -762,7 +764,6 @@ dot2.addEventListener("click", () => {
     </section>
 
 
-
     <!-- =========================
          CONTACT SECTION
     ========================== -->
@@ -778,17 +779,23 @@ dot2.addEventListener("click", () => {
 
                 <p
                     class="text-cyan-600 font-semibold uppercase tracking-widest text-sm mb-2">
+
                     Get In Touch
+
                 </p>
 
                 <h2
                     class="text-3xl md:text-4xl font-bold text-slate-800">
+
                     Contact Us
+
                 </h2>
 
                 <p
                     class="max-w-2xl mx-auto mt-4 text-slate-500">
+
                     Have questions? We're ready to assist you.
+
                 </p>
 
             </div>
@@ -877,7 +884,6 @@ dot2.addEventListener("click", () => {
     </section>
 
 
-
     <!-- =========================
          LOGIN SECTION
     ========================== -->
@@ -922,16 +928,20 @@ dot2.addEventListener("click", () => {
 
                         <h3
                             class="text-2xl font-semibold mb-3">
+
                             Fresh & Clean,
                             <br>
                             Every Time!
+
                         </h3>
 
                         <p
                             class="text-sm text-cyan-100 leading-relaxed mb-8">
+
                             Your clothes. Our care.
                             Simple, organized, and convenient
                             laundry management.
+
                         </p>
 
 
@@ -978,7 +988,6 @@ dot2.addEventListener("click", () => {
                 </div>
 
 
-
                 <!-- RIGHT LOGIN FORM -->
                 <div
                     class="bg-white p-8 md:p-10 flex flex-col justify-center">
@@ -1008,7 +1017,9 @@ dot2.addEventListener("click", () => {
                             <label
                                 for="username"
                                 class="block text-sm font-medium text-slate-700 mb-2">
+
                                 Username
+
                             </label>
 
                             <div class="relative">
@@ -1033,14 +1044,15 @@ dot2.addEventListener("click", () => {
                         </div>
 
 
-
                         <!-- PASSWORD -->
                         <div class="mb-6">
 
                             <label
                                 for="password"
                                 class="block text-sm font-medium text-slate-700 mb-2">
+
                                 Password
+
                             </label>
 
                             <div class="relative">
@@ -1079,7 +1091,6 @@ dot2.addEventListener("click", () => {
                         </div>
 
 
-
                         <!-- LOGIN BUTTON -->
                         <button
                             type="submit"
@@ -1105,7 +1116,9 @@ dot2.addEventListener("click", () => {
                         <a
                             href="signup.html"
                             class="text-cyan-600 font-semibold hover:text-cyan-700">
+
                             Sign Up
+
                         </a>
 
                     </p>
@@ -1114,7 +1127,9 @@ dot2.addEventListener("click", () => {
                     <!-- LOGIN FOOTER -->
                     <p
                         class="text-center text-xs text-slate-400 mt-6">
+
                         © 2026 Laundry Management System
+
                     </p>
 
                 </div>
@@ -1126,9 +1141,11 @@ dot2.addEventListener("click", () => {
     </section>
 
 
+    <!-- =========================
+         STANDARD GOVERNMENT FOOTER
+    ========================== -->
+    <footer>
 
-
-        <!-- STANDARD GOVERNMENT FOOTER -->
         <div class="bg-slate-900 text-slate-300">
 
             <div
@@ -1164,7 +1181,6 @@ dot2.addEventListener("click", () => {
                     </div>
 
 
-
                     <!-- GOVERNMENT DIRECTORY -->
                     <div
                         class="text-center md:text-right">
@@ -1181,7 +1197,9 @@ dot2.addEventListener("click", () => {
 
                         <p
                             class="text-xs text-slate-500 mt-2">
+
                             © 2026 Fresh Fold Laundry Management System
+
                         </p>
 
                     </div>
@@ -1208,7 +1226,6 @@ dot2.addEventListener("click", () => {
         </div>
 
     </footer>
-
 
 
     <!-- =========================

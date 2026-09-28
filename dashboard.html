@@ -24,6 +24,7 @@
 
 <body class="font-[Poppins] dashboard-bg min-h-screen">
 
+
     <!-- ===================================================== -->
     <!-- GOVERNMENT TOP BAR + MAIN NAVIGATION -->
     <!-- ===================================================== -->
@@ -34,7 +35,10 @@
 
             <div class="flex items-center justify-between gap-4">
 
+
+                <!-- ================================================= -->
                 <!-- LEFT: REPUBLIC SEAL -->
+                <!-- ================================================= -->
 
                 <div class="flex items-center gap-3 shrink-0">
 
@@ -48,6 +52,7 @@
                             class="w-full h-full rounded-full object-contain">
 
                     </div>
+
 
                     <div class="hidden sm:block">
 
@@ -64,7 +69,9 @@
                 </div>
 
 
+                <!-- ================================================= -->
                 <!-- MAIN NAVIGATION -->
+                <!-- ================================================= -->
 
                 <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm">
 
@@ -72,12 +79,6 @@
                         href="#home"
                         class="top-nav-link text-cyan-300 transition">
                         Home
-                    </a>
-
-                    <a
-                        href="#profile"
-                        class="top-nav-link hover:text-cyan-300 transition">
-                        Profile
                     </a>
 
                     <a
@@ -107,16 +108,241 @@
                 </nav>
 
 
-                <!-- RIGHT: TRANSPARENCY SEAL -->
+                <!-- ================================================= -->
+                <!-- RIGHT SIDE -->
+                <!-- PROFILE LEFT / LOGO RIGHT -->
+                <!-- ================================================= -->
 
-                <div
-                    class="rounded-full bg-white p-1 shadow-md shrink-0"
-                    style="width: 60px; height: 60px;">
+                <div class="flex items-center gap-3 shrink-0">
 
-                    <img
-                        src="images/ph1.png"
-                        alt="Transparency Seal"
-                        class="w-full h-full rounded-full object-contain">
+
+                    <!-- ================================================= -->
+                    <!-- USER PROFILE -->
+                    <!-- ================================================= -->
+
+                    <div class="relative">
+
+                        <button
+                            id="profileButton"
+                            type="button"
+                            class="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition">
+
+                            <!-- USER ICON -->
+
+                            <div
+                                class="w-9 h-9 rounded-full bg-cyan-500 flex items-center justify-center">
+
+                                <i class="fa-solid fa-user text-white"></i>
+
+                            </div>
+
+
+                            <!-- USERNAME -->
+
+                            <div class="hidden md:block text-left">
+
+                                <p
+                                    id="profileUsername"
+                                    class="text-sm font-medium text-white">
+
+                                    User
+
+                                </p>
+
+                                <p
+                                    class="text-xs text-white/60">
+
+                                    User Profile
+
+                                </p>
+
+                            </div>
+
+
+                            <!-- ARROW -->
+
+                            <i
+                                id="profileArrow"
+                                class="fa-solid fa-chevron-down text-xs text-white/70 transition-transform">
+                            </i>
+
+                        </button>
+
+
+                        <!-- ================================================= -->
+                        <!-- PROFILE DROPDOWN -->
+                        <!-- ================================================= -->
+
+                        <div
+                            id="profileDropdown"
+                            class="hidden absolute right-0 mt-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50">
+
+
+                            <!-- DROPDOWN HEADER -->
+
+                            <div class="bg-slate-900 px-5 py-4">
+
+                                <div class="flex items-center gap-3">
+
+                                    <div
+                                        class="w-11 h-11 rounded-full bg-cyan-500 flex items-center justify-center">
+
+                                        <i
+                                            class="fa-solid fa-user text-white text-lg">
+                                        </i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <p
+                                            class="text-xs text-white/60">
+
+                                            Signed in as
+
+                                        </p>
+
+
+                                        <p
+                                            id="dropdownUsername"
+                                            class="text-sm font-semibold text-white">
+
+                                            User
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ================================================= -->
+                            <!-- USER INFORMATION -->
+                            <!-- ================================================= -->
+
+                            <div class="p-5">
+
+
+                                <!-- USERNAME -->
+
+                                <div class="mb-5">
+
+                                    <p
+                                        class="text-xs text-slate-400 uppercase tracking-wide">
+
+                                        Username
+
+                                    </p>
+
+
+                                    <div
+                                        class="flex items-center gap-3 mt-2">
+
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+
+                                            <i
+                                                class="fa-solid fa-user text-blue-600">
+                                            </i>
+
+                                        </div>
+
+
+                                        <p
+                                            id="userUsername"
+                                            class="text-sm font-medium text-slate-700 break-all">
+
+                                            Loading...
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+
+                                <div>
+
+                                    <p
+                                        class="text-xs text-slate-400 uppercase tracking-wide">
+
+                                        Gmail
+
+                                    </p>
+
+
+                                    <div
+                                        class="flex items-center gap-3 mt-2">
+
+                                        <div
+                                            class="w-9 h-9 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0">
+
+                                            <i
+                                                class="fa-solid fa-envelope text-cyan-600">
+                                            </i>
+
+                                        </div>
+
+
+                                        <p
+                                            id="userEmail"
+                                            class="text-sm font-medium text-slate-700 break-all">
+
+                                            Loading...
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ================================================= -->
+                                <!-- LOGOUT -->
+                                <!-- ================================================= -->
+
+                                <div
+                                    class="border-t border-slate-100 mt-5 pt-5">
+
+                                    <button
+                                        id="logoutBtn"
+                                        type="button"
+                                        class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition text-sm font-medium">
+
+                                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                                        Logout
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================================================= -->
+                    <!-- TRANSPARENCY SEAL / LOGO -->
+                    <!-- ================================================= -->
+
+                    <div
+                        class="rounded-full bg-white p-1 shadow-md shrink-0"
+                        style="width: 60px; height: 60px;">
+
+                        <img
+                            src="images/ph1.png"
+                            alt="Transparency Seal"
+                            class="w-full h-full rounded-full object-contain">
+
+                    </div>
 
                 </div>
 
@@ -144,56 +370,67 @@
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
 
+
+                    <!-- HOME -->
+
                     <a
                         href="#home"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm">
 
                         <i class="fa-solid fa-house"></i>
+
                         Home
 
                     </a>
 
-                    <a
-                        href="#profile"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
-                        <i class="fa-solid fa-user"></i>
-                        Profile
-
-                    </a>
+                    <!-- SERVICES -->
 
                     <a
                         href="#services"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
                         <i class="fa-solid fa-shirt"></i>
+
                         Services
 
                     </a>
+
+
+                    <!-- PRICES -->
 
                     <a
                         href="#prices"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
                         <i class="fa-solid fa-tags"></i>
+
                         Prices
 
                     </a>
+
+
+                    <!-- ABOUT -->
 
                     <a
                         href="#about"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
                         <i class="fa-solid fa-circle-info"></i>
+
                         About
 
                     </a>
+
+
+                    <!-- CONTACT -->
 
                     <a
                         href="#contact"
                         class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm">
 
                         <i class="fa-solid fa-envelope"></i>
+
                         Contact
 
                     </a>
@@ -209,13 +446,20 @@
         <!-- HOME -->
         <!-- ================================================= -->
 
-        <section id="home" class="scroll-mt-6">
+        <section
+            id="home"
+            class="scroll-mt-6">
 
-            <div class="welcome-banner p-8 md:p-10 mb-8">
+            <div
+                class="welcome-banner p-8 md:p-10 mb-8">
 
-                <p class="text-sm text-white/70 mb-2">
+                <p
+                    class="text-sm text-white/70 mb-2">
+
                     Fresh Fold Laundry Services
+
                 </p>
+
 
                 <h1
                     id="welcomeHeading"
@@ -225,91 +469,21 @@
 
                 </h1>
 
+
                 <p
                     id="welcomeRole"
                     class="text-white/80">
 
                 </p>
 
-                <p class="text-white/80 mt-3 max-w-2xl">
+
+                <p
+                    class="text-white/80 mt-3 max-w-2xl">
 
                     Convenient, reliable, and quality laundry
                     services for every customer.
 
                 </p>
-
-            </div>
-
-
-        <!-- ================================================= -->
-        <!-- PROFILE -->
-        <!-- ================================================= -->
-
-        <section
-            id="profile"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-6">
-
-                <div class="flex items-center gap-4">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
-
-                        <i
-                            class="fa-solid fa-user text-blue-600 text-xl">
-                        </i>
-
-                    </div>
-
-                    <div>
-
-                        <h2
-                            class="text-lg font-semibold text-slate-800">
-
-                            Profile
-
-                        </h2>
-
-                        <p
-                            class="text-sm text-slate-500 mt-1">
-
-                            Manage your Fresh Fold account information.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-
-                    <div class="bg-slate-50 rounded-xl p-4">
-
-                        <p class="text-xs text-slate-400">
-                            Account
-                        </p>
-
-                        <p class="text-sm font-medium text-slate-700 mt-1">
-                            Zoro
-                        </p>
-
-                    </div>
-
-                    <div class="bg-slate-50 rounded-xl p-4">
-
-                        <p class="text-xs text-slate-400">
-                            Account Status
-                        </p>
-
-                        <p class="text-sm font-medium text-green-600 mt-1">
-                            Active
-                        </p>
-
-                    </div>
-
-                </div>
 
             </div>
 
@@ -324,9 +498,14 @@
             id="services"
             class="mb-8 scroll-mt-6">
 
-            <div class="dashboard-card p-6">
+            <div
+                class="dashboard-card p-6">
 
-                <div class="flex items-center gap-4 mb-6">
+
+                <!-- HEADER -->
+
+                <div
+                    class="flex items-center gap-4 mb-6">
 
                     <div
                         class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
@@ -337,6 +516,7 @@
 
                     </div>
 
+
                     <div>
 
                         <h2
@@ -345,6 +525,7 @@
                             Our Services
 
                         </h2>
+
 
                         <p
                             class="text-sm text-slate-500 mt-1">
@@ -358,129 +539,211 @@
                 </div>
 
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- SERVICES GRID -->
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+                    <!-- WASH & FOLD -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-soap text-cyan-600"></i>
+                            <i
+                                class="fa-solid fa-soap text-cyan-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Wash & Fold
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Professional washing, drying, and folding
                             service for your everyday clothes.
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                    <!-- DRY CLEANING -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-spray-can-sparkles text-blue-600"></i>
+                            <i
+                                class="fa-solid fa-spray-can-sparkles text-blue-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Dry Cleaning
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Careful cleaning service for clothes that
                             require special treatment.
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                    <!-- IRONING -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-shirt text-purple-600"></i>
+                            <i
+                                class="fa-solid fa-shirt text-purple-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Ironing Service
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Neat and professional ironing for clean,
                             fresh-looking clothes.
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                    <!-- WASH & DRY -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-wind text-green-600"></i>
+                            <i
+                                class="fa-solid fa-wind text-green-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Wash & Dry
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Complete washing and drying service for
                             your laundry.
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                    <!-- PICKUP -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-truck text-orange-600"></i>
+                            <i
+                                class="fa-solid fa-truck text-orange-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Pickup Service
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Convenient laundry pickup service for
                             eligible customers.
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-2xl p-5">
+                    <!-- DELIVERY -->
+
+                    <div
+                        class="bg-slate-50 rounded-2xl p-5">
 
                         <div
                             class="w-11 h-11 rounded-xl bg-red-100 flex items-center justify-center mb-4">
 
-                            <i class="fa-solid fa-box text-red-600"></i>
+                            <i
+                                class="fa-solid fa-box text-red-600">
+                            </i>
 
                         </div>
 
-                        <h3 class="font-semibold text-slate-800">
+
+                        <h3
+                            class="font-semibold text-slate-800">
+
                             Delivery Service
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-2">
+
+                        <p
+                            class="text-sm text-slate-500 mt-2">
+
                             Have your clean laundry delivered
                             conveniently.
+
                         </p>
 
                     </div>
@@ -500,9 +763,14 @@
             id="prices"
             class="mb-8 scroll-mt-6">
 
-            <div class="dashboard-card p-6">
+            <div
+                class="dashboard-card p-6">
 
-                <div class="flex items-center gap-4 mb-6">
+
+                <!-- HEADER -->
+
+                <div
+                    class="flex items-center gap-4 mb-6">
 
                     <div
                         class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
@@ -513,6 +781,7 @@
 
                     </div>
 
+
                     <div>
 
                         <h2
@@ -521,6 +790,7 @@
                             Laundry Prices
 
                         </h2>
+
 
                         <p
                             class="text-sm text-slate-500 mt-1">
@@ -533,6 +803,8 @@
 
                 </div>
 
+
+                <!-- PRICE TABLE -->
 
                 <div class="overflow-x-auto">
 
@@ -559,71 +831,120 @@
 
                         </thead>
 
+
                         <tbody class="text-sm">
 
-                            <tr class="border-b border-slate-100">
 
-                                <td class="py-4 pr-4 font-medium text-slate-700">
+                            <!-- WASH & FOLD -->
+
+                            <tr
+                                class="border-b border-slate-100">
+
+                                <td
+                                    class="py-4 pr-4 font-medium text-slate-700">
+
                                     Wash & Fold
+
                                 </td>
 
-                                <td class="py-4 pr-4 text-slate-500">
+                                <td
+                                    class="py-4 pr-4 text-slate-500">
+
                                     Per kg
+
                                 </td>
 
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                <td
+                                    class="py-4 pr-4 font-semibold text-cyan-600">
+
                                     ₱50
+
                                 </td>
 
                             </tr>
 
 
-                            <tr class="border-b border-slate-100">
+                            <!-- WASH & DRY -->
 
-                                <td class="py-4 pr-4 font-medium text-slate-700">
+                            <tr
+                                class="border-b border-slate-100">
+
+                                <td
+                                    class="py-4 pr-4 font-medium text-slate-700">
+
                                     Wash & Dry
+
                                 </td>
 
-                                <td class="py-4 pr-4 text-slate-500">
+                                <td
+                                    class="py-4 pr-4 text-slate-500">
+
                                     Per kg
+
                                 </td>
 
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                <td
+                                    class="py-4 pr-4 font-semibold text-cyan-600">
+
                                     ₱60
+
                                 </td>
 
                             </tr>
 
 
-                            <tr class="border-b border-slate-100">
+                            <!-- DRY CLEANING -->
 
-                                <td class="py-4 pr-4 font-medium text-slate-700">
+                            <tr
+                                class="border-b border-slate-100">
+
+                                <td
+                                    class="py-4 pr-4 font-medium text-slate-700">
+
                                     Dry Cleaning
+
                                 </td>
 
-                                <td class="py-4 pr-4 text-slate-500">
+                                <td
+                                    class="py-4 pr-4 text-slate-500">
+
                                     Per item
+
                                 </td>
 
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                <td
+                                    class="py-4 pr-4 font-semibold text-cyan-600">
+
                                     ₱150
+
                                 </td>
 
                             </tr>
 
+
+                            <!-- IRONING -->
 
                             <tr>
 
-                                <td class="py-4 pr-4 font-medium text-slate-700">
+                                <td
+                                    class="py-4 pr-4 font-medium text-slate-700">
+
                                     Ironing
+
                                 </td>
 
-                                <td class="py-4 pr-4 text-slate-500">
+                                <td
+                                    class="py-4 pr-4 text-slate-500">
+
                                     Per item
+
                                 </td>
 
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
+                                <td
+                                    class="py-4 pr-4 font-semibold text-cyan-600">
+
                                     ₱30
+
                                 </td>
 
                             </tr>
@@ -647,7 +968,11 @@
             id="orders"
             class="mb-8 scroll-mt-6">
 
-            <div class="dashboard-card p-6">
+            <div
+                class="dashboard-card p-6">
+
+
+                <!-- HEADER -->
 
                 <div
                     class="flex items-center justify-between mb-4">
@@ -659,6 +984,7 @@
 
                     </h2>
 
+
                     <span
                         id="ordersCount"
                         class="text-sm text-slate-500">
@@ -668,12 +994,16 @@
                 </div>
 
 
+                <!-- MESSAGE -->
+
                 <p
                     id="ordersMessage"
                     class="text-slate-500 text-sm mb-4">
 
                 </p>
 
+
+                <!-- TABLE -->
 
                 <div class="overflow-x-auto">
 
@@ -713,9 +1043,10 @@
 
                         </thead>
 
+
                         <tbody id="ordersTableBody">
 
-                            <!-- Rows injected by dashboard.js -->
+                            <!-- Orders loaded by dashboard.js -->
 
                         </tbody>
 
@@ -736,9 +1067,14 @@
             id="about"
             class="mb-8 scroll-mt-6">
 
-            <div class="dashboard-card p-6">
+            <div
+                class="dashboard-card p-6">
 
-                <div class="flex items-center gap-4 mb-5">
+
+                <!-- HEADER -->
+
+                <div
+                    class="flex items-center gap-4 mb-5">
 
                     <div
                         class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
@@ -749,6 +1085,7 @@
 
                     </div>
 
+
                     <div>
 
                         <h2
@@ -757,6 +1094,7 @@
                             About Fresh Fold
 
                         </h2>
+
 
                         <p
                             class="text-sm text-slate-500 mt-1">
@@ -770,13 +1108,16 @@
                 </div>
 
 
-                <p class="text-sm text-slate-600 leading-7">
+                <!-- DESCRIPTION -->
+
+                <p
+                    class="text-sm text-slate-600 leading-7">
 
                     Fresh Fold is a laundry service management system
                     designed to make laundry services more convenient,
                     organized, and accessible. Customers can view
                     available services, check prices, manage their
-                    profile, and monitor their laundry orders.
+                    account, and monitor their laundry orders.
 
                 </p>
 
@@ -793,9 +1134,14 @@
             id="contact"
             class="mb-8 scroll-mt-6">
 
-            <div class="dashboard-card p-6">
+            <div
+                class="dashboard-card p-6">
 
-                <div class="flex items-center gap-4 mb-6">
+
+                <!-- HEADER -->
+
+                <div
+                    class="flex items-center gap-4 mb-6">
 
                     <div
                         class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
@@ -806,6 +1152,7 @@
 
                     </div>
 
+
                     <div>
 
                         <h2
@@ -814,6 +1161,7 @@
                             Contact Us
 
                         </h2>
+
 
                         <p
                             class="text-sm text-slate-500 mt-1">
@@ -827,48 +1175,91 @@
                 </div>
 
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- CONTACT CARDS -->
 
-                    <div class="bg-slate-50 rounded-xl p-5">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-                        <i class="fa-solid fa-envelope text-cyan-600 text-xl"></i>
 
-                        <h3 class="font-semibold text-slate-800 mt-3">
+                    <!-- EMAIL -->
+
+                    <div
+                        class="bg-slate-50 rounded-xl p-5">
+
+                        <i
+                            class="fa-solid fa-envelope text-cyan-600 text-xl">
+                        </i>
+
+
+                        <h3
+                            class="font-semibold text-slate-800 mt-3">
+
                             Email
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-1">
-                            freshfold@gamil.com
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
+                            freshfold@gmail.com
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-xl p-5">
+                    <!-- PHONE -->
 
-                        <i class="fa-solid fa-phone text-blue-600 text-xl"></i>
+                    <div
+                        class="bg-slate-50 rounded-xl p-5">
 
-                        <h3 class="font-semibold text-slate-800 mt-3">
+                        <i
+                            class="fa-solid fa-phone text-blue-600 text-xl">
+                        </i>
+
+
+                        <h3
+                            class="font-semibold text-slate-800 mt-3">
+
                             Phone
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-1">
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
                             +63 915 021 5467
+
                         </p>
 
                     </div>
 
 
-                    <div class="bg-slate-50 rounded-xl p-5">
+                    <!-- LOCATION -->
 
-                        <i class="fa-solid fa-location-dot text-red-500 text-xl"></i>
+                    <div
+                        class="bg-slate-50 rounded-xl p-5">
 
-                        <h3 class="font-semibold text-slate-800 mt-3">
+                        <i
+                            class="fa-solid fa-location-dot text-red-500 text-xl">
+                        </i>
+
+
+                        <h3
+                            class="font-semibold text-slate-800 mt-3">
+
                             Location
+
                         </h3>
 
-                        <p class="text-sm text-slate-500 mt-1">
+
+                        <p
+                            class="text-sm text-slate-500 mt-1">
+
                             Borongan, Eastern Samar
+
                         </p>
 
                     </div>
@@ -903,6 +1294,7 @@
                             alt="Republic of the Philippines Seal"
                             class="w-12 h-12 object-contain">
 
+
                         <div>
 
                             <p
@@ -911,6 +1303,7 @@
                                 Government Directory
 
                             </p>
+
 
                             <p
                                 class="text-sm font-semibold">
@@ -937,6 +1330,7 @@
 
                         </p>
 
+
                         <p
                             class="text-xs text-slate-500 mt-1">
 
@@ -957,7 +1351,7 @@
 
 
     <!-- ===================================================== -->
-    <!-- SUPABASE + DASHBOARD SCRIPT -->
+    <!-- SUPABASE -->
     <!-- ===================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -968,12 +1362,77 @@
 
 
     <!-- ===================================================== -->
-    <!-- TOP NAVIGATION ACTIVE LINK -->
+    <!-- PROFILE DROPDOWN + NAVIGATION -->
     <!-- ===================================================== -->
 
     <script>
 
-        const topNavLinks = document.querySelectorAll(".top-nav-link");
+        // =====================================================
+        // PROFILE ELEMENTS
+        // =====================================================
+
+        const profileButton =
+            document.getElementById("profileButton");
+
+        const profileDropdown =
+            document.getElementById("profileDropdown");
+
+        const profileArrow =
+            document.getElementById("profileArrow");
+
+
+        // =====================================================
+        // OPEN / CLOSE PROFILE
+        // =====================================================
+
+        if (profileButton && profileDropdown) {
+
+            profileButton.addEventListener("click", function (event) {
+
+                event.stopPropagation();
+
+                profileDropdown.classList.toggle("hidden");
+
+                if (profileArrow) {
+
+                    profileArrow.classList.toggle("rotate-180");
+
+                }
+
+            });
+
+
+            // Close dropdown when clicking outside
+
+            document.addEventListener("click", function (event) {
+
+                if (
+                    !profileButton.contains(event.target) &&
+                    !profileDropdown.contains(event.target)
+                ) {
+
+                    profileDropdown.classList.add("hidden");
+
+                    if (profileArrow) {
+
+                        profileArrow.classList.remove("rotate-180");
+
+                    }
+
+                }
+
+            });
+
+        }
+
+
+        // =====================================================
+        // TOP NAVIGATION ACTIVE LINK
+        // =====================================================
+
+        const topNavLinks =
+            document.querySelectorAll(".top-nav-link");
+
 
         topNavLinks.forEach(function (link) {
 
@@ -985,6 +1444,7 @@
 
                 });
 
+
                 this.classList.add("text-cyan-300");
 
             });
@@ -992,6 +1452,7 @@
         });
 
     </script>
+
 
 </body>
 
