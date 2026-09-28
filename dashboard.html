@@ -3,12 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Fresh Fold</title>
 
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="src/output.css">
+    <link
+        rel="stylesheet"
+        href="src/output.css">
 
     <!-- Poppins Font -->
     <link
@@ -20,437 +24,1443 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        <style>
-    /* =====================================================
-       RESPONSIVE FIX - PROFILE DROPDOWN
-       ===================================================== */
+    <!-- =====================================================
+         DASHBOARD CUSTOM FIXES
+    ====================================================== -->
+    <style>
 
-    #profileDropdown {
-        width: min(320px, calc(100vw - 24px)) !important;
-        max-width: calc(100vw - 24px) !important;
-        right: 0 !important;
-        left: auto !important;
-        box-sizing: border-box !important;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    #profileDropdown #dropdownUsername,
-    #profileDropdown #userUsername,
-    #profileDropdown #userEmail {
-        min-width: 0 !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        overflow-wrap: anywhere !important;
-        word-break: break-word !important;
-        white-space: normal !important;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    #profileDropdown .flex {
-        min-width: 0 !important;
-    }
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
 
+        /* =====================================================
+           GOVERNMENT TOP BAR
+        ====================================================== */
 
-    /* =====================================================
-       PROFILE BUTTON
-       ===================================================== */
+        .government-bar {
+            width: 100%;
+            background: #0f172a;
+            color: white;
+        }
 
-    #profileButton {
-        min-width: 0 !important;
-        max-width: 220px !important;
-        overflow: hidden !important;
-    }
+        .government-inner {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            min-height: 60px;
+            padding: 8px 24px;
 
-    #profileButton #profileUsername {
-        min-width: 0 !important;
-        max-width: 120px !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
-    }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
+        .government-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
 
-    /* =====================================================
-       CREATE LAUNDRY ORDER BUTTON
-       ===================================================== */
+        .government-left img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
-    #createOrderBtn {
-        width: auto !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        height: auto !important;
-        min-height: 48px !important;
-        padding: 12px 20px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 8px !important;
-        overflow: visible !important;
-        white-space: nowrap !important;
-        line-height: 1.4 !important;
-        box-sizing: border-box !important;
-    }
+        .government-text {
+            min-width: 0;
+        }
 
-    #createOrderBtn span {
-        display: inline-block !important;
-        width: auto !important;
-        max-width: none !important;
-        overflow: visible !important;
-        text-overflow: clip !important;
-        white-space: nowrap !important;
-    }
+        .government-title {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.3;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #ffffff;
+        }
 
+        .government-subtitle {
+            margin: 2px 0 0;
+            font-size: 11px;
+            line-height: 1.3;
+            color: #cbd5e1;
+        }
 
-    /* =====================================================
-       HERO CREATE ORDER LINK
-       ===================================================== */
-
-    a[href="#create-order"] {
-        max-width: 100% !important;
-        min-height: 48px !important;
-        height: auto !important;
-        overflow: visible !important;
-        white-space: nowrap !important;
-        line-height: 1.4 !important;
-        box-sizing: border-box !important;
-    }
-
-    a[href="#create-order"] span {
-        overflow: visible !important;
-        text-overflow: clip !important;
-        white-space: nowrap !important;
-    }
+        .government-seal {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
 
-    /* =====================================================
-       FORM WIDTH FIX
-       ===================================================== */
+        /* =====================================================
+           MAIN NAVIGATION
+        ====================================================== */
 
-    #laundryOrderForm,
-    #laundryOrderForm > div,
-    #laundryOrderForm input,
-    #laundryOrderForm select,
-    #laundryOrderForm textarea {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+        }
+
+        .main-nav-inner {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 82px;
+            margin: 0 auto;
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
 
-    /* =====================================================
-       MOBILE
-       ===================================================== */
+        /* =====================================================
+           LOGO
+        ====================================================== */
 
-    @media (max-width: 639px) {
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: auto;
+            height: 52px;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            margin: 3px 0 0;
+            font-size: 11px;
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           DESKTOP NAVIGATION
+        ====================================================== */
+
+        .desktop-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .desktop-navigation a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 10px 11px;
+
+            border-radius: 9px;
+
+            color: #475569;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .desktop-navigation a:hover {
+            background: #ecfeff;
+            color: #0891b2;
+        }
+
+        .desktop-navigation a.active {
+            background: #ecfeff;
+            color: #0891b2;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           RIGHT SIDE PROFILE
+        ====================================================== */
+
+        .desktop-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-shrink: 0;
+        }
+
+        .profile-wrapper {
+            position: relative;
+        }
+
+        .profile-button {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 6px 10px 6px 6px;
+
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .profile-button:hover {
+            background: #ecfeff;
+            border-color: #67e8f9;
+        }
+
+        .profile-icon {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #0891b2;
+            color: white;
+
+            flex-shrink: 0;
+        }
+
+        .profile-information {
+            text-align: left;
+            min-width: 60px;
+            max-width: 90px;
+        }
+
+        .profile-information .username {
+            margin: 0;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            color: #1e293b;
+        }
+
+        .profile-information .account {
+            margin: 2px 0 0;
+
+            font-size: 9px;
+            color: #64748b;
+        }
+
+        .profile-arrow {
+            color: #94a3b8;
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           PROFILE DROPDOWN
+        ====================================================== */
 
         #profileDropdown {
-            position: fixed !important;
-            top: 76px !important;
-            right: 12px !important;
-            left: 12px !important;
-            width: auto !important;
-            max-width: none !important;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 12px);
+
+            width: 280px;
+
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 40px rgba(15, 23, 42, 0.15);
+
+            display: none;
         }
 
-        #profileButton {
-            max-width: 52px !important;
-            width: 52px !important;
-            padding: 6px !important;
-            justify-content: center !important;
+        #profileDropdown.show {
+            display: block;
         }
 
-        #profileButton #profileUsername {
-            display: none !important;
+
+        /* =====================================================
+           MOBILE BUTTON
+        ====================================================== */
+
+        .mobile-menu-button {
+            width: 44px;
+            height: 44px;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 11px;
+
+            background: white;
+            color: #334155;
+
+            cursor: pointer;
         }
 
-        #profileButton > .fa-chevron-down {
-            display: none !important;
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        .mobile-navigation {
+            display: none;
+
+            border-top: 1px solid #f1f5f9;
+            background: #ffffff;
+
+            padding: 14px 20px 20px;
         }
 
-        #createOrderBtn {
-            width: 100% !important;
-            max-width: 100% !important;
-            padding-left: 16px !important;
-            padding-right: 16px !important;
+        .mobile-navigation.show {
+            display: block;
         }
 
-        a[href="#create-order"] {
-            width: 100% !important;
-            max-width: 100% !important;
+        .mobile-navigation nav {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
         }
 
-    }
+        .mobile-navigation nav a {
+            display: flex;
+            align-items: center;
 
+            padding: 12px 14px;
 
-    /* =====================================================
-       VERY SMALL PHONES
-       ===================================================== */
+            border-radius: 9px;
 
-    @media (max-width: 380px) {
+            color: #475569;
+            text-decoration: none;
 
-        #profileDropdown {
-            top: 72px !important;
-            right: 8px !important;
-            left: 8px !important;
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        #profileDropdown .p-4,
-        #profileDropdown .p-5 {
-            padding: 16px !important;
+        .mobile-navigation nav a:hover,
+        .mobile-navigation nav a.active {
+            background: #ecfeff;
+            color: #0891b2;
         }
 
-        #createOrderBtn {
-            font-size: 13px !important;
-            padding: 11px 14px !important;
+        .mobile-navigation nav i {
+            width: 22px;
+            margin-right: 8px;
         }
 
-        a[href="#create-order"] {
-            font-size: 13px !important;
-            padding: 11px 14px !important;
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #0369a1 0%,
+                    #0891b2 45%,
+                    #1d4ed8 100%
+                );
+
+            color: white;
         }
 
-    }
-</style>
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255,255,255,0.12),
+                    transparent 30%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            max-width: 1280px;
+
+            margin: 0 auto;
+            padding: 75px 24px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+            gap: 55px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            background: rgba(255,255,255,0.13);
+
+            color: #cffafe;
+
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            margin: 22px 0 0;
+
+            font-size: 46px;
+            line-height: 1.15;
+            font-weight: 700;
+
+            color: #ffffff;
+        }
+
+        .hero-title span {
+            color: #a5f3fc;
+        }
+
+        .hero-description {
+            max-width: 570px;
+
+            margin: 20px 0 0;
+
+            color: #e0f2fe;
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .hero-button-primary,
+        .hero-button-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 11px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: all 0.2s ease;
+        }
+
+        .hero-button-primary {
+            background: white;
+            color: #0369a1;
+
+            box-shadow:
+                0 8px 20px rgba(15,23,42,0.15);
+        }
+
+        .hero-button-primary:hover {
+            background: #ecfeff;
+            transform: translateY(-1px);
+        }
+
+        .hero-button-secondary {
+            background: rgba(255,255,255,0.10);
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .hero-button-secondary:hover {
+            background: rgba(255,255,255,0.18);
+        }
+
+
+        /* =====================================================
+           HERO IMAGE
+        ====================================================== */
+
+        .hero-image-wrapper {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 24px;
+
+            background: white;
+
+            box-shadow:
+                0 25px 50px rgba(15,23,42,0.25);
+
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .hero-image {
+            display: block;
+
+            width: 100%;
+            height: 360px;
+
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           QUICK ACCESS
+        ====================================================== */
+
+        .quick-section {
+            background: #f8fafc;
+
+            padding: 65px 24px;
+        }
+
+        .section-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            margin: 0;
+
+            color: #0891b2;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title {
+            margin: 7px 0 0;
+
+            color: #1e293b;
+
+            font-size: 28px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .quick-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin-top: 30px;
+        }
+
+        .quick-card {
+            display: block;
+
+            padding: 23px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 17px;
+
+            text-decoration: none;
+
+            box-shadow:
+                0 3px 10px rgba(15,23,42,0.04);
+
+            transition: all 0.2s ease;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-3px);
+
+            border-color: #67e8f9;
+
+            box-shadow:
+                0 12px 25px rgba(15,23,42,0.08);
+        }
+
+        .quick-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            font-size: 18px;
+        }
+
+        .icon-cyan {
+            background: #cffafe;
+            color: #0891b2;
+        }
+
+        .icon-blue {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .icon-green {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .icon-purple {
+            background: #f3e8ff;
+            color: #9333ea;
+        }
+
+        .quick-card h3 {
+            margin: 17px 0 0;
+
+            color: #1e293b;
+
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .quick-card p {
+            margin: 7px 0 0;
+
+            color: #64748b;
+
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        .about-section {
+            background: white;
+
+            padding: 75px 24px;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 360px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+        }
+
+        .about-content p.description {
+            margin-top: 18px;
+
+            color: #64748b;
+
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .about-content p.description + p.description {
+            margin-top: 12px;
+        }
+
+        .about-features {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px;
+
+            margin-top: 25px;
+        }
+
+        .about-feature {
+            padding: 18px;
+
+            border-radius: 15px;
+
+            background: #f8fafc;
+        }
+
+        .about-feature-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #cffafe;
+            color: #0891b2;
+        }
+
+        .about-feature h3 {
+            margin: 13px 0 0;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #1e293b;
+        }
+
+        .about-feature p {
+            margin: 4px 0 0;
+
+            color: #64748b;
+
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact-section {
+            background: #f8fafc;
+
+            padding: 75px 24px;
+        }
+
+        .contact-header {
+            text-align: center;
+        }
+
+        .contact-description {
+            max-width: 600px;
+
+            margin: 10px auto 0;
+
+            color: #64748b;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            max-width: 850px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+            margin: 35px auto 0;
+        }
+
+        .contact-card {
+            padding: 25px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 17px;
+
+            text-align: center;
+
+            box-shadow:
+                0 3px 10px rgba(15,23,42,0.04);
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto;
+
+            border-radius: 50%;
+
+            background: #cffafe;
+            color: #0891b2;
+
+            font-size: 19px;
+        }
+
+        .contact-card h3 {
+            margin: 14px 0 0;
+
+            color: #1e293b;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .contact-card p {
+            margin: 6px 0 0;
+
+            color: #64748b;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+            background: #0f172a;
+            color: white;
+
+            padding: 45px 24px 25px;
+        }
+
+        .footer-grid {
+            width: 100%;
+            max-width: 1280px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 1fr 1fr;
+
+            gap: 45px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .footer-brand img {
+            width: auto;
+            height: 52px;
+            object-fit: contain;
+        }
+
+        .footer-brand h3 {
+            margin: 0;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            margin: 3px 0 0;
+
+            font-size: 10px;
+            color: #94a3b8;
+        }
+
+        .footer-description {
+            max-width: 360px;
+
+            margin: 15px 0 0;
+
+            color: #94a3b8;
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .footer-heading {
+            margin: 0 0 15px;
+
+            color: white;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #22d3ee;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin: 0;
+
+            color: #94a3b8;
+
+            font-size: 12px;
+        }
+
+        .footer-contact i {
+            width: 17px;
+            color: #22d3ee;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            max-width: 1280px;
+
+            margin: 30px auto 0;
+            padding-top: 20px;
+
+            border-top: 1px solid #1e293b;
+
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+
+            color: #64748b;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - TABLET
+        ====================================================== */
+
+        @media (max-width: 1279px) {
+
+            .desktop-navigation {
+                display: none;
+            }
+
+            .desktop-actions {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .quick-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE - MOBILE
+        ====================================================== */
+
+        @media (max-width: 767px) {
+
+            .government-inner {
+                min-height: 54px;
+                padding: 7px 15px;
+            }
+
+            .government-left img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .government-seal {
+                width: 38px;
+                height: 38px;
+            }
+
+            .government-title {
+                font-size: 9px;
+            }
+
+            .government-subtitle {
+                font-size: 8px;
+            }
+
+            .main-nav-inner {
+                min-height: 70px;
+                padding: 0 15px;
+            }
+
+            .brand-logo {
+                height: 45px;
+            }
+
+            .brand-text {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                padding: 55px 18px;
+
+                gap: 35px;
+            }
+
+            .hero-title {
+                font-size: 34px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-image {
+                height: 270px;
+            }
+
+            .quick-section,
+            .about-section,
+            .contact-section {
+                padding: 50px 18px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .about-image {
+                height: 280px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 40px 18px 22px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 420px) {
+
+            .government-left {
+                gap: 8px;
+            }
+
+            .government-left img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .government-seal {
+                width: 34px;
+                height: 34px;
+            }
+
+            .government-title {
+                font-size: 8px;
+            }
+
+            .government-subtitle {
+                font-size: 7px;
+            }
+
+            .hero-title {
+                font-size: 29px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-button-primary,
+            .hero-button-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+        }
+
+    </style>
 
 </head>
 
-<body class="font-[Poppins] dashboard-bg min-h-screen overflow-x-hidden">
 
-    <!-- ===================================================== -->
-    <!-- GOVERNMENT TOP BAR + MAIN NAVIGATION -->
-    <!-- ===================================================== -->
+<body>
 
-    <header class="relative z-30 w-full bg-slate-900/95 text-white shadow-lg">
 
-        <div class="w-full px-3 sm:px-4 md:px-8 py-3">
+    <!-- =========================================================
+         GOVERNMENT TOP BAR
+         ONLY ONE GOVERNMENT TOP BAR
+    ========================================================== -->
 
-            <div class="flex items-center justify-between gap-2 sm:gap-4 min-w-0">
+    <div class="government-bar">
 
-                <!-- LEFT: REPUBLIC SEAL -->
+        <div class="government-inner">
 
-                <div class="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
 
-                    <div
-                        class="rounded-full bg-white p-1 shadow-md shrink-0"
-                        style="width: 60px; height: 60px;">
+            <!-- LEFT -->
+            <div class="government-left">
 
-                        <img
-                            src="images/ph.webp"
-                            alt="Republic of the Philippines Seal"
-                            class="w-full h-full rounded-full object-contain">
+                <img
+                    src="images/ph.webp"
+                    alt="Republic of the Philippines">
 
-                    </div>
+                <div class="government-text">
 
-                    <div class="hidden sm:block min-w-0">
+                    <p class="government-title">
+                        Republic of the Philippines
+                    </p>
 
-                        <p class="text-xs text-white/70">
-                            Government of the Philippines
-                        </p>
-
-                        <p class="font-semibold text-sm md:text-base truncate">
-                            Republic of the Philippines
-                        </p>
-
-                    </div>
+                    <p class="government-subtitle">
+                        Government Web Transparency
+                    </p>
 
                 </div>
 
-
-                <!-- MAIN NAVIGATION -->
-
-                <nav
-                    class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 text-sm flex-1 min-w-0">
-
-                    <a
-                        href="#home"
-                        class="top-nav-link text-cyan-300 transition whitespace-nowrap">
-                        Home
-                    </a>
-
-                    <a
-                        href="#services"
-                        class="top-nav-link hover:text-cyan-300 transition whitespace-nowrap">
-                        Services
-                    </a>
-
-                    <a
-                        href="#prices"
-                        class="top-nav-link hover:text-cyan-300 transition whitespace-nowrap">
-                        Prices
-                    </a>
-
-                    <a
-                        href="#orders"
-                        class="top-nav-link hover:text-cyan-300 transition whitespace-nowrap">
-                        Orders
-                    </a>
-
-                    <a
-                        href="#about"
-                        class="top-nav-link hover:text-cyan-300 transition whitespace-nowrap">
-                        About
-                    </a>
-
-                    <a
-                        href="#contact"
-                        class="top-nav-link hover:text-cyan-300 transition whitespace-nowrap">
-                        Contact
-                    </a>
-
-                </nav>
+            </div>
 
 
-                <!-- RIGHT SIDE: PROFILE + LOGO -->
+            <!-- RIGHT
+                 ONLY ONE TRANSPARENCY SEAL -->
+            <img
+                src="images/ph1.png"
+                alt="Transparency Seal"
+                class="government-seal">
 
-                <div class="flex items-center gap-1 sm:gap-3 min-w-0 shrink-0">
+        </div>
 
-                    <!-- USER PROFILE -->
-
-                    <div class="relative min-w-0">
-
-                        <button
-                            id="profileButton"
-                            type="button"
-                            class="flex items-center gap-2 px-2 sm:px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition min-w-0 max-w-45 sm:max-w-55">
-
-                            <div
-                                class="w-9 h-9 rounded-full bg-cyan-500 flex items-center justify-center shrink-0">
-
-                                <i class="fa-solid fa-user text-white"></i>
-
-                            </div>
-
-                            <div class="hidden md:block text-left min-w-0 flex-1">
-
-                                <p
-                                    id="profileUsername"
-                                    class="text-sm font-medium text-white truncate max-w-25 lg:max-w-32.5">
-                                    User
-                                </p>
-
-                                <p class="text-xs text-white/60 truncate">
-                                    User Profile
-                                </p>
-
-                            </div>
-
-                            <i
-                                id="profileArrow"
-                                class="fa-solid fa-chevron-down text-xs text-white/70 transition-transform shrink-0">
-                            </i>
-
-                        </button>
+    </div>
 
 
-                        <!-- PROFILE DROPDOWN -->
+    <!-- =========================================================
+         MAIN NAVIGATION
+    ========================================================== -->
+
+    <header class="main-header">
+
+        <div class="main-nav-inner">
+
+
+            <!-- =================================================
+                 FRESH FOLD LOGO
+            ================================================== -->
+
+            <a
+                href="dashboard.html"
+                class="brand-link">
+
+                <img
+                    src="images/laundry-logo.png"
+                    alt="Fresh Fold Logo"
+                    class="brand-logo">
+
+                <div class="brand-text">
+
+                    <h1>
+                        Fresh Fold
+                    </h1>
+
+                    <p>
+                        Laundry Services
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 DESKTOP NAVIGATION
+            ================================================== -->
+
+            <nav class="desktop-navigation">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="dashboard.html"
+                    class="active">
+
+                    <i class="fa-solid fa-house"></i>
+                    Home
+
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <a href="services.html">
+
+                    <i class="fa-solid fa-shirt"></i>
+                    Services
+
+                </a>
+
+
+                <!-- PRICES -->
+
+                <a href="prices.html">
+
+                    <i class="fa-solid fa-tags"></i>
+                    Prices
+
+                </a>
+
+
+                <!-- CREATE ORDER -->
+
+                <a href="">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Create Order
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a href="">
+
+                    <i class="fa-solid fa-receipt"></i>
+                    Orders
+
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <a href="#about">
+
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 PROFILE
+            ================================================== -->
+
+            <div class="desktop-actions">
+
+                <div class="profile-wrapper">
+
+
+                    <!-- PROFILE BUTTON -->
+
+                    <button
+                        id="profileButton"
+                        type="button"
+                        class="profile-button">
+
+
+                        <div class="profile-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+
+                        <div class="profile-information">
+
+                            <p
+                                id="profileUsername"
+                                class="username">
+
+                                User
+
+                            </p>
+
+                            <p class="account">
+
+                                Account
+
+                            </p>
+
+                        </div>
+
+
+                        <i
+                            id="profileArrow"
+                            class="fa-solid fa-chevron-down profile-arrow">
+                        </i>
+
+                    </button>
+
+
+                    <!-- =================================================
+                         PROFILE DROPDOWN
+                    ================================================== -->
+
+                    <div id="profileDropdown">
+
+
+                        <!-- HEADER -->
 
                         <div
-                            id="profileDropdown"
-                            class="hidden absolute right-0 mt-3 w-[calc(100vw-24px)] max-w-85 sm:w-72 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden z-50">
+                            class="bg-linear-to-r from-cyan-600 to-blue-600 px-5 py-5 text-white">
 
-                            <!-- DROPDOWN HEADER -->
+                            <div class="flex items-center gap-3">
 
-                            <div class="bg-slate-900 px-4 sm:px-5 py-4">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
 
-                                <div class="flex items-center gap-3 min-w-0">
-
-                                    <div
-                                        class="w-11 h-11 rounded-full bg-cyan-500 flex items-center justify-center shrink-0">
-
-                                        <i class="fa-solid fa-user text-white text-lg"></i>
-
-                                    </div>
-
-                                    <div class="min-w-0 flex-1">
-
-                                        <p class="text-xs text-white/60">
-                                            Signed in as
-                                        </p>
-
-                                        <p
-                                            id="dropdownUsername"
-                                            class="text-sm font-semibold text-white break-all leading-5">
-                                            User
-                                        </p>
-
-                                    </div>
+                                    <i class="fa-solid fa-user text-lg"></i>
 
                                 </div>
 
-                            </div>
-
-
-                            <!-- DROPDOWN CONTENT -->
-
-                            <div class="p-4 sm:p-5">
-
-                                <!-- USERNAME -->
-
-                                <div class="mb-5 min-w-0">
-
-                                    <p class="text-xs text-slate-400 uppercase tracking-wide">
-                                        Username
-                                    </p>
-
-                                    <div class="flex items-start gap-3 mt-2 min-w-0">
-
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
-
-                                            <i class="fa-solid fa-user text-blue-600"></i>
-
-                                        </div>
-
-                                        <p
-                                            id="userUsername"
-                                            class="text-sm font-medium text-slate-700 break-all leading-5 min-w-0 flex-1">
-                                            Loading...
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- GMAIL -->
 
                                 <div class="min-w-0">
 
-                                    <p class="text-xs text-slate-400 uppercase tracking-wide">
-                                        Gmail
+                                    <p
+                                        id="dropdownUsername"
+                                        class="truncate font-semibold">
+
+                                        User
+
                                     </p>
 
-                                    <div class="flex items-start gap-3 mt-2 min-w-0">
+                                    <p
+                                        id="userEmail"
+                                        class="truncate text-xs text-cyan-100">
 
-                                        <div
-                                            class="w-9 h-9 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0">
+                                        user@email.com
 
-                                            <i class="fa-solid fa-envelope text-cyan-600"></i>
-
-                                        </div>
-
-                                        <p
-                                            id="userEmail"
-                                            class="text-sm font-medium text-slate-700 break-all leading-5 min-w-0 flex-1">
-                                            Loading...
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- LOGOUT -->
-
-                                <div class="border-t border-slate-100 mt-5 pt-5">
-
-                                    <button
-                                        id="logoutBtn"
-                                        type="button"
-                                        class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition text-sm font-medium">
-
-                                        <i class="fa-solid fa-right-from-bracket"></i>
-
-                                        Logout
-
-                                    </button>
+                                    </p>
 
                                 </div>
 
@@ -458,21 +1468,227 @@
 
                         </div>
 
+
+                        <!-- BODY -->
+
+                        <div class="p-4">
+
+
+                            <div class="mb-3 rounded-xl bg-slate-50 p-3">
+
+                                <p
+                                    class="mb-1 text-[10px] font-medium uppercase tracking-wide text-slate-400">
+
+                                    Username
+
+                                </p>
+
+                                <p
+                                    id="userUsername"
+                                    class="break-all text-sm font-medium text-slate-700">
+
+                                    @user
+
+                                </p>
+
+                            </div>
+
+
+                            <!-- LOGOUT -->
+
+                            <button
+                                id="logoutBtn"
+                                type="button"
+                                class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-medium text-red-600 transition hover:bg-red-50">
+
+                                <i class="fa-solid fa-right-from-bracket w-5"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
                     </div>
 
+                </div>
 
-                    <!-- TRANSPARENCY SEAL -->
+            </div>
+
+
+            <!-- =================================================
+                 MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button
+                id="mobileMenuButton"
+                type="button"
+                class="mobile-menu-button"
+                aria-label="Open navigation menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             MOBILE NAVIGATION
+        ====================================================== -->
+
+        <div
+            id="mobileMenu"
+            class="mobile-navigation">
+
+
+            <nav>
+
+
+                <a
+                    href="dashboard.html"
+                    class="active">
+
+                    <i class="fa-solid fa-house"></i>
+                    Home
+
+                </a>
+
+
+                <a href="services.html">
+
+                    <i class="fa-solid fa-shirt"></i>
+                    Services
+
+                </a>
+
+
+                <a href="prices.html">
+
+                    <i class="fa-solid fa-tags"></i>
+                    Prices
+
+                </a>
+
+
+                <a href="">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Create Order
+
+                </a>
+
+
+                <a href="">
+
+                    <i class="fa-solid fa-receipt"></i>
+                    Orders
+
+                </a>
+
+
+                <a href="#about">
+
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+
+                </a>
+
+
+                <a href="#contact">
+
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact
+
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 MOBILE PROFILE
+            ================================================== -->
+
+            <div class="mt-4 border-t border-slate-100 pt-4">
+
+
+                <button
+                    id="mobileProfileButton"
+                    type="button"
+                    class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left transition hover:bg-slate-50">
+
 
                     <div
-                        class="rounded-full bg-white p-1 shadow-md shrink-0"
-                        style="width: 60px; height: 60px;">
+                        class="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-600 text-white">
 
-                        <img
-                            src="images/ph1.png"
-                            alt="Transparency Seal"
-                            class="w-full h-full rounded-full object-contain">
+                        <i class="fa-solid fa-user"></i>
 
                     </div>
+
+
+                    <div class="min-w-0 flex-1">
+
+                        <p
+                            id="mobileProfileUsername"
+                            class="truncate text-sm font-semibold text-slate-800">
+
+                            User
+
+                        </p>
+
+                        <p class="text-xs text-slate-500">
+
+                            View account
+
+                        </p>
+
+                    </div>
+
+
+                    <i
+                        class="fa-solid fa-chevron-down text-xs text-slate-400">
+                    </i>
+
+                </button>
+
+
+                <!-- MOBILE PROFILE DROPDOWN -->
+
+                <div
+                    id="mobileProfileDropdown"
+                    class="mt-2 hidden rounded-xl bg-slate-50 p-3">
+
+
+                    <div class="mb-3">
+
+                        <p
+                            class="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+
+                            Email
+
+                        </p>
+
+                        <p
+                            id="mobileUserEmail"
+                            class="break-all text-sm text-slate-700">
+
+                            user@email.com
+
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="mobileLogoutBtn"
+                        type="button"
+                        class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-red-600 transition hover:bg-red-100">
+
+                        <i class="fa-solid fa-right-from-bracket w-5"></i>
+
+                        Logout
+
+                    </button>
 
                 </div>
 
@@ -483,1072 +1699,442 @@
     </header>
 
 
-    <!-- ===================================================== -->
-    <!-- MAIN CONTENT -->
-    <!-- ===================================================== -->
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
 
-    <main
-        class="w-full max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-10 py-5 md:py-8 lg:py-10 min-w-0">
+    <main>
 
-        <!-- MOBILE NAVIGATION -->
 
-        <div class="lg:hidden mb-6">
+        <!-- =====================================================
+             HOME / HERO
+        ====================================================== -->
 
-            <div class="dashboard-card p-4">
+        <section
+            id="home"
+            class="hero-section">
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+
+                <!-- TEXT -->
+
+                <div class="hero-text">
+
+
+                    <span class="hero-label">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Fresh & Clean Every Time
+
+                    </span>
+
+
+                    <h2 class="hero-title">
+
+                        Welcome to
+                        <span>Fresh Fold</span>
+
+                    </h2>
+
+
+                    <p class="hero-description">
+
+                        Your trusted laundry service for clean, fresh,
+                        and carefully handled clothes. We make laundry
+                        simple and convenient for you.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+
+                        <!-- CREATE ORDER -->
+
+                        <a
+                            href=""
+                            class="hero-button-primary">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                            Create Laundry Order
+
+                        </a>
+
+
+                        <!-- SERVICES -->
+
+                        <a
+                            href="services.html"
+                            class="hero-button-secondary">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                            View Services
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE -->
+
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="images/banner1.png"
+                        alt="Fresh Fold Laundry"
+                        class="hero-image">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUICK ACCESS
+        ====================================================== -->
+
+        <section class="quick-section">
+
+
+            <div class="section-container">
+
+
+                <p class="section-label">
+                    Quick Access
+                </p>
+
+
+                <h2 class="section-title">
+                    What would you like to do?
+                </h2>
+
+
+                <div class="quick-grid">
+
+
+                    <!-- SERVICES -->
 
                     <a
-                        href="#home"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm min-w-0">
+                        href="services.html"
+                        class="quick-card">
 
-                        <i class="fa-solid fa-house shrink-0"></i>
-                        <span class="truncate">Home</span>
+                        <div
+                            class="quick-icon icon-cyan">
+
+                            <i class="fa-solid fa-shirt"></i>
+
+                        </div>
+
+                        <h3>
+                            Our Services
+                        </h3>
+
+                        <p>
+                            Explore our available laundry services.
+                        </p>
 
                     </a>
 
-                    <a
-                        href="#services"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm min-w-0">
 
-                        <i class="fa-solid fa-shirt shrink-0"></i>
-                        <span class="truncate">Services</span>
+                    <!-- PRICES -->
+
+                    <a
+                        href="prices.html"
+                        class="quick-card">
+
+                        <div
+                            class="quick-icon icon-blue">
+
+                            <i class="fa-solid fa-tags"></i>
+
+                        </div>
+
+                        <h3>
+                            Laundry Prices
+                        </h3>
+
+                        <p>
+                            Check our current laundry service rates.
+                        </p>
 
                     </a>
 
-                    <a
-                        href="#prices"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm min-w-0">
 
-                        <i class="fa-solid fa-tags shrink-0"></i>
-                        <span class="truncate">Prices</span>
+                    <!-- CREATE ORDER -->
+
+                    <a
+                        href=""
+                        class="quick-card">
+
+                        <div
+                            class="quick-icon icon-green">
+
+                            <i class="fa-solid fa-cart-plus"></i>
+
+                        </div>
+
+                        <h3>
+                            Create Order
+                        </h3>
+
+                        <p>
+                            Schedule a new laundry service order.
+                        </p>
 
                     </a>
 
-                    <a
-                        href="#orders"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm min-w-0">
 
-                        <i class="fa-solid fa-receipt shrink-0"></i>
-                        <span class="truncate">Orders</span>
-
-                    </a>
+                    <!-- ORDERS -->
 
                     <a
-                        href="#about"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm min-w-0">
+                        href=""
+                        class="quick-card">
 
-                        <i class="fa-solid fa-circle-info shrink-0"></i>
-                        <span class="truncate">About</span>
+                        <div
+                            class="quick-icon icon-purple">
 
-                    </a>
+                            <i class="fa-solid fa-receipt"></i>
 
-                    <a
-                        href="#contact"
-                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm min-w-0">
+                        </div>
 
-                        <i class="fa-solid fa-envelope shrink-0"></i>
-                        <span class="truncate">Contact</span>
+                        <h3>
+                            My Orders
+                        </h3>
+
+                        <p>
+                            View and track your laundry orders.
+                        </p>
 
                     </a>
 
                 </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section
+            id="about"
+            class="about-section">
+
+
+            <div
+                class="section-container about-grid">
+
+
+                <!-- IMAGE -->
+
+                <div>
+
+                    <img
+                        src="images/aboutus1.png"
+                        alt="About Fresh Fold"
+                        class="about-image">
+
+                </div>
+
+
+                <!-- CONTENT -->
+
+                <div class="about-content">
+
+
+                    <p class="section-label">
+                        About Us
+                    </p>
+
+
+                    <h2 class="section-title">
+                        About Fresh Fold
+                    </h2>
+
+
+                    <p class="description">
+
+                        Fresh Fold provides convenient and reliable laundry
+                        services designed to help customers save time and
+                        keep their clothes fresh and clean.
+
+                    </p>
+
+
+                    <p class="description">
+
+                        Our goal is to provide quality laundry care while
+                        making the ordering and tracking process simple
+                        and convenient for every customer.
+
+                    </p>
+
+
+                    <div class="about-features">
+
+
+                        <!-- CONVENIENT -->
+
+                        <div class="about-feature">
+
+
+                            <div class="about-feature-icon">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+
+                            <h3>
+                                Convenient
+                            </h3>
+
+
+                            <p>
+                                Easy laundry scheduling and order tracking.
+                            </p>
+
+                        </div>
+
+
+                        <!-- QUALITY -->
+
+                        <div class="about-feature">
+
+
+                            <div
+                                class="about-feature-icon"
+                                style="background:#dbeafe;color:#2563eb;">
+
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+
+                            <h3>
+                                Quality Service
+                            </h3>
+
+
+                            <p>
+                                Careful handling of your laundry.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- LEFT: PHILIPPINES -->
+        <div class="footer-government">
+
+            <img
+                src="images/ph.webp"
+                alt="Republic of the Philippines"
+                class="footer-ph-logo"
+            >
+
+            <div class="footer-government-text">
+                <h3>Republic of the Philippines</h3>
+                <p>Government Web Transparency</p>
+            </div>
+
+        </div>
+
+<div class="footer-center">
+
+    <div class="footer-brand">
+
+        <img
+            src="images/laundry-logo.png"
+            alt="Fresh Fold Logo"
+        >
+
+        <div>
+            <h3>Fresh Fold</h3>
+            <p>Laundry Services</p>
+        </div>
+
+    </div>
+
+    <p class="footer-description">
+        Fresh, clean, and convenient laundry services for the community.
+    </p>
+
+</div>
+
+
+        <!-- RIGHT: CONTACT -->
+        <div class="footer-contact-section">
+
+            <h3 class="footer-heading">
+                Contact Us
+            </h3>
+
+            <div class="footer-contact">
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    freshfold@gmail.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Borongan, Eastern Samar
+                </p>
 
             </div>
 
         </div>
 
+    </div>
 
-        <!-- ================================================= -->
-        <!-- HOME -->
-        <!-- ================================================= -->
 
-        <section
-            id="home"
-            class="scroll-mt-6">
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
 
-            <div
-                class="welcome-banner p-5 sm:p-8 md:p-10 mb-8 overflow-hidden">
+        <p>
+            © 2026 Fresh Fold. All Rights Reserved.
+        </p>
 
-                <p class="text-sm text-white/70 mb-2">
-                    Fresh Fold Laundry Services
-                </p>
+    </div>
 
-                <h1
-                    id="welcomeHeading"
-                    class="text-2xl md:text-3xl font-bold mb-1 wrap-break-word">
-                    Welcome!
-                </h1>
+</footer>
 
-                <p
-                    id="welcomeRole"
-                    class="text-white/80">
-                </p>
 
-                <p class="text-white/80 mt-3 max-w-2xl">
-                   
-                </p>
-
-                <a
-                    href="#create-order"
-                    class="inline-flex max-w-full items-center justify-center gap-2 mt-6 px-5 py-3 rounded-xl bg-white text-slate-800 hover:bg-cyan-50 transition font-medium text-sm whitespace-nowrap">
-
-                    <i class="fa-solid fa-plus shrink-0"></i>
-
-                    <span>
-                        Create Laundry Order
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- SERVICES -->
-        <!-- ================================================= -->
-
-        <section
-            id="services"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-6">
-
-                <div class="flex items-center gap-4 mb-6">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
-
-                        <i class="fa-solid fa-shirt text-cyan-600 text-xl"></i>
-
-                    </div>
-
-                    <div class="min-w-0">
-
-                        <h2 class="text-lg font-semibold text-slate-800">
-                            Our Services
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1">
-                            Choose the laundry service that fits your needs.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-soap text-cyan-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Wash & Fold
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Professional washing, drying, and folding
-                            service for your everyday clothes.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-spray-can-sparkles text-blue-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Dry Cleaning
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Careful cleaning service for clothes that
-                            require special treatment.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-shirt text-purple-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Ironing Service
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Neat and professional ironing for clean,
-                            fresh-looking clothes.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-wind text-green-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Wash & Dry
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Complete washing and drying service for
-                            your laundry.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-truck text-orange-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Pickup Service
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Convenient laundry pickup service for
-                            eligible customers.
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-2xl p-5">
-
-                        <div
-                            class="w-11 h-11 rounded-xl bg-red-100 flex items-center justify-center mb-4">
-
-                            <i class="fa-solid fa-box text-red-600"></i>
-
-                        </div>
-
-                        <h3 class="font-semibold text-slate-800">
-                            Delivery Service
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-2">
-                            Have your clean laundry delivered
-                            conveniently.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- PRICES -->
-        <!-- ================================================= -->
-
-        <section
-            id="prices"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-6">
-
-                <div class="flex items-center gap-4 mb-6">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
-
-                        <i class="fa-solid fa-tags text-blue-600 text-xl"></i>
-
-                    </div>
-
-                    <div class="min-w-0">
-
-                        <h2 class="text-lg font-semibold text-slate-800">
-                            Laundry Prices
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1">
-                            Fresh Fold service rates.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="overflow-x-auto">
-
-                    <table class="w-full text-left">
-
-                        <thead>
-
-                            <tr class="text-sm text-slate-500 border-b border-slate-200">
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Service
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Unit
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Price
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody class="text-sm">
-
-                            <tr class="border-b border-slate-100">
-
-                                <td class="py-4 pr-4 font-medium text-slate-700">
-                                    Wash & Fold
-                                </td>
-
-                                <td class="py-4 pr-4 text-slate-500">
-                                    Per kg
-                                </td>
-
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
-                                    ₱50
-                                </td>
-
-                            </tr>
-
-                            <tr class="border-b border-slate-100">
-
-                                <td class="py-4 pr-4 font-medium text-slate-700">
-                                    Wash & Dry
-                                </td>
-
-                                <td class="py-4 pr-4 text-slate-500">
-                                    Per kg
-                                </td>
-
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
-                                    ₱60
-                                </td>
-
-                            </tr>
-
-                            <tr class="border-b border-slate-100">
-
-                                <td class="py-4 pr-4 font-medium text-slate-700">
-                                    Dry Cleaning
-                                </td>
-
-                                <td class="py-4 pr-4 text-slate-500">
-                                    Per item
-                                </td>
-
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
-                                    ₱150
-                                </td>
-
-                            </tr>
-
-                            <tr>
-
-                                <td class="py-4 pr-4 font-medium text-slate-700">
-                                    Ironing
-                                </td>
-
-                                <td class="py-4 pr-4 text-slate-500">
-                                    Per item
-                                </td>
-
-                                <td class="py-4 pr-4 font-semibold text-cyan-600">
-                                    ₱30
-                                </td>
-
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- CREATE LAUNDRY ORDER -->
-        <!-- ================================================= -->
-
-        <section
-            id="create-order"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-5 sm:p-6 overflow-hidden">
-
-                <div class="flex items-start sm:items-center gap-4 mb-6 min-w-0">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
-
-                        <i class="fa-solid fa-cart-plus text-cyan-600 text-xl"></i>
-
-                    </div>
-
-                    <div class="min-w-0 flex-1">
-
-                        <h2 class="text-lg font-semibold text-slate-800 wrap-break-word">
-                            Create Laundry Order
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1 wrap-break-word">
-                            Fill out the form below to create your laundry order.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <form
-                    id="laundryOrderForm"
-                    class="space-y-6 min-w-0">
-
-
-                    <!-- SERVICE -->
-
-                    <div class="min-w-0">
-
-                        <label
-                            for="serviceType"
-                            class="block text-sm font-medium text-slate-700 mb-2">
-
-                            Laundry Service
-
-                        </label>
-
-                        <select
-                            id="serviceType"
-                            required
-                            class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            <option value="">
-                                Select a service
-                            </option>
-
-                            <option value="Wash & Fold">
-                                Wash & Fold - ₱50/kg
-                            </option>
-
-                            <option value="Wash & Dry">
-                                Wash & Dry - ₱60/kg
-                            </option>
-
-                            <option value="Dry Cleaning">
-                                Dry Cleaning - ₱150/item
-                            </option>
-
-                            <option value="Ironing">
-                                Ironing - ₱30/item
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- ITEM DESCRIPTION -->
-
-                    <div class="min-w-0">
-
-                        <label
-                            for="itemDescription"
-                            class="block text-sm font-medium text-slate-700 mb-2">
-
-                            Item Description
-
-                        </label>
-
-                        <input
-                            type="text"
-                            id="itemDescription"
-                            required
-                            placeholder="Example: Clothes, shirts, pants..."
-                            class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                    </div>
-
-
-                    <!-- WEIGHT / QUANTITY -->
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 min-w-0">
-
-                        <div class="min-w-0">
-
-                            <label
-                                for="weightKg"
-                                id="weightLabel"
-                                class="block text-sm font-medium text-slate-700 mb-2">
-
-                                Weight / Quantity
-
-                            </label>
-
-                            <input
-                                type="number"
-                                id="weightKg"
-                                min="0.1"
-                                step="0.1"
-                                required
-                                placeholder="Enter quantity"
-                                class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                        </div>
-
-
-                        <div class="min-w-0">
-
-                            <label
-                                for="orderAmount"
-                                class="block text-sm font-medium text-slate-700 mb-2">
-
-                                Estimated Amount
-
-                            </label>
-
-                            <input
-                                type="text"
-                                id="orderAmount"
-                                readonly
-                                value=""
-                                placeholder="₱0.00"
-                                class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-semibold text-cyan-600">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PICKUP -->
-
-                    <div class="border-t border-slate-100 pt-6">
-
-                        <h3 class="font-semibold text-slate-800 mb-4 wrap-break-word">
-
-                            <i class="fa-solid fa-truck text-orange-500 mr-2"></i>
-
-                            Pick-up Schedule
-
-                        </h3>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-                            <div class="min-w-0">
-
-                                <label
-                                    for="pickupDate"
-                                    class="block text-sm font-medium text-slate-700 mb-2">
-
-                                    Pick-up Date
-
-                                </label>
-
-                                <input
-                                    type="date"
-                                    id="pickupDate"
-                                    required
-                                    class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            </div>
-
-                            <div class="min-w-0">
-
-                                <label
-                                    for="pickupTime"
-                                    class="block text-sm font-medium text-slate-700 mb-2">
-
-                                    Pick-up Time
-
-                                </label>
-
-                                <input
-                                    type="time"
-                                    id="pickupTime"
-                                    required
-                                    class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- DELIVERY -->
-
-                    <div>
-
-                        <h3 class="font-semibold text-slate-800 mb-4 wrap-break-word">
-
-                            <i class="fa-solid fa-box text-blue-500 mr-2"></i>
-
-                            Delivery Schedule
-
-                        </h3>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-                            <div class="min-w-0">
-
-                                <label
-                                    for="deliveryDate"
-                                    class="block text-sm font-medium text-slate-700 mb-2">
-
-                                    Delivery Date
-
-                                </label>
-
-                                <input
-                                    type="date"
-                                    id="deliveryDate"
-                                    required
-                                    class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            </div>
-
-                            <div class="min-w-0">
-
-                                <label
-                                    for="deliveryTime"
-                                    class="block text-sm font-medium text-slate-700 mb-2">
-
-                                    Delivery Time
-
-                                </label>
-
-                                <input
-                                    type="time"
-                                    id="deliveryTime"
-                                    required
-                                    class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PAYMENT -->
-
-                    <div class="min-w-0">
-
-                        <label
-                            for="paymentMethod"
-                            class="block text-sm font-medium text-slate-700 mb-2">
-
-                            Payment Method
-
-                        </label>
-
-                        <select
-                            id="paymentMethod"
-                            required
-                            class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-
-                            <option value="">
-                                Select payment method
-                            </option>
-
-                            <option value="Cash">
-                                Cash
-                            </option>
-
-                            <option value="GCash">
-                                GCash
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- NOTES -->
-
-                    <div class="min-w-0">
-
-                        <label
-                            for="orderNotes"
-                            class="block text-sm font-medium text-slate-700 mb-2">
-
-                            Notes
-
-                        </label>
-
-                        <textarea
-                            id="orderNotes"
-                            rows="4"
-                            placeholder="Additional instructions..."
-                            class="w-full min-w-0 max-w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
-
-                    </div>
-
-
-                    <!-- MESSAGE -->
-
-                    <div
-                        id="orderFormMessage"
-                        class="hidden rounded-xl px-4 py-3 text-sm wrap-break-word">
-                    </div>
-
-
-                    <!-- SUBMIT -->
-
-                    <div class="w-full min-w-0">
-
-                        <button
-                            type="submit"
-                            id="createOrderBtn"
-                            class="w-full sm:w-auto max-w-full min-w-0 inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 transition font-medium text-sm">
-
-                            <i class="fa-solid fa-plus shrink-0"></i>
-
-                            <span class="whitespace-nowrap">
-                                Create Laundry Order
-                            </span>
-
-                        </button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- LAUNDRY ORDERS / TRACKING -->
-        <!-- ================================================= -->
-
-        <section
-            id="orders"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-5 sm:p-6">
-
-                <div
-                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-
-                    <div class="min-w-0">
-
-                        <h2 class="text-lg font-semibold text-slate-800">
-                            My Laundry Orders
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1">
-                            Track your laundry orders and their current status.
-                        </p>
-
-                    </div>
-
-                    <span
-                        id="ordersCount"
-                        class="text-sm text-slate-500 shrink-0">
-                    </span>
-
-                </div>
-
-                <p
-                    id="ordersMessage"
-                    class="text-slate-500 text-sm mb-4">
-                </p>
-
-                <div class="overflow-x-auto">
-
-                    <table
-                        class="w-full text-left table-hover">
-
-                        <thead>
-
-                            <tr
-                                class="text-slate-500 text-sm border-b border-slate-200">
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Order #
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Service
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Item
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Amount
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Pick-up
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Delivery
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Payment
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Status
-                                </th>
-
-                                <th class="py-3 pr-4 whitespace-nowrap">
-                                    Created
-                                </th>
-
-                            </tr>
-
-                        </thead>
-
-                        <tbody id="ordersTableBody">
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- ABOUT -->
-        <!-- ================================================= -->
-
-        <section
-            id="about"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-6">
-
-                <div class="flex items-center gap-4 mb-5">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center shrink-0">
-
-                        <i class="fa-solid fa-circle-info text-purple-600 text-xl"></i>
-
-                    </div>
-
-                    <div class="min-w-0">
-
-                        <h2 class="text-lg font-semibold text-slate-800">
-                            About Fresh Fold
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1">
-                            Learn more about our laundry management service.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <p class="text-sm text-slate-600 leading-7 wrap-break-word">
-
-                    Fresh Fold is a laundry service management system
-                    designed to make laundry services more convenient,
-                    organized, and accessible. Customers can view
-                    available services, check prices, manage their
-                    account, create laundry orders, and monitor their
-                    laundry orders.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- CONTACT -->
-        <!-- ================================================= -->
-
-        <section
-            id="contact"
-            class="mb-8 scroll-mt-6">
-
-            <div class="dashboard-card p-6">
-
-                <div class="flex items-center gap-4 mb-6">
-
-                    <div
-                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center shrink-0">
-
-                        <i class="fa-solid fa-envelope text-cyan-600 text-xl"></i>
-
-                    </div>
-
-                    <div class="min-w-0">
-
-                        <h2 class="text-lg font-semibold text-slate-800">
-                            Contact Us
-                        </h2>
-
-                        <p class="text-sm text-slate-500 mt-1">
-                            Get in touch with the Fresh Fold administration.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-
-                    <div class="bg-slate-50 rounded-xl p-5 min-w-0">
-
-                        <i class="fa-solid fa-envelope text-cyan-600 text-xl"></i>
-
-                        <h3 class="font-semibold text-slate-800 mt-3">
-                            Email
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-1 break-all">
-                            freshfold@gmail.com
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-xl p-5 min-w-0">
-
-                        <i class="fa-solid fa-phone text-blue-600 text-xl"></i>
-
-                        <h3 class="font-semibold text-slate-800 mt-3">
-                            Phone
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-1 wrap-break-word">
-                            +63 915 021 5467
-                        </p>
-
-                    </div>
-
-
-                    <div class="bg-slate-50 rounded-xl p-5 min-w-0">
-
-                        <i class="fa-solid fa-location-dot text-red-500 text-xl"></i>
-
-                        <h3 class="font-semibold text-slate-800 mt-3">
-                            Location
-                        </h3>
-
-                        <p class="text-sm text-slate-500 mt-1 wrap-break-word">
-                            Borongan, Eastern Samar
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================================= -->
-        <!-- FOOTER -->
-        <!-- ================================================= -->
-
-        <footer>
-
-            <div class="bg-slate-900 text-white px-6 md:px-8 py-6">
-
-                <div
-                    class="flex flex-col md:flex-row items-center justify-between gap-5">
-
-                    <div class="flex items-center gap-3 min-w-0">
-
-                        <img
-                            src="images/ph.webp"
-                            alt="Republic of the Philippines Seal"
-                            class="w-12 h-12 object-contain shrink-0">
-
-                        <div class="min-w-0">
-
-                            <p class="text-xs text-slate-400">
-                                Government Directory
-                            </p>
-
-                            <p class="text-sm font-semibold wrap-break-word">
-                                Government information and directory services.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="text-center md:text-right">
-
-                        <p class="text-xs text-slate-400">
-                            © 2026 Fresh Fold Laundry Management System
-                        </p>
-
-                        <p class="text-xs text-slate-500 mt-1">
-                            All content is public domain unless otherwise stated.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </footer>
-
-    </main>
-
-
-    <!-- ===================================================== -->
-    <!-- SUPABASE -->
-    <!-- ===================================================== -->
+    <!-- =========================================================
+         SUPABASE
+    ========================================================== -->
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -1557,95 +2143,246 @@
     <script src="js/dashboard.js"></script>
 
 
-    <!-- ===================================================== -->
-    <!-- PROFILE DROPDOWN + NAVIGATION -->
-    <!-- ===================================================== -->
+    <!-- =========================================================
+         DASHBOARD UI JAVASCRIPT
+    ========================================================== -->
 
     <script>
 
-        const profileButton =
-            document.getElementById("profileButton");
-
-        const profileDropdown =
-            document.getElementById("profileDropdown");
-
-        const profileArrow =
-            document.getElementById("profileArrow");
+        document.addEventListener("DOMContentLoaded", function () {
 
 
-        if (profileButton && profileDropdown) {
+            /* =================================================
+               MOBILE MENU
+            ================================================= */
 
-            profileButton.addEventListener(
-                "click",
-                function (event) {
+            const mobileMenuButton =
+                document.getElementById("mobileMenuButton");
 
-                    event.stopPropagation();
-
-                    profileDropdown.classList.toggle("hidden");
-
-                    if (profileArrow) {
-
-                        profileArrow.classList.toggle("rotate-180");
-
-                    }
-
-                }
-            );
+            const mobileMenu =
+                document.getElementById("mobileMenu");
 
 
-            document.addEventListener(
-                "click",
-                function (event) {
+            if (mobileMenuButton && mobileMenu) {
 
-                    if (
-                        !profileButton.contains(event.target) &&
-                        !profileDropdown.contains(event.target)
-                    ) {
+                mobileMenuButton.addEventListener(
+                    "click",
+                    function () {
 
-                        profileDropdown.classList.add("hidden");
+                        mobileMenu.classList.toggle("show");
 
-                        if (profileArrow) {
+                        const icon =
+                            mobileMenuButton.querySelector("i");
 
-                            profileArrow.classList.remove("rotate-180");
+
+                        if (
+                            mobileMenu.classList.contains("show")
+                        ) {
+
+                            icon.classList.remove("fa-bars");
+                            icon.classList.add("fa-xmark");
+
+                        } else {
+
+                            icon.classList.remove("fa-xmark");
+                            icon.classList.add("fa-bars");
 
                         }
 
                     }
+                );
 
-                }
-            );
-
-        }
+            }
 
 
-        const topNavLinks =
-            document.querySelectorAll(".top-nav-link");
+            /* =================================================
+               DESKTOP PROFILE DROPDOWN
+            ================================================= */
+
+            const profileButton =
+                document.getElementById("profileButton");
+
+            const profileDropdown =
+                document.getElementById("profileDropdown");
+
+            const profileArrow =
+                document.getElementById("profileArrow");
 
 
-        topNavLinks.forEach(function (link) {
+            if (
+                profileButton &&
+                profileDropdown
+            ) {
 
-            link.addEventListener(
-                "click",
-                function () {
+                profileButton.addEventListener(
+                    "click",
+                    function (event) {
 
-                    topNavLinks.forEach(function (item) {
+                        event.stopPropagation();
 
-                        item.classList.remove(
-                            "text-cyan-300"
+                        profileDropdown.classList.toggle("show");
+
+
+                        if (profileArrow) {
+
+                            profileArrow.style.transform =
+                                profileDropdown.classList.contains("show")
+                                    ? "rotate(180deg)"
+                                    : "rotate(0deg)";
+
+                        }
+
+                    }
+                );
+
+
+                document.addEventListener(
+                    "click",
+                    function (event) {
+
+                        if (
+                            !profileButton.contains(event.target) &&
+                            !profileDropdown.contains(event.target)
+                        ) {
+
+                            profileDropdown.classList.remove("show");
+
+                            if (profileArrow) {
+
+                                profileArrow.style.transform =
+                                    "rotate(0deg)";
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            /* =================================================
+               MOBILE PROFILE
+            ================================================= */
+
+            const mobileProfileButton =
+                document.getElementById(
+                    "mobileProfileButton"
+                );
+
+            const mobileProfileDropdown =
+                document.getElementById(
+                    "mobileProfileDropdown"
+                );
+
+
+            if (
+                mobileProfileButton &&
+                mobileProfileDropdown
+            ) {
+
+                mobileProfileButton.addEventListener(
+                    "click",
+                    function () {
+
+                        mobileProfileDropdown.classList.toggle(
+                            "hidden"
                         );
 
-                    });
+                    }
+                );
 
-                    this.classList.add(
-                        "text-cyan-300"
-                    );
+            }
 
-                }
-            );
+
+            /* =================================================
+               MOBILE LOGOUT
+               USE THE EXISTING DESKTOP LOGOUT FUNCTION
+            ================================================= */
+
+            const mobileLogoutBtn =
+                document.getElementById(
+                    "mobileLogoutBtn"
+                );
+
+            const logoutBtn =
+                document.getElementById(
+                    "logoutBtn"
+                );
+
+
+            if (
+                mobileLogoutBtn &&
+                logoutBtn
+            ) {
+
+                mobileLogoutBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        logoutBtn.click();
+
+                    }
+                );
+
+            }
+
+
+            /* =================================================
+               CLOSE MOBILE MENU AFTER NAVIGATION
+            ================================================= */
+
+            const mobileLinks =
+                mobileMenu
+                    ? mobileMenu.querySelectorAll("a")
+                    : [];
+
+
+            mobileLinks.forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        if (mobileMenu) {
+
+                            mobileMenu.classList.remove(
+                                "show"
+                            );
+
+                        }
+
+
+                        if (mobileMenuButton) {
+
+                            const icon =
+                                mobileMenuButton.querySelector("i");
+
+
+                            if (icon) {
+
+                                icon.classList.remove(
+                                    "fa-xmark"
+                                );
+
+                                icon.classList.add(
+                                    "fa-bars"
+                                );
+
+                            }
+
+                        }
+
+                    }
+                );
+
+            });
 
         });
 
     </script>
+
 
 </body>
 

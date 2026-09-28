@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fresh Fold - Services</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="src/output.css">
+
+    <!-- Poppins Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+
+        /* =====================================================
+           HEADER NAVIGATION
+           ===================================================== */
+
+        .top-nav-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 2px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.75);
+            transition: all 0.2s ease;
+        }
+
+        .top-nav-link:hover {
+            color: #67e8f9;
+        }
+
+        .top-nav-link.active {
+            color: #67e8f9;
+        }
+
+        .top-nav-link.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: #22d3ee;
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 1023px) {
+
+            #desktopNavigation {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="font-[Poppins] dashboard-bg min-h-screen overflow-x-hidden">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="relative z-30 w-full bg-slate-900/95 text-white shadow-lg">
+
+        <div class="w-full px-3 sm:px-4 md:px-8 py-3">
+
+            <div class="flex items-center justify-between gap-2 sm:gap-4 min-w-0">
+
+
+                <!-- =================================================
+                     LEFT - REPUBLIC SEAL
+                     ================================================= -->
+
+                <div class="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
+
+                    <div
+                        class="rounded-full bg-white p-1 shadow-md shrink-0"
+                        style="width: 60px; height: 60px;">
+
+                        <img
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-full h-full rounded-full object-contain">
+
+                    </div>
+
+
+                    <div class="hidden sm:block min-w-0">
+
+                        <p class="text-xs text-white/70">
+                            Government of the Philippines
+                        </p>
+
+                        <p class="font-semibold text-sm md:text-base truncate">
+                            Republic of the Philippines
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DESKTOP NAVIGATION
+                     ================================================= -->
+
+                <nav
+                    id="desktopNavigation"
+                    class="hidden lg:flex items-center justify-center gap-4 xl:gap-7 text-sm flex-1 min-w-0">
+
+                    <a
+                        href="dashboard.html"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-house text-xs"></i>
+
+                        <span>Home</span>
+
+                    </a>
+
+
+                    <a
+                        href="services.html"
+                        class="top-nav-link active whitespace-nowrap">
+
+                        <i class="fa-solid fa-shirt text-xs"></i>
+
+                        <span>Services</span>
+
+                    </a>
+
+
+                    <a
+                        href="prices.html"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-tags text-xs"></i>
+
+                        <span>Prices</span>
+
+                    </a>
+
+
+                    <a
+                        href="orders.html"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-receipt text-xs"></i>
+
+                        <span>Orders</span>
+
+                    </a>
+
+
+                    <a
+                        href="dashboard.html#about"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-circle-info text-xs"></i>
+
+                        <span>About</span>
+
+                    </a>
+
+
+                    <a
+                        href="dashboard.html#contact"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-envelope text-xs"></i>
+
+                        <span>Contact</span>
+
+                    </a>
+
+                </nav>
+
+
+                <!-- =================================================
+                     RIGHT - TRANSPARENCY SEAL ONLY
+                     ================================================= -->
+
+                <div class="flex items-center shrink-0">
+
+                    <div
+                        class="rounded-full bg-white p-1 shadow-md shrink-0"
+                        style="width: 60px; height: 60px;">
+
+                        <img
+                            src="images/ph1.png"
+                            alt="Transparency Seal"
+                            class="w-full h-full rounded-full object-contain">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main
+        class="w-full max-w-7xl mx-auto px-3 sm:px-5 md:px-8 lg:px-10 py-5 md:py-8 lg:py-10">
+
+
+        <!-- =================================================
+             MOBILE NAVIGATION
+             ================================================= -->
+
+        <div class="lg:hidden mb-6">
+
+            <div class="dashboard-card p-4">
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+
+
+                    <a
+                        href="dashboard.html"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-house shrink-0"></i>
+
+                        <span class="truncate">
+                            Home
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="services.html"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm font-medium">
+
+                        <i class="fa-solid fa-shirt shrink-0"></i>
+
+                        <span class="truncate">
+                            Services
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="prices.html"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-tags shrink-0"></i>
+
+                        <span class="truncate">
+                            Prices
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="orders.html"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-receipt shrink-0"></i>
+
+                        <span class="truncate">
+                            Orders
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="dashboard.html#about"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-circle-info shrink-0"></i>
+
+                        <span class="truncate">
+                            About
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="dashboard.html#contact"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-envelope shrink-0"></i>
+
+                        <span class="truncate">
+                            Contact
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="mb-8">
+
+            <div class="welcome-banner p-6 sm:p-8 md:p-10 overflow-hidden">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/15 flex items-center justify-center shrink-0">
+
+                        <i class="fa-solid fa-shirt text-white text-2xl sm:text-3xl"></i>
+
+                    </div>
+
+
+                    <div class="min-w-0">
+
+                        <p class="text-sm text-white/70 mb-1">
+                            Fresh Fold Laundry Services
+                        </p>
+
+                        <h1 class="text-2xl sm:text-3xl font-bold">
+                            Our Services
+                        </h1>
+
+                        <p class="text-white/80 text-sm sm:text-base mt-2">
+                            Choose the laundry service that fits your needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SERVICES
+             ================================================= -->
+
+        <section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+                <!-- WASH & FOLD -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-soap text-cyan-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Wash & Fold
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Professional washing, drying, and folding
+                        service for your everyday clothes.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-cyan-600">
+                            Laundry Service
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DRY CLEANING -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-spray-can-sparkles text-blue-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Dry Cleaning
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Careful cleaning service for clothes that
+                        require special treatment.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-blue-600">
+                            Special Care
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IRONING -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-shirt text-purple-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Ironing Service
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Neat and professional ironing for clean,
+                        fresh-looking clothes.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-purple-600">
+                            Garment Care
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WASH & DRY -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-wind text-green-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Wash & Dry
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Complete washing and drying service for
+                        your laundry.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-green-600">
+                            Complete Service
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-truck text-orange-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Pickup Service
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Convenient laundry pickup service for
+                        eligible customers.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-orange-600">
+                            Convenient Pickup
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="dashboard-card p-6">
+
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-5">
+
+                        <i class="fa-solid fa-box text-red-600 text-xl"></i>
+
+                    </div>
+
+                    <h2 class="text-lg font-semibold text-slate-800">
+                        Delivery Service
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-2 leading-6">
+                        Have your clean laundry delivered
+                        conveniently.
+                    </p>
+
+                    <div class="mt-5 pt-4 border-t border-slate-100">
+
+                        <span class="text-xs font-medium text-red-600">
+                            Home Delivery
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="mt-8">
+
+            <div class="bg-slate-900 text-white px-6 md:px-8 py-6">
+
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-5">
+
+
+                    <!-- FOOTER LOGO -->
+
+                    <div class="flex items-center gap-3 min-w-0">
+
+                        <img
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-12 h-12 object-contain shrink-0">
+
+
+                        <div class="min-w-0">
+
+                            <p class="text-xs text-slate-400">
+                                Government Directory
+                            </p>
+
+
+                            <p class="text-sm font-semibold wrap-break-word">
+                                Government information and directory services.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COPYRIGHT -->
+
+                    <div class="text-center md:text-right">
+
+                        <p class="text-xs text-slate-400">
+                            © 2026 Fresh Fold Laundry Management System
+                        </p>
+
+                        <p class="text-xs text-slate-500 mt-1">
+                            All content is public domain unless otherwise stated.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =====================================================
+         SUPABASE
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
