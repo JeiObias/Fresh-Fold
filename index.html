@@ -28,6 +28,43 @@
         section {
             scroll-margin-top: 90px;
         }
+
+        /* DASHBOARD-STYLE NAVIGATION */
+        .top-nav-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 2px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.75);
+            transition: all 0.2s ease;
+        }
+
+        .top-nav-link:hover {
+            color: #67e8f9;
+        }
+
+        .top-nav-link.active {
+            color: #67e8f9;
+        }
+
+        .top-nav-link.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: #22d3ee;
+        }
+
+        @media (max-width: 1023px) {
+            #desktopNavigation {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -37,93 +74,154 @@
          NAVIGATION BAR
     ========================== -->
     <nav
-        class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        class="fixed top-0 left-0 w-full z-50 bg-slate-900/95 text-white shadow-lg">
 
-        <div class="w-full px-4 md:px-6 lg:px-8">
+        <div class="w-full px-3 sm:px-4 md:px-8 py-3">
 
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between gap-2 sm:gap-4 min-w-0">
 
                 <!-- LEFT SIDE -->
-                <div class="flex items-center gap-2 shrink-0">
+                <div class="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
 
-                    <!-- Republic Seal -->
-                    <img
-                        src="images/ph.webp"
-                        alt="Republic of the Philippines"
-                        class="w-11 h-11 md:w-12 md:h-12 object-contain">
-
-                    <!-- Fresh Fold Logo -->
-                    <a href="#home" class="flex items-center gap-2">
+                    <!-- REPUBLIC SEAL -->
+                    <div
+                        class="rounded-full bg-white p-1 shadow-md shrink-0"
+                        style="width:60px;height:60px;">
 
                         <img
-                            src="images/laundry-logo.png"
-                            alt="Fresh Fold Logo"
-                            class="w-11 h-11 object-cover rounded-full">
+                            src="images/ph.webp"
+                            alt="Republic of the Philippines Seal"
+                            class="w-full h-full rounded-full object-contain">
 
-                        <div class="hidden sm:block">
+                    </div>
 
-                            <h1 class="text-lg md:text-xl font-bold text-cyan-600">
-                                Fresh Fold
-                            </h1>
+                    <!-- GOVERNMENT TEXT -->
+                    <div class="hidden sm:block min-w-0">
 
-                        </div>
+                        <p class="text-xs text-white/70">
+                            Government of the Philippines
+                        </p>
 
-                    </a>
+                        <p class="font-semibold text-sm md:text-base truncate">
+                            Republic of the Philippines
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <!-- RIGHT SIDE -->
-                <div class="flex items-center ml-auto">
+                <!-- DESKTOP NAVIGATION -->
+                <nav
+                    id="desktopNavigation"
+                    class="hidden lg:flex items-center justify-center gap-4 xl:gap-7 text-sm flex-1 min-w-0">
 
-                    <!-- DESKTOP MENU -->
-                    <div
-                        class="hidden lg:flex items-center gap-7 xl:gap-9 text-sm font-medium mr-8">
+                    <!-- HOME -->
+                    <a
+                        href="#home"
+                        class="top-nav-link active whitespace-nowrap">
 
-                        <a
-                            href="#home"
-                            class="text-slate-700 hover:text-cyan-600 transition">
+                        <i class="fa-solid fa-house text-xs"></i>
+
+                        <span>
                             Home
-                        </a>
+                        </span>
 
-                        <a
-                            href="#services"
-                            class="text-slate-700 hover:text-cyan-600 transition">
+                    </a>
+
+
+                    <!-- SERVICES -->
+                    <a
+                        href="#services"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-shirt text-xs"></i>
+
+                        <span>
                             Services
-                        </a>
+                        </span>
 
-                        <a
-                            href="#about"
-                            class="text-slate-700 hover:text-cyan-600 transition">
-                            About Us
-                        </a>
+                    </a>
 
-                        <a
-                            href="#contact"
-                            class="text-slate-700 hover:text-cyan-600 transition">
-                            Contact Us
-                        </a>
 
-                        <a
-                            href="#login"
-                            class="px-5 py-2.5 rounded-full bg-cyan-600 text-white hover:bg-cyan-700 transition shadow-md">
-                            Login
-                        </a>
+                    <!-- PRICES -->
+                    <a
+                        href="prices.html"
+                        class="top-nav-link whitespace-nowrap">
 
-                    </div>
+                        <i class="fa-solid fa-tags text-xs"></i>
 
+                        <span>
+                            Prices
+                        </span>
+
+                    </a>
+
+
+                    <!-- ORDERS -->
+                    <a
+                        href="orders.html"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-receipt text-xs"></i>
+
+                        <span>
+                            Orders
+                        </span>
+
+                    </a>
+
+
+                    <!-- ABOUT -->
+                    <a
+                        href="#about"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-circle-info text-xs"></i>
+
+                        <span>
+                            About
+                        </span>
+
+                    </a>
+
+
+                    <!-- CONTACT -->
+                    <a
+                        href="#contact"
+                        class="top-nav-link whitespace-nowrap">
+
+                        <i class="fa-solid fa-envelope text-xs"></i>
+
+                        <span>
+                            Contact
+                        </span>
+
+                    </a>
+
+                </nav>
+
+
+                <!-- RIGHT SIDE -->
+                <div class="flex items-center shrink-0">
 
                     <!-- TRANSPARENCY SEAL -->
-                    <img
-                        src="images/ph1.png"
-                        alt="Transparency Seal"
-                        class="w-11 h-11 md:w-12 md:h-12 object-contain">
+                    <div
+                        class="rounded-full bg-white p-1 shadow-md shrink-0"
+                        style="width:60px;height:60px;">
+
+                        <img
+                            src="images/ph1.png"
+                            alt="Transparency Seal"
+                            class="w-full h-full rounded-full object-contain">
+
+                    </div>
 
 
                     <!-- MOBILE MENU BUTTON -->
                     <button
                         id="menuBtn"
-                        class="lg:hidden ml-3 text-slate-700 text-2xl">
+                        class="lg:hidden ml-3 text-white text-2xl">
 
                         <i class="fa-solid fa-bars"></i>
 
@@ -141,37 +239,94 @@
             id="mobileMenu"
             class="hidden lg:hidden bg-white border-t border-slate-200">
 
-            <div class="px-6 py-5 space-y-4">
+            <div class="p-4">
 
-                <a
-                    href="#home"
-                    class="mobile-link block text-slate-700 hover:text-cyan-600">
-                    Home
-                </a>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
 
-                <a
-                    href="#services"
-                    class="mobile-link block text-slate-700 hover:text-cyan-600">
-                    Services
-                </a>
+                    <!-- HOME -->
+                    <a
+                        href="#home"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-50 text-cyan-700 text-sm font-medium">
 
-                <a
-                    href="#about"
-                    class="mobile-link block text-slate-700 hover:text-cyan-600">
-                    About Us
-                </a>
+                        <i class="fa-solid fa-house"></i>
 
-                <a
-                    href="#contact"
-                    class="mobile-link block text-slate-700 hover:text-cyan-600">
-                    Contact Us
-                </a>
+                        <span>
+                            Home
+                        </span>
 
-                <a
-                    href="#login"
-                    class="mobile-link block text-cyan-600 font-semibold">
-                    Login
-                </a>
+                    </a>
+
+
+                    <!-- SERVICES -->
+                    <a
+                        href="#services"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-shirt"></i>
+
+                        <span>
+                            Services
+                        </span>
+
+                    </a>
+
+
+                    <!-- PRICES -->
+                    <a
+                        href="prices.html"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-tags"></i>
+
+                        <span>
+                            Prices
+                        </span>
+
+                    </a>
+
+
+                    <!-- ORDERS -->
+                    <a
+                        href="orders.html"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <span>
+                            Orders
+                        </span>
+
+                    </a>
+
+
+                    <!-- ABOUT -->
+                    <a
+                        href="#about"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            About
+                        </span>
+
+                    </a>
+
+
+                    <!-- CONTACT -->
+                    <a
+                        href="#contact"
+                        class="mobile-link flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-600 text-sm transition">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span>
+                            Contact
+                        </span>
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -185,10 +340,11 @@
     ========================== -->
     <section class="pt-24 pb-6 bg-slate-50">
 
-        <!-- SIDE MARGIN -->
         <div class="mx-6 md:mx-12 lg:mx-20 xl:mx-28">
 
-            <div id="bannerSlider" class="relative overflow-hidden">
+            <div
+                id="bannerSlider"
+                class="relative overflow-hidden">
 
                 <!-- SLIDER TRACK -->
                 <div
@@ -196,19 +352,18 @@
                     class="flex gap-6 transition-transform duration-700 ease-in-out">
 
 
-                    <!-- =========================
-                         BANNER 1
-                    ========================== -->
-                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
+                    <!-- BANNER 1 -->
+                    <div
+                        class="banner-slide min-w-full shrink-0 flex justify-center">
 
-                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
 
                             <img
                                 src="images/banner1.png"
                                 alt="Fresh Fold Banner 1"
                                 class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
 
-                            <!-- DARK WHEN NOT HOVERED -->
                             <div
                                 class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
                             </div>
@@ -218,19 +373,18 @@
                     </div>
 
 
-                    <!-- =========================
-                         BANNER 2
-                    ========================== -->
-                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
+                    <!-- BANNER 2 -->
+                    <div
+                        class="banner-slide min-w-full shrink-0 flex justify-center">
 
-                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
 
                             <img
                                 src="images/banner2.png"
                                 alt="Fresh Fold Banner 2"
                                 class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
 
-                            <!-- DARK WHEN NOT HOVERED -->
                             <div
                                 class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
                             </div>
@@ -240,19 +394,18 @@
                     </div>
 
 
-                    <!-- =========================
-                         CLONE BANNER 1
-                    ========================== -->
-                    <div class="banner-slide min-w-full shrink-0 flex justify-center">
+                    <!-- CLONE BANNER 1 -->
+                    <div
+                        class="banner-slide min-w-full shrink-0 flex justify-center">
 
-                        <div class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
+                        <div
+                            class="group relative w-fit rounded-2xl overflow-hidden shadow-xl">
 
                             <img
                                 src="images/banner1.png"
                                 alt="Fresh Fold Banner 1"
                                 class="h-125 sm:h-150 md:h-175 lg:h-200 w-auto block">
 
-                            <!-- DARK WHEN NOT HOVERED -->
                             <div
                                 class="absolute inset-0 bg-black/35 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none">
                             </div>
@@ -264,10 +417,9 @@
                 </div>
 
 
-                <!-- =========================
-                     DOTS
-                ========================== -->
-                <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                <!-- DOTS -->
+                <div
+                    class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
 
                     <button
                         type="button"
@@ -306,10 +458,6 @@
         let sliderInterval;
 
 
-        /* =========================
-           UPDATE DOTS
-        ========================== */
-
         function updateDots() {
 
             if (currentBanner === 0) {
@@ -333,10 +481,6 @@
         }
 
 
-        /* =========================
-           MOVE BANNER
-        ========================== */
-
         function moveBanner() {
 
             currentBanner++;
@@ -349,8 +493,6 @@
 
             updateDots();
 
-
-            /* LOOP */
 
             if (currentBanner === 2) {
 
@@ -372,10 +514,6 @@
         }
 
 
-        /* =========================
-           START AUTO SLIDER
-        ========================== */
-
         function startSlider() {
 
             sliderInterval = setInterval(moveBanner, 4000);
@@ -384,10 +522,6 @@
 
         startSlider();
 
-
-        /* =========================
-           DOT 1
-        ========================== */
 
         dot1.addEventListener("click", () => {
 
@@ -407,10 +541,6 @@
 
         });
 
-
-        /* =========================
-           DOT 2
-        ========================== */
 
         dot2.addEventListener("click", () => {
 
@@ -516,19 +646,24 @@
         id="services"
         class="min-h-screen bg-slate-50 flex items-center">
 
-        <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+        <div
+            class="max-w-6xl mx-auto px-6 py-20 w-full">
 
             <!-- TITLE -->
             <div class="text-center mb-14">
 
                 <p
                     class="text-cyan-600 font-semibold uppercase tracking-widest text-sm mb-2">
+
                     What We Offer
+
                 </p>
 
                 <h2
                     class="text-3xl md:text-4xl font-bold text-slate-800">
+
                     Our Laundry Services
+
                 </h2>
 
                 <p
@@ -544,7 +679,7 @@
 
             <!-- SERVICE CARDS -->
             <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
 
                 <!-- WASH & FOLD -->
@@ -560,41 +695,23 @@
 
                     <h3
                         class="text-xl font-bold text-slate-800 mb-3">
+
                         Wash & Fold
+
                     </h3>
 
                     <p
                         class="text-slate-500 leading-relaxed">
 
-                        Your clothes are carefully washed, dried,
-                        folded, and prepared for pickup.
+                        Professional washing, drying, and folding
+                        service for your everyday clothes.
 
                     </p>
 
-                </div>
-
-
-                <!-- WASH & DRY -->
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
-
-                    <div
-                        class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6">
-
-                        <i class="fa-solid fa-wind"></i>
-
-                    </div>
-
-                    <h3
-                        class="text-xl font-bold text-slate-800 mb-3">
-                        Wash & Dry
-                    </h3>
-
                     <p
-                        class="text-slate-500 leading-relaxed">
+                        class="text-cyan-600 font-semibold text-sm mt-5">
 
-                        A complete washing and drying service
-                        for clean and fresh clothes.
+                        Laundry Service
 
                     </p>
 
@@ -606,22 +723,175 @@
                     class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
 
                     <div
-                        class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+                        class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6">
 
-                        <i class="fa-solid fa-temperature-low"></i>
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
 
                     </div>
 
                     <h3
                         class="text-xl font-bold text-slate-800 mb-3">
+
                         Dry Cleaning
+
                     </h3>
 
                     <p
                         class="text-slate-500 leading-relaxed">
 
-                        Professional care for clothes that require
-                        special cleaning and handling.
+                        Careful cleaning service for clothes that
+                        require special treatment.
+
+                    </p>
+
+                    <p
+                        class="text-blue-600 font-semibold text-sm mt-5">
+
+                        Special Care
+
+                    </p>
+
+                </div>
+
+
+                <!-- IRONING SERVICE -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-shirt"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+
+                        Ironing Service
+
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+
+                        Neat and professional ironing for clean,
+                        fresh-looking clothes.
+
+                    </p>
+
+                    <p
+                        class="text-indigo-600 font-semibold text-sm mt-5">
+
+                        Garment Care
+
+                    </p>
+
+                </div>
+
+
+                <!-- WASH & DRY -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-wind"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+
+                        Wash & Dry
+
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+
+                        Complete washing and drying service for
+                        your laundry.
+
+                    </p>
+
+                    <p
+                        class="text-cyan-600 font-semibold text-sm mt-5">
+
+                        Complete Service
+
+                    </p>
+
+                </div>
+
+
+                <!-- PICKUP SERVICE -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-truck-fast"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+
+                        Pickup Service
+
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+
+                        Convenient laundry pickup service for
+                        eligible customers.
+
+                    </p>
+
+                    <p
+                        class="text-blue-600 font-semibold text-sm mt-5">
+
+                        Convenient Pickup
+
+                    </p>
+
+                </div>
+
+
+                <!-- DELIVERY SERVICE -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+
+                        <i class="fa-solid fa-house-circle-check"></i>
+
+                    </div>
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mb-3">
+
+                        Delivery Service
+
+                    </h3>
+
+                    <p
+                        class="text-slate-500 leading-relaxed">
+
+                        Have your clean laundry delivered
+                        conveniently.
+
+                    </p>
+
+                    <p
+                        class="text-indigo-600 font-semibold text-sm mt-5">
+
+                        Home Delivery
 
                     </p>
 
@@ -714,12 +984,16 @@
 
                                 <h3
                                     class="font-semibold text-slate-800">
+
                                     Convenient
+
                                 </h3>
 
                                 <p
                                     class="text-sm text-slate-500 mt-1">
+
                                     Easy and organized laundry management.
+
                                 </p>
 
                             </div>
@@ -741,12 +1015,16 @@
 
                                 <h3
                                     class="font-semibold text-slate-800">
+
                                     Organized
+
                                 </h3>
 
                                 <p
                                     class="text-sm text-slate-500 mt-1">
+
                                     Keep laundry information in one place.
+
                                 </p>
 
                             </div>
@@ -819,12 +1097,16 @@
 
                     <h3
                         class="font-bold text-slate-800 mb-2">
+
                         Email
+
                     </h3>
 
                     <p
                         class="text-sm text-slate-500">
+
                         freshfold@gmail.com
+
                     </p>
 
                 </div>
@@ -843,12 +1125,16 @@
 
                     <h3
                         class="font-bold text-slate-800 mb-2">
+
                         Location
+
                     </h3>
 
                     <p
                         class="text-sm text-slate-500">
+
                         Borongan, Eastern Samar
+
                     </p>
 
                 </div>
@@ -867,12 +1153,16 @@
 
                     <h3
                         class="font-bold text-slate-800 mb-2">
+
                         Support
+
                     </h3>
 
                     <p
                         class="text-sm text-slate-500">
+
                         We're ready to assist you.
+
                     </p>
 
                 </div>
@@ -917,12 +1207,16 @@
 
                         <h2
                             class="text-3xl font-bold mb-2">
+
                             Fresh Fold
+
                         </h2>
 
                         <p
                             class="text-cyan-100 text-sm mb-8">
+
                             Laundry Management System
+
                         </p>
 
 
@@ -996,12 +1290,16 @@
 
                         <h2
                             class="text-3xl font-bold text-slate-800">
+
                             Welcome!
+
                         </h2>
 
                         <p
                             class="text-sm text-slate-500 mt-2">
+
                             Login to your Fresh Fold account.
+
                         </p>
 
                     </div>
@@ -1168,12 +1466,16 @@
 
                             <p
                                 class="text-sm font-semibold text-white">
+
                                 Republic of the Philippines
+
                             </p>
 
                             <p
                                 class="text-xs text-slate-400">
+
                                 Government of the Philippines
+
                             </p>
 
                         </div>
