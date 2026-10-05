@@ -1,1387 +1,1325 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Laundry Orders - Fresh Fold</title>
 
-    <title>My Laundry Orders - Fresh Fold</title>
+<!-- Tailwind CSS -->
+<link rel="stylesheet" href="src/output.css">
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="src/output.css">
+<!-- Poppins Font -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <!-- Poppins Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+    /* =====================================================
+       DASHBOARD NAVIGATION
+       ===================================================== */
+
+    .top-nav-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 2px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        transition: all 0.2s ease;
+    }
+
+    .top-nav-link:hover {
+        color: #67e8f9;
+    }
+
+    .top-nav-link.active {
+        color: #67e8f9;
+    }
+
+    .top-nav-link.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: #22d3ee;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 1023px) {
+
+        #desktopNavigation {
+            display: none;
+        }
+
+    }
+
+</style>
+
 </head>
 
-<body class="min-h-screen bg-slate-50 font-[Poppins] text-slate-800">
+<body class="font-[Poppins] dashboard-bg min-h-screen overflow-x-hidden">
 
-    <!-- ==================== GOVERNMENT TOP BAR ==================== -->
-    <div class="bg-slate-900 text-white">
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+<header class="relative z-30 w-full bg-slate-900/95 text-white shadow-lg">
 
-            <div class="flex items-center gap-3">
+    <div class="w-full px-3 py-3 sm:px-4 md:px-8">
 
-                <img
-                    src="images/ph.webp"
-                    alt="Republic of the Philippines"
-                    class="h-10 w-10 object-contain">
+        <div class="flex min-w-0 items-center justify-between gap-2 sm:gap-4">
 
-                <div class="hidden sm:block">
 
-                    <p class="text-xs font-medium uppercase tracking-wide">
-                        Republic of the Philippines
+            <!-- =================================================
+                 LEFT: REPUBLIC SEAL
+                 ================================================= -->
+
+            <div class="flex min-w-0 shrink items-center gap-2 sm:gap-3">
+
+                <div
+                    class="shrink-0 rounded-full bg-white p-1 shadow-md"
+                    style="width: 60px; height: 60px;">
+
+                    <img
+                        src="images/ph.webp"
+                        alt="Republic of the Philippines Seal"
+                        class="h-full w-full rounded-full object-contain">
+
+                </div>
+
+
+                <div class="hidden min-w-0 sm:block">
+
+                    <p class="text-xs text-white/70">
+                        Government of the Philippines
                     </p>
 
-                    <p class="text-[10px] text-slate-300">
-                        Government Web Transparency
+                    <p class="truncate text-sm font-semibold md:text-base">
+                        Republic of the Philippines
                     </p>
 
                 </div>
 
             </div>
 
-            <img
-                src="images/ph1.png"
-                alt="Transparency Seal"
-                class="h-10 w-auto object-contain">
+
+            <!-- =================================================
+                 MAIN NAVIGATION
+                 ================================================= -->
+
+            <nav
+                id="desktopNavigation"
+                class="hidden min-w-0 flex-1 items-center justify-center gap-4 text-sm lg:flex xl:gap-7">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="dashboard.html"
+                    class="top-nav-link whitespace-nowrap">
+
+                    <i class="fa-solid fa-house text-xs"></i>
+
+                    <span>
+                        Home
+                    </span>
+
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <a
+                    href="services.html"
+                    class="top-nav-link whitespace-nowrap">
+
+                    <i class="fa-solid fa-shirt text-xs"></i>
+
+                    <span>
+                        Services
+                    </span>
+
+                </a>
+
+
+                <!-- PRICES -->
+
+                <a
+                    href="prices.html"
+                    class="top-nav-link whitespace-nowrap">
+
+                    <i class="fa-solid fa-tags text-xs"></i>
+
+                    <span>
+                        Prices
+                    </span>
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a
+                    href="orders.html"
+                    class="top-nav-link active whitespace-nowrap">
+
+                    <i class="fa-solid fa-receipt text-xs"></i>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 RIGHT: TRANSPARENCY SEAL ONLY
+                 ================================================= -->
+
+            <div class="flex shrink-0 items-center">
+
+                <div
+                    class="shrink-0 rounded-full bg-white p-1 shadow-md"
+                    style="width: 60px; height: 60px;">
+
+                    <img
+                        src="images/ph1.png"
+                        alt="Transparency Seal"
+                        class="h-full w-full rounded-full object-contain">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main
+    class="mx-auto w-full max-w-7xl px-3 py-5 sm:px-5 md:px-8 md:py-8 lg:px-10 lg:py-10">
+
+
+    <!-- =================================================
+         MOBILE NAVIGATION
+         ================================================= -->
+
+    <div class="mb-6 lg:hidden">
+
+        <div class="dashboard-card p-4">
+
+            <div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
+
+
+                <!-- HOME -->
+
+                <a
+                    href="dashboard.html"
+                    class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100">
+
+                    <i class="fa-solid fa-house shrink-0"></i>
+
+                    <span class="truncate">
+                        Home
+                    </span>
+
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <a
+                    href="services.html"
+                    class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100">
+
+                    <i class="fa-solid fa-shirt shrink-0"></i>
+
+                    <span class="truncate">
+                        Services
+                    </span>
+
+                </a>
+
+
+                <!-- PRICES -->
+
+                <a
+                    href="prices.html"
+                    class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100">
+
+                    <i class="fa-solid fa-tags shrink-0"></i>
+
+                    <span class="truncate">
+                        Prices
+                    </span>
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a
+                    href="orders.html"
+                    class="flex items-center gap-2 rounded-lg bg-cyan-50 px-3 py-2 text-sm font-medium text-cyan-700">
+
+                    <i class="fa-solid fa-receipt shrink-0"></i>
+
+                    <span class="truncate">
+                        Orders
+                    </span>
+
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <a
+                    href="dashboard.html#about"
+                    class="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-slate-100">
+
+                    <i class="fa-solid fa-circle-info shrink-0"></i>
+
+                    <span class="truncate">
+                        About
+                    </span>
+
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
+    <!-- =================================================
+         PAGE HEADER
+         ================================================= -->
 
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section class="mb-8">
 
-            <div class="flex h-20 items-center justify-between">
+        <div class="welcome-banner overflow-hidden p-6 sm:p-8 md:p-10">
 
-                <!-- LOGO -->
-                <a
-                    href="dashboard.html"
-                    class="flex items-center gap-3">
+            <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
 
-                    <img
-                        src="images/laundry-logo.png"
-                        alt="Fresh Fold Logo"
-                        class="h-14 w-auto object-contain">
 
-                    <div class="hidden md:block">
+                <!-- LEFT -->
 
-                        <h1 class="text-lg font-bold text-slate-800">
-                            Fresh Fold
-                        </h1>
-
-                        <p class="text-xs text-slate-500">
-                            Laundry Services
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <!-- DESKTOP NAV -->
-                <nav class="hidden items-center gap-6 lg:flex">
-
-                    <a
-                        href="dashboard.html"
-                        class="text-sm font-medium text-slate-600 transition hover:text-cyan-600">
-                        Home
-                    </a>
-
-                    <a
-                        href="services.html"
-                        class="text-sm font-medium text-slate-600 transition hover:text-cyan-600">
-                        Services
-                    </a>
-
-                    <a
-                        href="prices.html"
-                        class="text-sm font-medium text-slate-600 transition hover:text-cyan-600">
-                        Prices
-                    </a>
-
-                    <a
-                        href="orders.html"
-                        class="text-sm font-semibold text-cyan-600">
-                        Orders
-                    </a>
-
-                    <a
-                        href="dashboard.html#about"
-                        class="text-sm font-medium text-slate-600 transition hover:text-cyan-600">
-                        About
-                    </a>
-
-                    <a
-                        href="dashboard.html#contact"
-                        class="text-sm font-medium text-slate-600 transition hover:text-cyan-600">
-                        Contact
-                    </a>
-
-                </nav>
-
-
-                <!-- PROFILE -->
-                <div class="hidden items-center gap-4 lg:flex">
-
-                    <div class="relative">
-
-                        <button
-                            id="profileButton"
-                            type="button"
-                            class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 transition hover:border-cyan-300 hover:bg-cyan-50">
-
-                            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-cyan-600 text-white">
-                                <i class="fa-solid fa-user text-sm"></i>
-                            </div>
-
-                            <div class="text-left">
-
-                                <p
-                                    id="profileUsername"
-                                    class="max-w-24 truncate text-xs font-semibold text-slate-800">
-                                    User
-                                </p>
-
-                                <p class="text-[10px] text-slate-500">
-                                    Account
-                                </p>
-
-                            </div>
-
-                            <i
-                                id="profileArrow"
-                                class="fa-solid fa-chevron-down ml-1 text-xs text-slate-400 transition-transform">
-                            </i>
-
-                        </button>
-
-
-                        <!-- PROFILE DROPDOWN -->
-                        <div
-                            id="profileDropdown"
-                            class="absolute right-0 top-full mt-3 hidden w-72 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
-
-                            <div class="bg-linear-to-r from-cyan-600 to-blue-600 px-5 py-5 text-white">
-
-                                <div class="flex items-center gap-3">
-
-                                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
-                                        <i class="fa-solid fa-user text-lg"></i>
-                                    </div>
-
-                                    <div class="min-w-0">
-
-                                        <p
-                                            id="dropdownUsername"
-                                            class="truncate font-semibold">
-                                            User
-                                        </p>
-
-                                        <p
-                                            id="userEmail"
-                                            class="truncate text-xs text-cyan-100">
-                                            user@email.com
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="p-4">
-
-                                <div class="mb-3 rounded-xl bg-slate-50 p-3">
-
-                                    <p class="mb-1 text-[10px] font-medium uppercase tracking-wide text-slate-400">
-                                        Username
-                                    </p>
-
-                                    <p
-                                        id="userUsername"
-                                        class="break-all text-sm font-medium text-slate-700">
-                                        @user
-                                    </p>
-
-                                </div>
-
-
-                                <button
-                                    id="logoutBtn"
-                                    type="button"
-                                    class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-medium text-red-600 transition hover:bg-red-50">
-
-                                    <i class="fa-solid fa-right-from-bracket w-5"></i>
-
-                                    Logout
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <img
-                        src="images/ph1.png"
-                        alt="Transparency Seal"
-                        class="h-12 w-auto object-contain">
-
-                </div>
-
-
-                <!-- MOBILE MENU -->
-                <button
-                    id="mobileMenuButton"
-                    type="button"
-                    class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition hover:bg-slate-100 lg:hidden">
-
-                    <i class="fa-solid fa-bars"></i>
-
-                </button>
-
-            </div>
-
-
-            <!-- MOBILE NAV -->
-            <div
-                id="mobileMenu"
-                class="hidden border-t border-slate-100 py-4 lg:hidden">
-
-                <nav class="flex flex-col gap-1">
-
-                    <a
-                        href="dashboard.html"
-                        class="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-cyan-50 hover:text-cyan-600">
-                        <i class="fa-solid fa-house mr-3 w-5"></i>
-                        Home
-                    </a>
-
-                    <a
-                        href="services.html"
-                        class="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-cyan-50 hover:text-cyan-600">
-                        <i class="fa-solid fa-shirt mr-3 w-5"></i>
-                        Services
-                    </a>
-
-                    <a
-                        href="prices.html"
-                        class="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-cyan-50 hover:text-cyan-600">
-                        <i class="fa-solid fa-tags mr-3 w-5"></i>
-                        Prices
-                    </a>
-
-                    <a
-                        href="orders.html"
-                        class="rounded-lg bg-cyan-50 px-4 py-3 text-sm font-semibold text-cyan-600">
-                        <i class="fa-solid fa-receipt mr-3 w-5"></i>
-                        Orders
-                    </a>
-
-                    <a
-                        href="dashboard.html#about"
-                        class="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-cyan-50 hover:text-cyan-600">
-                        <i class="fa-solid fa-circle-info mr-3 w-5"></i>
-                        About
-                    </a>
-
-                    <a
-                        href="dashboard.html#contact"
-                        class="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-cyan-50 hover:text-cyan-600">
-                        <i class="fa-solid fa-envelope mr-3 w-5"></i>
-                        Contact
-                    </a>
-
-                </nav>
-
-
-                <!-- MOBILE PROFILE -->
-                <div class="mt-4 border-t border-slate-100 pt-4">
-
-                    <button
-                        id="mobileProfileButton"
-                        type="button"
-                        class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left transition hover:bg-slate-50">
-
-                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-600 text-white">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-
-                        <div class="min-w-0 flex-1">
-
-                            <p
-                                id="mobileProfileUsername"
-                                class="truncate text-sm font-semibold text-slate-800">
-                                User
-                            </p>
-
-                            <p class="text-xs text-slate-500">
-                                View account
-                            </p>
-
-                        </div>
-
-                        <i class="fa-solid fa-chevron-down text-xs text-slate-400"></i>
-
-                    </button>
-
+                <div class="flex min-w-0 items-center gap-4">
 
                     <div
-                        id="mobileProfileDropdown"
-                        class="mt-2 hidden rounded-xl bg-slate-50 p-3">
+                        class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 sm:h-16 sm:w-16">
 
-                        <div class="mb-3">
-
-                            <p class="text-[10px] font-medium uppercase tracking-wide text-slate-400">
-                                Email
-                            </p>
-
-                            <p
-                                id="mobileUserEmail"
-                                class="break-all text-sm text-slate-700">
-                                user@email.com
-                            </p>
-
-                        </div>
-
-
-                        <button
-                            id="mobileLogoutBtn"
-                            type="button"
-                            class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-red-600 transition hover:bg-red-100">
-
-                            <i class="fa-solid fa-right-from-bracket w-5"></i>
-
-                            Logout
-
-                        </button>
+                        <i class="fa-solid fa-receipt text-2xl text-white sm:text-3xl"></i>
 
                     </div>
 
-                </div>
 
-            </div>
+                    <div class="min-w-0">
 
-        </div>
+                        <p class="mb-1 text-sm text-white/70">
+                            Fresh Fold Laundry Services
+                        </p>
 
-    </header>
-
-
-    <!-- ==================== MAIN ==================== -->
-    <main>
-
-        <!-- PAGE HEADER -->
-        <section class="bg-linear-to-r from-cyan-600 to-blue-700 px-4 py-14 text-white sm:px-6 lg:px-8">
-
-            <div class="mx-auto max-w-6xl">
-
-                <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-
-                    <div>
-
-                        <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
-                            <i class="fa-solid fa-receipt text-xl"></i>
-                        </div>
-
-                        <h2 class="text-3xl font-bold sm:text-4xl">
+                        <h1 class="text-2xl font-bold sm:text-3xl">
                             My Laundry Orders
-                        </h2>
+                        </h1>
 
-                        <p class="mt-2 text-sm text-cyan-50 sm:text-base">
+                        <p class="mt-2 text-sm text-white/80 sm:text-base">
                             View and track your laundry orders.
                         </p>
 
                     </div>
 
-
-                    <a
-                        href="create-order.html"
-                        class="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-cyan-700 shadow-md transition hover:bg-cyan-50">
-
-                        <i class="fa-solid fa-plus"></i>
-
-                        Create New Order
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ORDERS CONTENT -->
-        <section class="px-4 py-12 sm:px-6 lg:px-8">
-
-            <div class="mx-auto max-w-6xl">
-
-                <!-- FILTER / SUMMARY -->
-                <div class="mb-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
-                    <!-- TOTAL -->
-                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-
-                                <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                    Total Orders
-                                </p>
-
-                                <p
-                                    id="totalOrders"
-                                    class="mt-2 text-2xl font-bold text-slate-800">
-                                    0
-                                </p>
-
-                            </div>
-
-                            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
-                                <i class="fa-solid fa-receipt"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PENDING -->
-                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-
-                                <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                    Pending
-                                </p>
-
-                                <p
-                                    id="pendingOrders"
-                                    class="mt-2 text-2xl font-bold text-amber-600">
-                                    0
-                                </p>
-
-                            </div>
-
-                            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PROCESSING -->
-                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-
-                                <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                    Processing
-                                </p>
-
-                                <p
-                                    id="processingOrders"
-                                    class="mt-2 text-2xl font-bold text-blue-600">
-                                    0
-                                </p>
-
-                            </div>
-
-                            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
-                                <i class="fa-solid fa-spinner"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- COMPLETED -->
-                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-
-                                <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                    Completed
-                                </p>
-
-                                <p
-                                    id="completedOrders"
-                                    class="mt-2 text-2xl font-bold text-green-600">
-                                    0
-                                </p>
-
-                            </div>
-
-                            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-green-100 text-green-600">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
 
-                <!-- ORDERS LIST -->
-                <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                <!-- CREATE ORDER -->
 
-                    <!-- HEADER -->
-                    <div class="border-b border-slate-200 bg-slate-50 px-6 py-5">
+                <a
+                    href="create-order.html"
+                    class="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-cyan-700 shadow-md transition hover:bg-cyan-50">
 
-                        <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+                    <i class="fa-solid fa-plus"></i>
 
-                            <div>
+                    Create New Order
 
-                                <h3 class="font-semibold text-slate-800">
-                                    Order History
-                                </h3>
-
-                                <p class="text-xs text-slate-500">
-                                    Your recently submitted laundry orders.
-                                </p>
-
-                            </div>
-
-                            <button
-                                id="refreshOrdersBtn"
-                                type="button"
-                                class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-600 transition hover:border-cyan-300 hover:text-cyan-600">
-
-                                <i class="fa-solid fa-rotate"></i>
-
-                                Refresh
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ORDERS CONTAINER -->
-                    <div
-                        id="ordersContainer"
-                        class="divide-y divide-slate-100">
-
-                        <!-- LOADING -->
-                        <div
-                            id="ordersLoading"
-                            class="px-6 py-14 text-center">
-
-                            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-50 text-cyan-600">
-
-                                <i class="fa-solid fa-spinner fa-spin text-lg"></i>
-
-                            </div>
-
-                            <p class="text-sm font-medium text-slate-700">
-                                Loading your orders...
-                            </p>
-
-                            <p class="mt-1 text-xs text-slate-400">
-                                Please wait a moment.
-                            </p>
-
-                        </div>
-
-
-                        <!-- EMPTY -->
-                        <div
-                            id="ordersEmpty"
-                            class="hidden px-6 py-16 text-center">
-
-                            <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-400">
-
-                                <i class="fa-solid fa-receipt text-2xl"></i>
-
-                            </div>
-
-                            <h3 class="font-semibold text-slate-800">
-                                No Laundry Orders Yet
-                            </h3>
-
-                            <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
-                                You haven't created any laundry orders yet.
-                                Create your first order to get started.
-                            </p>
-
-                            <a
-                                href="create-order.html"
-                                class="mt-6 inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:from-cyan-700 hover:to-blue-700">
-
-                                <i class="fa-solid fa-plus"></i>
-
-                                Create Laundry Order
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-slate-900 text-white">
-
-        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-
-            <div class="grid gap-8 md:grid-cols-3">
-
-                <!-- LOGO -->
-                <div>
-
-                    <div class="flex items-center gap-3">
-
-                        <img
-                            src="images/laundry-logo.png"
-                            alt="Fresh Fold Logo"
-                            class="h-14 w-auto object-contain">
-
-                        <div>
-
-                            <h3 class="text-lg font-bold">
-                                Fresh Fold
-                            </h3>
-
-                            <p class="text-xs text-slate-400">
-                                Laundry Services
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <p class="mt-4 max-w-sm text-sm leading-6 text-slate-400">
-                        Fresh, clean, and convenient laundry services for the community.
-                    </p>
-
-                </div>
-
-
-                <!-- QUICK LINKS -->
-                <div>
-
-                    <h3 class="mb-4 text-sm font-semibold uppercase tracking-wide">
-                        Quick Links
-                    </h3>
-
-                    <div class="flex flex-col gap-2 text-sm text-slate-400">
-
-                        <a
-                            href="dashboard.html"
-                            class="transition hover:text-cyan-400">
-                            Home
-                        </a>
-
-                        <a
-                            href="services.html"
-                            class="transition hover:text-cyan-400">
-                            Services
-                        </a>
-
-                        <a
-                            href="prices.html"
-                            class="transition hover:text-cyan-400">
-                            Prices
-                        </a>
-
-                        <a
-                            href="create-order.html"
-                            class="transition hover:text-cyan-400">
-                            Create Order
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CONTACT -->
-                <div>
-
-                    <h3 class="mb-4 text-sm font-semibold uppercase tracking-wide">
-                        Contact Us
-                    </h3>
-
-                    <div class="space-y-3 text-sm text-slate-400">
-
-                        <p class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope w-5 text-cyan-400"></i>
-                            freshfold@gmail.com
-                        </p>
-
-                        <p class="flex items-center gap-3">
-                            <i class="fa-solid fa-location-dot w-5 text-cyan-400"></i>
-                            Borongan, Eastern Samar
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="mt-8 border-t border-slate-800 pt-6 text-center">
-
-                <p class="text-xs text-slate-500">
-                    © 2026 Fresh Fold. All Rights Reserved.
-                </p>
+                </a>
 
             </div>
 
         </div>
 
-    </footer>
+    </section>
 
 
-    <!-- ==================== SCRIPTS ==================== -->
+    <!-- =================================================
+         ORDER SUMMARY
+         ================================================= -->
 
-    <!-- Supabase -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <section class="mb-8">
 
-    <!-- Supabase Configuration -->
-    <script src="js/supabase.js"></script>
-
-    <!-- Dashboard / User Logic -->
-    <script src="js/dashboard.js"></script>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
 
-    <!-- Orders Page Logic -->
-    <script>
+            <!-- TOTAL ORDERS -->
 
-        document.addEventListener("DOMContentLoaded", function () {
+            <div class="dashboard-card p-5">
 
-            const mobileMenuButton =
-                document.getElementById("mobileMenuButton");
+                <div class="flex items-center justify-between">
 
-            const mobileMenu =
-                document.getElementById("mobileMenu");
+                    <div>
 
+                        <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+                            Total Orders
+                        </p>
 
-            /* ==================== MOBILE MENU ==================== */
+                        <p
+                            id="totalOrders"
+                            class="mt-2 text-2xl font-bold text-slate-800">
+                            0
+                        </p>
 
-            if (mobileMenuButton && mobileMenu) {
+                    </div>
 
-                mobileMenuButton.addEventListener("click", function () {
+                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
 
-                    mobileMenu.classList.toggle("hidden");
+                        <i class="fa-solid fa-receipt"></i>
 
-                    const icon =
-                        mobileMenuButton.querySelector("i");
+                    </div>
 
-                    if (mobileMenu.classList.contains("hidden")) {
+                </div>
 
-                        icon.classList.remove("fa-xmark");
-                        icon.classList.add("fa-bars");
-
-                    } else {
-
-                        icon.classList.remove("fa-bars");
-                        icon.classList.add("fa-xmark");
-
-                    }
-
-                });
-
-            }
+            </div>
 
 
-            /* ==================== MOBILE PROFILE ==================== */
+            <!-- PENDING -->
 
-            const mobileProfileButton =
-                document.getElementById("mobileProfileButton");
+            <div class="dashboard-card p-5">
 
-            const mobileProfileDropdown =
-                document.getElementById("mobileProfileDropdown");
+                <div class="flex items-center justify-between">
 
+                    <div>
 
-            if (mobileProfileButton && mobileProfileDropdown) {
+                        <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+                            Pending
+                        </p>
 
-                mobileProfileButton.addEventListener("click", function () {
+                        <p
+                            id="pendingOrders"
+                            class="mt-2 text-2xl font-bold text-amber-600">
+                            0
+                        </p>
 
-                    mobileProfileDropdown.classList.toggle("hidden");
+                    </div>
 
-                });
+                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
 
-            }
+                        <i class="fa-solid fa-clock"></i>
 
+                    </div>
 
-            /* ==================== ORDER ELEMENTS ==================== */
+                </div>
 
-            const ordersContainer =
-                document.getElementById("ordersContainer");
-
-            const ordersLoading =
-                document.getElementById("ordersLoading");
-
-            const ordersEmpty =
-                document.getElementById("ordersEmpty");
-
-            const refreshOrdersBtn =
-                document.getElementById("refreshOrdersBtn");
+            </div>
 
 
-            const totalOrders =
-                document.getElementById("totalOrders");
+            <!-- PROCESSING -->
 
-            const pendingOrders =
-                document.getElementById("pendingOrders");
+            <div class="dashboard-card p-5">
 
-            const processingOrders =
-                document.getElementById("processingOrders");
+                <div class="flex items-center justify-between">
 
-            const completedOrders =
-                document.getElementById("completedOrders");
+                    <div>
 
-
-            /* ==================== STATUS BADGE ==================== */
-
-            function getStatusBadge(status) {
-
-                const normalized =
-                    String(status || "Pending").toLowerCase();
-
-
-                if (normalized === "completed") {
-
-                    return `
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                            <i class="fa-solid fa-circle-check"></i>
-                            Completed
-                        </span>
-                    `;
-
-                }
-
-
-                if (normalized === "processing") {
-
-                    return `
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                            <i class="fa-solid fa-spinner"></i>
+                        <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
                             Processing
-                        </span>
-                    `;
+                        </p>
 
-                }
+                        <p
+                            id="processingOrders"
+                            class="mt-2 text-2xl font-bold text-blue-600">
+                            0
+                        </p>
+
+                    </div>
+
+                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+
+                        <i class="fa-solid fa-spinner"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
 
 
-                if (normalized === "ready") {
+            <!-- COMPLETED -->
 
-                    return `
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">
-                            <i class="fa-solid fa-box"></i>
-                            Ready
-                        </span>
-                    `;
+            <div class="dashboard-card p-5">
 
-                }
+                <div class="flex items-center justify-between">
+
+                    <div>
+
+                        <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+                            Completed
+                        </p>
+
+                        <p
+                            id="completedOrders"
+                            class="mt-2 text-2xl font-bold text-green-600">
+                            0
+                        </p>
+
+                    </div>
+
+                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-green-100 text-green-600">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                if (normalized === "cancelled") {
+    <!-- =================================================
+         ORDER HISTORY
+         ================================================= -->
 
-                    return `
-                        <span class="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
-                            <i class="fa-solid fa-xmark"></i>
-                            Cancelled
-                        </span>
-                    `;
+    <section>
 
-                }
+        <div class="dashboard-card overflow-hidden">
 
+
+            <!-- HEADER -->
+
+            <div class="border-b border-slate-200 bg-slate-50 p-5 sm:p-6">
+
+                <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+
+                    <div>
+
+                        <h2 class="font-semibold text-slate-800">
+                            Order History
+                        </h2>
+
+                        <p class="mt-1 text-sm text-slate-500">
+                            Your recently submitted laundry orders.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="refreshOrdersBtn"
+                        type="button"
+                        class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-600 transition hover:border-cyan-300 hover:text-cyan-600">
+
+                        <i class="fa-solid fa-rotate"></i>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDERS CONTAINER -->
+
+            <div
+                id="ordersContainer"
+                class="divide-y divide-slate-100">
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="ordersLoading"
+                    class="px-6 py-14 text-center">
+
+                    <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-50 text-cyan-600">
+
+                        <i class="fa-solid fa-spinner fa-spin text-lg"></i>
+
+                    </div>
+
+                    <p class="text-sm font-medium text-slate-700">
+                        Loading your orders...
+                    </p>
+
+                    <p class="mt-1 text-xs text-slate-400">
+                        Please wait a moment.
+                    </p>
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    id="ordersEmpty"
+                    class="hidden px-6 py-16 text-center">
+
+                    <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+
+                        <i class="fa-solid fa-receipt text-2xl"></i>
+
+                    </div>
+
+                    <h3 class="font-semibold text-slate-800">
+                        No Laundry Orders Yet
+                    </h3>
+
+                    <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+
+                        You haven't created any laundry orders yet.
+                        Create your first order to get started.
+
+                    </p>
+
+                  
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     SUPABASE
+     ===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+
+<!-- =====================================================
+     ORDERS PAGE LOGIC
+     ===================================================== -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+        /* =================================================
+           ORDER ELEMENTS
+           ================================================= */
+
+        const ordersContainer =
+            document.getElementById("ordersContainer");
+
+        const ordersLoading =
+            document.getElementById("ordersLoading");
+
+        const ordersEmpty =
+            document.getElementById("ordersEmpty");
+
+        const refreshOrdersBtn =
+            document.getElementById("refreshOrdersBtn");
+
+
+        const totalOrders =
+            document.getElementById("totalOrders");
+
+        const pendingOrders =
+            document.getElementById("pendingOrders");
+
+        const processingOrders =
+            document.getElementById("processingOrders");
+
+        const completedOrders =
+            document.getElementById("completedOrders");
+
+
+        /* =================================================
+           STATUS BADGE
+           ================================================= */
+
+        function getStatusBadge(status) {
+
+            const normalized =
+                String(status || "Pending").toLowerCase();
+
+
+            if (normalized === "completed") {
 
                 return `
-                    <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
-                        <i class="fa-solid fa-clock"></i>
-                        Pending
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Completed
+
                     </span>
                 `;
 
             }
 
 
-            /* ==================== DATE FORMAT ==================== */
+            if (normalized === "processing") {
 
-            function formatDate(dateValue) {
+                return `
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
 
-                if (!dateValue) {
-                    return "—";
-                }
+                        <i class="fa-solid fa-spinner"></i>
 
-                const date =
-                    new Date(dateValue);
+                        Processing
 
-                if (Number.isNaN(date.getTime())) {
-                    return dateValue;
-                }
-
-                return date.toLocaleDateString(
-                    "en-PH",
-                    {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric"
-                    }
-                );
+                    </span>
+                `;
 
             }
 
 
-            /* ==================== MONEY FORMAT ==================== */
+            if (normalized === "ready") {
 
-            function formatAmount(amount) {
+                return `
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">
 
-                const number =
-                    Number(amount || 0);
+                        <i class="fa-solid fa-box"></i>
 
-                return "₱" + number.toLocaleString(
-                    "en-PH",
-                    {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    }
-                );
+                        Ready
+
+                    </span>
+                `;
 
             }
 
 
-            /* ==================== LOAD ORDERS ==================== */
+            if (normalized === "cancelled") {
 
-            async function loadOrders() {
+                return `
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
 
-                if (!ordersContainer) {
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancelled
+
+                    </span>
+                `;
+
+            }
+
+
+            return `
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    Pending
+
+                </span>
+            `;
+
+        }
+
+
+        /* =================================================
+           DATE FORMAT
+           ================================================= */
+
+        function formatDate(dateValue) {
+
+            if (!dateValue) {
+                return "—";
+            }
+
+
+            const date =
+                new Date(dateValue);
+
+
+            if (Number.isNaN(date.getTime())) {
+                return dateValue;
+            }
+
+
+            return date.toLocaleDateString(
+                "en-PH",
+                {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           MONEY FORMAT
+           ================================================= */
+
+        function formatAmount(amount) {
+
+            const number =
+                Number(amount || 0);
+
+
+            return "₱" + number.toLocaleString(
+                "en-PH",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           LOAD ORDERS
+           ================================================= */
+
+        async function loadOrders() {
+
+            if (!ordersContainer) {
+                return;
+            }
+
+
+            ordersLoading.classList.remove("hidden");
+
+            ordersEmpty.classList.add("hidden");
+
+
+            /* Remove previously rendered orders */
+
+            const existingOrders =
+                ordersContainer.querySelectorAll(".order-card");
+
+
+            existingOrders.forEach(function (card) {
+
+                card.remove();
+
+            });
+
+
+            try {
+
+
+                /* =================================================
+                   GET CURRENT USER
+                   ================================================= */
+
+                let currentUser = null;
+
+
+                if (
+                    typeof supabase !== "undefined" &&
+                    supabase.auth
+                ) {
+
+                    const {
+                        data: {
+                            user
+                        }
+                    } = await supabase.auth.getUser();
+
+
+                    currentUser = user;
+
+                }
+
+
+                /* =================================================
+                   NO USER
+                   ================================================= */
+
+                if (!currentUser) {
+
+                    ordersLoading.classList.add("hidden");
+
+                    ordersEmpty.classList.remove("hidden");
+
+                    totalOrders.textContent = "0";
+
+                    pendingOrders.textContent = "0";
+
+                    processingOrders.textContent = "0";
+
+                    completedOrders.textContent = "0";
+
                     return;
+
                 }
 
 
-                ordersLoading.classList.remove("hidden");
+                /* =================================================
+                   GET ORDERS FROM SUPABASE
+                   ================================================= */
 
-                ordersEmpty.classList.add("hidden");
+                const {
+                    data,
+                    error
+                } = await supabase
+                    .from("laundry_orders")
+                    .select("*")
+                    .eq("user_id", currentUser.id)
+                    .order("created_at", {
+                        ascending: false
+                    });
 
 
-                /* Remove previously rendered orders */
-                const existingOrders =
-                    ordersContainer.querySelectorAll(".order-card");
+                if (error) {
+                    throw error;
+                }
 
-                existingOrders.forEach(function (card) {
-                    card.remove();
+
+                const orders =
+                    data || [];
+
+
+                ordersLoading.classList.add("hidden");
+
+
+                /* =================================================
+                   SUMMARY
+                   ================================================= */
+
+                totalOrders.textContent =
+                    orders.length;
+
+
+                pendingOrders.textContent =
+                    orders.filter(function (order) {
+
+                        return String(
+                            order.status || "Pending"
+                        )
+                            .toLowerCase() === "pending";
+
+                    }).length;
+
+
+                processingOrders.textContent =
+                    orders.filter(function (order) {
+
+                        return String(
+                            order.status || ""
+                        )
+                            .toLowerCase() === "processing";
+
+                    }).length;
+
+
+                completedOrders.textContent =
+                    orders.filter(function (order) {
+
+                        return String(
+                            order.status || ""
+                        )
+                            .toLowerCase() === "completed";
+
+                    }).length;
+
+
+                /* =================================================
+                   EMPTY ORDERS
+                   ================================================= */
+
+                if (orders.length === 0) {
+
+                    ordersEmpty.classList.remove("hidden");
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   DISPLAY ORDERS
+                   ================================================= */
+
+                orders.forEach(function (order) {
+
+
+                    const orderCard =
+                        document.createElement("div");
+
+
+                    orderCard.className =
+                        "order-card p-5 sm:p-6 transition hover:bg-slate-50";
+
+
+                    /* ORDER ID */
+
+                    const orderId =
+                        order.id
+                            ? String(order.id)
+                                .slice(0, 8)
+                                .toUpperCase()
+                            : "N/A";
+
+
+                    /* SERVICE */
+
+                    const service =
+                        order.service_type ||
+                        order.serviceType ||
+                        "Laundry Service";
+
+
+                    /* DESCRIPTION */
+
+                    const description =
+                        order.item_description ||
+                        order.itemDescription ||
+                        "No description";
+
+
+                    /* WEIGHT */
+
+                    const weight =
+                        order.weight_kg ||
+                        order.weightKg ||
+                        0;
+
+
+                    /* AMOUNT */
+
+                    const amount =
+                        order.order_amount ||
+                        order.orderAmount ||
+                        order.amount ||
+                        0;
+
+
+                    /* PICKUP */
+
+                    const pickupDate =
+                        order.pickup_date ||
+                        order.pickupDate;
+
+
+                    /* DELIVERY */
+
+                    const deliveryDate =
+                        order.delivery_date ||
+                        order.deliveryDate;
+
+
+                    /* PAYMENT */
+
+                    const payment =
+                        order.payment_method ||
+                        order.paymentMethod ||
+                        "Not specified";
+
+
+                    /* STATUS */
+
+                    const status =
+                        order.status ||
+                        "Pending";
+
+
+                    orderCard.innerHTML = `
+
+                        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+
+
+                            <!-- LEFT -->
+
+                            <div class="min-w-0 flex-1">
+
+
+                                <div class="mb-3 flex flex-wrap items-center gap-3">
+
+                                    <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">
+
+                                        Order #${orderId}
+
+                                    </span>
+
+
+                                    ${getStatusBadge(status)}
+
+                                </div>
+
+
+                                <h4 class="text-lg font-semibold text-slate-800">
+
+                                    ${service}
+
+                                </h4>
+
+
+                                <p class="mt-1 text-sm text-slate-500">
+
+                                    ${description}
+
+                                </p>
+
+
+                                <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+
+                                    <!-- QUANTITY -->
+
+                                    <div class="flex items-center gap-2">
+
+                                        <i class="fa-solid fa-weight-scale w-4 text-cyan-500"></i>
+
+                                        <div>
+
+                                            <p class="text-[10px] uppercase text-slate-400">
+                                                Quantity
+                                            </p>
+
+                                            <p class="text-xs font-medium text-slate-700">
+
+                                                ${weight}
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- PICKUP -->
+
+                                    <div class="flex items-center gap-2">
+
+                                        <i class="fa-solid fa-calendar-day w-4 text-cyan-500"></i>
+
+                                        <div>
+
+                                            <p class="text-[10px] uppercase text-slate-400">
+                                                Pickup
+                                            </p>
+
+                                            <p class="text-xs font-medium text-slate-700">
+
+                                                ${formatDate(pickupDate)}
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- DELIVERY -->
+
+                                    <div class="flex items-center gap-2">
+
+                                        <i class="fa-solid fa-truck w-4 text-cyan-500"></i>
+
+                                        <div>
+
+                                            <p class="text-[10px] uppercase text-slate-400">
+                                                Delivery
+                                            </p>
+
+                                            <p class="text-xs font-medium text-slate-700">
+
+                                                ${formatDate(deliveryDate)}
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- PAYMENT -->
+
+                                    <div class="flex items-center gap-2">
+
+                                        <i class="fa-solid fa-wallet w-4 text-cyan-500"></i>
+
+                                        <div>
+
+                                            <p class="text-[10px] uppercase text-slate-400">
+                                                Payment
+                                            </p>
+
+                                            <p class="text-xs font-medium text-slate-700">
+
+                                                ${payment}
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- RIGHT -->
+
+                            <div
+                                class="border-t border-slate-100 pt-4 lg:min-w-40 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+
+                                <p class="text-xs text-slate-400">
+
+                                    Estimated Amount
+
+                                </p>
+
+
+                                <p class="mt-1 text-xl font-bold text-cyan-600">
+
+                                    ${formatAmount(amount)}
+
+                                </p>
+
+
+                                <p class="mt-1 text-[10px] text-slate-400">
+
+                                    Submitted ${formatDate(order.created_at)}
+
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                    `;
+
+
+                    ordersContainer.appendChild(orderCard);
+
                 });
 
 
-                try {
+            } catch (error) {
 
-                    /*
-                     * Get the currently logged-in user.
-                     *
-                     * This uses Supabase authentication if available.
-                     */
 
-                    let currentUser = null;
+                console.error(
+                    "Error loading orders:",
+                    error
+                );
 
 
-                    if (
-                        typeof supabase !== "undefined" &&
-                        supabase.auth
-                    ) {
+                ordersLoading.classList.add("hidden");
 
-                        const {
-                            data: {
-                                user
-                            }
-                        } = await supabase.auth.getUser();
 
-                        currentUser = user;
+                ordersContainer.insertAdjacentHTML(
+                    "beforeend",
+                    `
 
-                    }
+                        <div class="order-card px-6 py-12 text-center">
 
 
-                    if (!currentUser) {
+                            <div
+                                class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-50 text-red-500">
 
-                        ordersLoading.classList.add("hidden");
-
-                        ordersEmpty.classList.remove("hidden");
-
-                        totalOrders.textContent = "0";
-                        pendingOrders.textContent = "0";
-                        processingOrders.textContent = "0";
-                        completedOrders.textContent = "0";
-
-                        return;
-
-                    }
-
-
-                    /*
-                     * Retrieve orders from Supabase.
-                     *
-                     * The table is expected to be named:
-                     * laundry_orders
-                     */
-
-                    const {
-                        data,
-                        error
-                    } = await supabase
-                        .from("laundry_orders")
-                        .select("*")
-                        .eq("user_id", currentUser.id)
-                        .order("created_at", {
-                            ascending: false
-                        });
-
-
-                    if (error) {
-
-                        throw error;
-
-                    }
-
-
-                    const orders =
-                        data || [];
-
-
-                    ordersLoading.classList.add("hidden");
-
-
-                    /* ==================== SUMMARY ==================== */
-
-                    totalOrders.textContent =
-                        orders.length;
-
-
-                    pendingOrders.textContent =
-                        orders.filter(function (order) {
-
-                            return String(order.status || "Pending").toLowerCase()
-                                === "pending";
-
-                        }).length;
-
-
-                    processingOrders.textContent =
-                        orders.filter(function (order) {
-
-                            return String(order.status || "").toLowerCase()
-                                === "processing";
-
-                        }).length;
-
-
-                    completedOrders.textContent =
-                        orders.filter(function (order) {
-
-                            return String(order.status || "").toLowerCase()
-                                === "completed";
-
-                        }).length;
-
-
-                    /* ==================== EMPTY ==================== */
-
-                    if (orders.length === 0) {
-
-                        ordersEmpty.classList.remove("hidden");
-
-                        return;
-
-                    }
-
-
-                    /* ==================== DISPLAY ORDERS ==================== */
-
-                    orders.forEach(function (order) {
-
-                        const orderCard =
-                            document.createElement("div");
-
-                        orderCard.className =
-                            "order-card p-6 transition hover:bg-slate-50";
-
-
-                        const orderId =
-                            order.id
-                                ? String(order.id).slice(0, 8).toUpperCase()
-                                : "N/A";
-
-
-                        const service =
-                            order.service_type ||
-                            order.serviceType ||
-                            "Laundry Service";
-
-
-                        const description =
-                            order.item_description ||
-                            order.itemDescription ||
-                            "No description";
-
-
-                        const weight =
-                            order.weight_kg ||
-                            order.weightKg ||
-                            0;
-
-
-                        const amount =
-                            order.order_amount ||
-                            order.orderAmount ||
-                            order.amount ||
-                            0;
-
-
-                        const pickupDate =
-                            order.pickup_date ||
-                            order.pickupDate;
-
-
-                        const deliveryDate =
-                            order.delivery_date ||
-                            order.deliveryDate;
-
-
-                        const payment =
-                            order.payment_method ||
-                            order.paymentMethod ||
-                            "Not specified";
-
-
-                        const status =
-                            order.status ||
-                            "Pending";
-
-
-                        orderCard.innerHTML = `
-
-                            <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-
-                                <!-- LEFT -->
-                                <div class="min-w-0 flex-1">
-
-                                    <div class="mb-3 flex flex-wrap items-center gap-3">
-
-                                        <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                                            Order #${orderId}
-                                        </span>
-
-                                        ${getStatusBadge(status)}
-
-                                    </div>
-
-
-                                    <h4 class="text-lg font-semibold text-slate-800">
-                                        ${service}
-                                    </h4>
-
-
-                                    <p class="mt-1 text-sm text-slate-500">
-                                        ${description}
-                                    </p>
-
-
-                                    <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-
-                                        <div class="flex items-center gap-2">
-
-                                            <i class="fa-solid fa-weight-scale w-4 text-cyan-500"></i>
-
-                                            <div>
-                                                <p class="text-[10px] uppercase text-slate-400">
-                                                    Quantity
-                                                </p>
-
-                                                <p class="text-xs font-medium text-slate-700">
-                                                    ${weight}
-                                                </p>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="flex items-center gap-2">
-
-                                            <i class="fa-solid fa-calendar-day w-4 text-cyan-500"></i>
-
-                                            <div>
-                                                <p class="text-[10px] uppercase text-slate-400">
-                                                    Pickup
-                                                </p>
-
-                                                <p class="text-xs font-medium text-slate-700">
-                                                    ${formatDate(pickupDate)}
-                                                </p>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="flex items-center gap-2">
-
-                                            <i class="fa-solid fa-truck w-4 text-cyan-500"></i>
-
-                                            <div>
-                                                <p class="text-[10px] uppercase text-slate-400">
-                                                    Delivery
-                                                </p>
-
-                                                <p class="text-xs font-medium text-slate-700">
-                                                    ${formatDate(deliveryDate)}
-                                                </p>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="flex items-center gap-2">
-
-                                            <i class="fa-solid fa-wallet w-4 text-cyan-500"></i>
-
-                                            <div>
-                                                <p class="text-[10px] uppercase text-slate-400">
-                                                    Payment
-                                                </p>
-
-                                                <p class="text-xs font-medium text-slate-700">
-                                                    ${payment}
-                                                </p>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <!-- RIGHT -->
-                                <div class="border-t border-slate-100 pt-4 lg:min-w-40 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
-
-                                    <p class="text-xs text-slate-400">
-                                        Estimated Amount
-                                    </p>
-
-                                    <p class="mt-1 text-xl font-bold text-cyan-600">
-                                        ${formatAmount(amount)}
-                                    </p>
-
-                                    <p class="mt-1 text-[10px] text-slate-400">
-                                        Submitted ${formatDate(order.created_at)}
-                                    </p>
-
-                                </div>
+                                <i class="fa-solid fa-triangle-exclamation text-xl"></i>
 
                             </div>
-                        `;
 
 
-                        ordersContainer.appendChild(orderCard);
+                            <h3 class="font-semibold text-slate-800">
 
-                    });
+                                Unable to Load Orders
 
-                } catch (error) {
-
-                    console.error(
-                        "Error loading orders:",
-                        error
-                    );
+                            </h3>
 
 
-                    ordersLoading.classList.add("hidden");
+                            <p class="mx-auto mt-2 max-w-md text-sm text-slate-500">
+
+                                There was a problem retrieving your orders.
+                                Please try again.
+
+                            </p>
 
 
-                    ordersContainer.insertAdjacentHTML(
-                        "beforeend",
-                        `
-                            <div class="order-card px-6 py-12 text-center">
+                            <button
+                                type="button"
+                                onclick="location.reload()"
+                                class="mt-5 rounded-xl bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-700">
 
-                                <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-50 text-red-500">
+                                Try Again
 
-                                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
-
-                                </div>
-
-                                <h3 class="font-semibold text-slate-800">
-                                    Unable to Load Orders
-                                </h3>
-
-                                <p class="mx-auto mt-2 max-w-md text-sm text-slate-500">
-                                    There was a problem retrieving your orders.
-                                    Please try again.
-                                </p>
-
-                                <button
-                                    type="button"
-                                    onclick="location.reload()"
-                                    class="mt-5 rounded-xl bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-700">
-
-                                    Try Again
-
-                                </button>
-
-                            </div>
-                        `
-                    );
-
-                }
-
-            }
+                            </button>
 
 
-            /* ==================== REFRESH ==================== */
+                        </div>
 
-            if (refreshOrdersBtn) {
-
-                refreshOrdersBtn.addEventListener(
-                    "click",
-                    loadOrders
+                    `
                 );
 
             }
 
+        }
 
-            /* ==================== INITIAL LOAD ==================== */
 
-            loadOrders();
+        /* =================================================
+           REFRESH BUTTON
+           ================================================= */
 
-        });
+        if (refreshOrdersBtn) {
 
-    </script>
+            refreshOrdersBtn.addEventListener(
+                "click",
+                loadOrders
+            );
+
+        }
+
+
+        /* =================================================
+           INITIAL LOAD
+           ================================================= */
+
+        loadOrders();
+
+    });
+
+</script>
 
 </body>
 
